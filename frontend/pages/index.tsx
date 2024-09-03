@@ -55,15 +55,18 @@ const Home: NextPage = () => {
         </section>
         
         <section id="download" className="text-center">
-          <h2 className="text-3xl font-bold mb-6">Download MemoryMaster</h2>
+          <h2 className="text-3xl font-bold mb-6">MemoryMaster Mobile App</h2>
+          <p className="text-xl text-gray-600 mb-8">
+            Our mobile app is coming soon! Stay tuned for the release on iOS and Android.
+          </p>
           <div className="flex justify-center space-x-4">
-            <button className="bg-black text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300 flex items-center">
+            <button disabled className="bg-gray-400 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300 flex items-center cursor-not-allowed">
               <Image src="/app-store-badge.svg" alt="App Store" width={24} height={24} className="mr-2" />
-              App Store
+              Coming Soon
             </button>
-            <button className="bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300 flex items-center">
+            <button disabled className="bg-gray-400 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300 flex items-center cursor-not-allowed">
               <Image src="/google-play-badge.svg" alt="Google Play" width={24} height={24} className="mr-2" />
-              Google Play
+              Coming Soon
             </button>
           </div>
         </section>
