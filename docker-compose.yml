@@ -1,6 +1,10 @@
 services:
   backend:
-    build: ./backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      args:
+        NODE_VERSION: lts
     ports:
       - "3000:3000"
     volumes:
@@ -12,7 +16,11 @@ services:
       - dev.orbstack.domains=back.anymem.orb.local
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        NODE_VERSION: lts
     ports:
       - "3001:3000"
     volumes:
