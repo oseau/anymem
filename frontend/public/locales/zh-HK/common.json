@@ -1,0 +1,35 @@
+{
+  "title": "AnyMem - 記住你學過的一切",
+  "description": "AnyMem：終極閃卡應用，幫助你記住所學的一切。可在網頁、iOS 和 Android 上使用。",
+  "header": {
+    "features": "功能",
+    "comingSoon": "即將推出"
+  },
+  "hero": {
+    "title": "記住你學過的一切",
+    "description": "AnyMem 是終極閃卡應用，幫助你輕鬆保留知識。可在網頁、iOS 和 Android 上使用。",
+    "startLearning": "立即開始學習",
+    "watchDemo": "觀看示範"
+  },
+  "features": {
+    "spacedRepetition": {
+      "title": "間隔重複",
+      "description": "使用我們先進的間隔重複算法優化你的學習。"
+    },
+    "multiPlatform": {
+      "title": "多平台",
+      "description": "隨時隨地在網頁、iOS 和 Android 上訪問你的閃卡。"
+    },
+    "customizableDecks": {
+      "title": "可自定義的卡組",
+      "description": "使用自定義卡組和標籤，按照你的方式創建和組織閃卡。"
+    }
+  },
+  "download": {
+    "title": "AnyMem 流動應用程式",
+    "description": "我們的流動應用程式即將推出！敬請期待 iOS 和 Android 版本的發布。"
+  },
+  "footer": {
+    "copyright": "© 2024 AnyMem。版權所有。"
+  }
+}
