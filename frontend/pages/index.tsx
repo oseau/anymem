@@ -6,18 +6,22 @@ const Home: NextPage = () => {
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-blue-50 to-white font-sans">
       <Head>
-        <title>MemoryMaster - Remember Anything You've Learned</title>
+        <title>AnyMem - Remember Anything You've Learned</title>
         <meta
           name="description"
-          content="MemoryMaster: The ultimate flashcard app for remembering anything you've learned. Available on web, iOS, and Android."
+          content="AnyMem: The ultimate flashcard app for remembering anything you've learned. Available on web, iOS, and Android."
         />
       </Head>
       <header className="bg-white shadow-md py-4">
         <nav className="container mx-auto px-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-blue-600">MemoryMaster</h1>
+          <h1 className="text-2xl font-bold text-blue-600">AnyMem</h1>
           <div className="space-x-4">
-            <a href="#features" className="text-gray-600 hover:text-blue-600">Features</a>
-            <a href="#download" className="text-gray-600 hover:text-blue-600">Coming Soon</a>
+            <a href="#features" className="text-gray-600 hover:text-blue-600">
+              Features
+            </a>
+            <a href="#download" className="text-gray-600 hover:text-blue-600">
+              Coming Soon
+            </a>
           </div>
         </nav>
       </header>
@@ -27,7 +31,8 @@ const Home: NextPage = () => {
             Remember Anything You've Learned
           </h2>
           <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
-            MemoryMaster is the ultimate flashcard app that helps you retain knowledge effortlessly. Available on web, iOS, and Android.
+            AnyMem is the ultimate flashcard app that helps you retain knowledge
+            effortlessly. Available on web, iOS, and Android.
           </p>
           <div className="flex justify-center space-x-4">
             <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-lg transition duration-300">
@@ -38,32 +43,41 @@ const Home: NextPage = () => {
             </button>
           </div>
         </section>
-        
+
         <section id="features" className="grid md:grid-cols-3 gap-6 mb-8">
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-xl font-semibold mb-4">Spaced Repetition</h3>
-            <p className="text-gray-600">Optimize your learning with our advanced spaced repetition algorithm.</p>
+            <p className="text-gray-600">
+              Optimize your learning with our advanced spaced repetition
+              algorithm.
+            </p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-xl font-semibold mb-4">Multi-Platform</h3>
-            <p className="text-gray-600">Access your flashcards anytime, anywhere on web, iOS, and Android.</p>
+            <p className="text-gray-600">
+              Access your flashcards anytime, anywhere on web, iOS, and Android.
+            </p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-xl font-semibold mb-4">Customizable Decks</h3>
-            <p className="text-gray-600">Create and organize flashcards your way with custom decks and tags.</p>
+            <p className="text-gray-600">
+              Create and organize flashcards your way with custom decks and
+              tags.
+            </p>
           </div>
         </section>
-        
+
         <section id="download" className="text-center mt-auto">
-          <h2 className="text-2xl font-bold mb-3">MemoryMaster Mobile App</h2>
+          <h2 className="text-2xl font-bold mb-3">AnyMem Mobile App</h2>
           <p className="text-lg text-gray-600">
-            Our mobile app is coming soon! Stay tuned for the release on iOS and Android.
+            Our mobile app is coming soon! Stay tuned for the release on iOS and
+            Android.
           </p>
         </section>
       </main>
       <footer className="bg-gray-800 text-white py-3 mt-8">
         <div className="container mx-auto px-4 text-center">
-          <p>&copy; 2024 MemoryMaster. All rights reserved.</p>
+          <p>&copy; 2024 AnyMem. All rights reserved.</p>
         </div>
       </footer>
     </div>
