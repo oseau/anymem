@@ -2,7 +2,7 @@
 
 ## Development
 
-This project uses Docker and Docker Compose for development, with the latest LTS version of Node.js for both frontend and backend services.
+This project uses Docker and Docker Compose for development, with Node.js 20 (Debian Bookworm-based image) for both frontend and backend services.
 
 To run the development environment:
 
