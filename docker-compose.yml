@@ -9,7 +9,7 @@ services:
       - NODE_ENV=development
     command: sh -c "npm install && npm run dev"
     labels:
-      dev.orbstack.domains: "backend.local.dev"
+      - dev.orbstack.domains=back.anymem.orb.local
 
   frontend:
     build: ./frontend
@@ -21,7 +21,7 @@ services:
       - backend
     command: sh -c "npm install && npm run dev"
     labels:
-      dev.orbstack.domains: "frontend.local.dev"
+      - dev.orbstack.domains=front.anymem.orb.local
 
   mobile:
     build: ./mobile
