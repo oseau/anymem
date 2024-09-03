@@ -11,3 +11,10 @@ MAKEFLAGS += --always-make
 
 help:
 	@grep -Eh '^[a-zA-Z_-]+:.*?##? .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?##? "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+# Login to frontend container
+login-frontend:
+	docker-compose exec frontend /bin/sh
+
+# Login to backend container
+login-backend:
+	docker-compose exec backend /bin/sh
