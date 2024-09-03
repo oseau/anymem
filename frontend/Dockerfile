@@ -7,6 +7,5 @@ COPY package*.json ./
 
 # Install dependencies
 RUN npm install
-RUN npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
 
 CMD ["npm", "run", "dev"]
