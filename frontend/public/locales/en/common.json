@@ -1,0 +1,35 @@
+{
+  "title": "AnyMem - Remember Anything You've Learned",
+  "description": "AnyMem: The ultimate flashcard app for remembering anything you've learned. Available on web, iOS, and Android.",
+  "header": {
+    "features": "Features",
+    "comingSoon": "Coming Soon"
+  },
+  "hero": {
+    "title": "Remember Anything You've Learned",
+    "description": "AnyMem is the ultimate flashcard app that helps you retain knowledge effortlessly. Available on web, iOS, and Android.",
+    "startLearning": "Start Learning Now",
+    "watchDemo": "Watch Demo"
+  },
+  "features": {
+    "spacedRepetition": {
+      "title": "Spaced Repetition",
+      "description": "Optimize your learning with our advanced spaced repetition algorithm."
+    },
+    "multiPlatform": {
+      "title": "Multi-Platform",
+      "description": "Access your flashcards anytime, anywhere on web, iOS, and Android."
+    },
+    "customizableDecks": {
+      "title": "Customizable Decks",
+      "description": "Create and organize flashcards your way with custom decks and tags."
+    }
+  },
+  "download": {
+    "title": "AnyMem Mobile App",
+    "description": "Our mobile app is coming soon! Stay tuned for the release on iOS and Android."
+  },
+  "footer": {
+    "copyright": "© 2024 AnyMem. All rights reserved."
+  }
+}

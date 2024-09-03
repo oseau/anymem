@@ -1,0 +1,35 @@
+{
+  "title": "AnyMem - Souvenez-vous de tout ce que vous avez appris",
+  "description": "AnyMem : L'application ultime de cartes mémoire pour vous souvenir de tout ce que vous avez appris. Disponible sur web, iOS et Android.",
+  "header": {
+    "features": "Fonctionnalités",
+    "comingSoon": "Bientôt disponible"
+  },
+  "hero": {
+    "title": "Souvenez-vous de tout ce que vous avez appris",
+    "description": "AnyMem est l'application ultime de cartes mémoire qui vous aide à retenir les connaissances sans effort. Disponible sur web, iOS et Android.",
+    "startLearning": "Commencez à apprendre maintenant",
+    "watchDemo": "Regarder la démo"
+  },
+  "features": {
+    "spacedRepetition": {
+      "title": "Répétition espacée",
+      "description": "Optimisez votre apprentissage avec notre algorithme avancé de répétition espacée."
+    },
+    "multiPlatform": {
+      "title": "Multi-plateforme",
+      "description": "Accédez à vos cartes mémoire à tout moment et n'importe où sur web, iOS et Android."
+    },
+    "customizableDecks": {
+      "title": "Paquets personnalisables",
+      "description": "Créez et organisez vos cartes mémoire à votre façon avec des paquets et des tags personnalisés."
+    }
+  },
+  "download": {
+    "title": "Application mobile AnyMem",
+    "description": "Notre application mobile arrive bientôt ! Restez à l'écoute pour la sortie sur iOS et Android."
+  },
+  "footer": {
+    "copyright": "© 2024 AnyMem. Tous droits réservés."
+  }
+}
