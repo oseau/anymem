@@ -17,7 +17,7 @@ const Home: NextPage = () => {
           <h1 className="text-2xl font-bold text-blue-600">MemoryMaster</h1>
           <div className="space-x-4">
             <a href="#features" className="text-gray-600 hover:text-blue-600">Features</a>
-            <a href="#download" className="text-gray-600 hover:text-blue-600">Download</a>
+            <a href="#download" className="text-gray-600 hover:text-blue-600">Coming Soon</a>
           </div>
         </nav>
       </header>
