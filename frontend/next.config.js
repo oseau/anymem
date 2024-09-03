@@ -5,6 +5,10 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   i18n,
+  output: 'export',
+  images: {
+    unoptimized: true,
+  },
 }
 
 module.exports = nextConfig
