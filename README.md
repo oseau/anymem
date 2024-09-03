@@ -1,4 +1,4 @@
-# anymem
+# AnyMem
 
 ## Development
 
