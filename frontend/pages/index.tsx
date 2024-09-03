@@ -21,7 +21,7 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <h1 style={{ color: "#333", fontSize: "2.5rem" }}>
-          Welcome 123to the Frontend
+          Welcome to the Frontend
         </h1>
       </main>
     </div>
