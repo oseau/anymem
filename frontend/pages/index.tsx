@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -17,7 +18,9 @@ const Home: NextPage = () => {
       </Head>
       <header className="bg-white shadow-md py-4">
         <nav className="container mx-auto px-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-blue-600">AnyMem</h1>
+          <Link href="/">
+            <h1 className="text-2xl font-bold text-blue-600 cursor-pointer">AnyMem</h1>
+          </Link>
           <div className="space-x-4">
             <a href="#features" className="text-gray-600 hover:text-blue-600">
               {t('header.features')}
