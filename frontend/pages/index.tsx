@@ -21,7 +21,7 @@ const Home: NextPage = () => {
           </div>
         </nav>
       </header>
-      <main className="flex-grow container mx-auto px-4 py-12">
+      <main className="flex-grow container mx-auto px-4 py-12 overflow-y-auto">
         <section className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
             Remember Anything You've Learned
@@ -68,7 +68,7 @@ const Home: NextPage = () => {
           </div>
         </section>
       </main>
-      <footer className="bg-gray-800 text-white py-8">
+      <footer className="bg-gray-800 text-white py-4">
         <div className="container mx-auto px-4 text-center">
           <p>&copy; 2024 MemoryMaster. All rights reserved.</p>
         </div>
