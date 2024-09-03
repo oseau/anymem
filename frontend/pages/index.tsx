@@ -3,15 +3,7 @@ import Head from "next/head";
 
 const Home: NextPage = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-        fontFamily: "Arial, sans-serif",
-      }}
-    >
+    <div className="flex justify-center items-center h-screen font-sans">
       <Head>
         <title>Frontend App</title>
         <meta
@@ -20,7 +12,7 @@ const Home: NextPage = () => {
         />
       </Head>
       <main>
-        <h1 style={{ color: "#333", fontSize: "2.5rem" }}>
+        <h1 className="text-gray-800 text-4xl">
           Welcome to the Frontend
         </h1>
       </main>
