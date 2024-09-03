@@ -1,0 +1,35 @@
+{
+  "title": "AnyMem - 记住你学过的一切",
+  "description": "AnyMem：终极闪卡应用，帮助你记住所学的一切。可在网页、iOS 和 Android 上使用。",
+  "header": {
+    "features": "功能",
+    "comingSoon": "即将推出"
+  },
+  "hero": {
+    "title": "记住你学过的一切",
+    "description": "AnyMem 是终极闪卡应用，帮助你轻松保留知识。可在网页、iOS 和 Android 上使用。",
+    "startLearning": "立即开始学习",
+    "watchDemo": "观看演示"
+  },
+  "features": {
+    "spacedRepetition": {
+      "title": "间隔重复",
+      "description": "使用我们先进的间隔重复算法优化你的学习。"
+    },
+    "multiPlatform": {
+      "title": "多平台",
+      "description": "随时随地在网页、iOS 和 Android 上访问你的闪卡。"
+    },
+    "customizableDecks": {
+      "title": "可定制的卡组",
+      "description": "使用自定义卡组和标签，按照你的方式创建和组织闪卡。"
+    }
+  },
+  "download": {
+    "title": "AnyMem 移动应用",
+    "description": "我们的移动应用即将推出！敬请期待 iOS 和 Android 版本的发布。"
+  },
+  "footer": {
+    "copyright": "© 2024 AnyMem。保留所有权利。"
+  }
+}
