@@ -1,6 +1,5 @@
 .PHONY: web
 
 web:
-	@echo "Starting backend and frontend in development mode..."
-	@cd backend && npm run dev & \
-	cd frontend && npm run dev
+	@echo "Starting backend and frontend in development mode using Docker..."
+	docker-compose up --build backend frontend
