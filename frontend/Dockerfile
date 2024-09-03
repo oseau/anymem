@@ -9,13 +9,6 @@ COPY package*.json ./
 RUN npm install
 RUN npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
 
-# Copy necessary files and directories
-COPY next.config.js ./
-COPY tsconfig.json ./
-COPY pages ./pages
-COPY styles ./styles
-COPY public ./public
-
 # Initialize Tailwind CSS
 RUN npx tailwindcss init -p
 
