@@ -33,21 +33,3 @@
     "copyright": "© 2024 AnyMem. All rights reserved."
   }
 }
-{
-  "appName": "AnyMem",
-  "features": "Features",
-  "comingSoon": "Coming Soon",
-  "learnAndMemorize": "Learn and Memorize Anything",
-  "appDescription": "AnyMem helps you remember everything you learn with powerful spaced repetition algorithms.",
-  "startLearning": "Start Learning",
-  "watchDemo": "Watch Demo",
-  "spacedRepetition": "Spaced Repetition",
-  "spacedRepetitionDesc": "Optimize your learning with scientifically proven spaced repetition techniques.",
-  "multiPlatform": "Multi-Platform",
-  "multiPlatformDesc": "Access your learning materials on any device, anytime, anywhere.",
-  "customizableDecks": "Customizable Decks",
-  "customizableDecksDesc": "Create and organize your own study decks for any subject or topic.",
-  "downloadAnyMem": "Download AnyMem",
-  "comingSoonToMobile": "Coming soon to iOS and Android. Stay tuned!",
-  "copyright": "© 2023 AnyMem. All rights reserved."
-}
