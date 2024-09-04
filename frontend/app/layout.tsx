@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 }
 
 export async function generateStaticParams() {
-  return languages.map((lng) => ({ lng }))
+  return languages.map((lng) => ({ lang: lng }))
 }
 
 export default function RootLayout({
