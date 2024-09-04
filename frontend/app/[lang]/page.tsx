@@ -2,7 +2,7 @@ import { getDictionary } from "@/get-dictionary";
 import Link from "next/link";
 import DotPattern from "@/components/magicui/dot-pattern";
 import { BentoGrid, BentoCard } from "@/components/magicui/bento-grid";
-import { RepeatIcon, DeviceTabletIcon, LayersIcon } from "@radix-ui/react-icons";
+import { UpdateIcon, MobileIcon, LayersIcon } from "@radix-ui/react-icons";
 
 export default async function IndexPage({
   params: { lang },
@@ -53,7 +53,7 @@ export default async function IndexPage({
             <BentoCard
               name={dictionary.features.spacedRepetition.title}
               description={dictionary.features.spacedRepetition.description}
-              Icon={RepeatIcon}
+              Icon={UpdateIcon}
               className="md:col-span-2"
               background={<DotPattern width={20} height={20} cx={1} cy={1} cr={1} />}
               href="#"
@@ -62,7 +62,7 @@ export default async function IndexPage({
             <BentoCard
               name={dictionary.features.multiPlatform.title}
               description={dictionary.features.multiPlatform.description}
-              Icon={DeviceTabletIcon}
+              Icon={MobileIcon}
               className="md:col-span-1"
               background={<DotPattern width={20} height={20} cx={1} cy={1} cr={1} />}
               href="#"
