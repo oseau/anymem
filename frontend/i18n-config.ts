@@ -1,3 +1,9 @@
-export const defaultLocale = 'zh-CN'
-export const locales = ['zh-CN', 'en', 'es', 'fr', 'zh-HK', 'zh-TW']
-export const defaultNS = 'common'
+const defaultLocale = 'zh-CN'
+const locales = ['zh-CN', 'en', 'es', 'fr', 'zh-HK', 'zh-TW']
+const defaultNS = 'common'
+
+module.exports = {
+  defaultLocale,
+  locales,
+  defaultNS,
+}

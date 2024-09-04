@@ -1,8 +1,10 @@
+const { defaultLocale, locales } = require('./i18n-config');
+
 const nextConfig = {
   reactStrictMode: true,
   i18n: {
-    locales: ['zh-CN', 'en', 'es', 'fr', 'zh-HK', 'zh-TW'],
-    defaultLocale: 'zh-CN',
+    locales,
+    defaultLocale,
     localeDetection: true,
   },
 };
