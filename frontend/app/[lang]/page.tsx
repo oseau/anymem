@@ -1,12 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslation } from '../../i18n'
+import DotPattern from '@/components/magicui/dot-pattern'
 
 export default async function Home({ params: { lang } }: { params: { lang: string } }) {
   const { t } = await useTranslation(lang)
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-b from-blue-50 to-white font-sans">
-      <header className="bg-white shadow-md py-4">
+    <div className="flex flex-col min-h-screen bg-gradient-to-b from-blue-50 to-white font-sans relative">
+      <DotPattern className="absolute inset-0 z-0 opacity-10" />
+      <header className="bg-white shadow-md py-4 relative z-10">
         <nav className="container mx-auto px-4 flex justify-between items-center">
           <Link href={`/${lang}`}>
             <h1 className="text-2xl font-bold text-blue-600 cursor-pointer">{t('title')}</h1>
@@ -21,7 +23,7 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
           </div>
         </nav>
       </header>
-      <main className="flex-grow container mx-auto px-4 py-8 flex flex-col justify-between">
+      <main className="flex-grow container mx-auto px-4 py-8 flex flex-col justify-between relative z-10">
         <section className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
             {t('hero.title')}
