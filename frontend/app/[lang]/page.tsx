@@ -1,6 +1,8 @@
 import { getDictionary } from "@/get-dictionary";
 import Link from "next/link";
 import DotPattern from "@/components/magicui/dot-pattern";
+import { BentoGrid, BentoCard } from "@/components/magicui/bento-grid";
+import { RepeatIcon, DeviceTabletIcon, LayersIcon } from "@radix-ui/react-icons";
 
 export default async function IndexPage({
   params: { lang },
@@ -46,31 +48,36 @@ export default async function IndexPage({
           </div>
         </section>
 
-        <section id="features" className="grid md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-4">
-              {dictionary.features.spacedRepetition.title}
-            </h3>
-            <p className="text-gray-600">
-              {dictionary.features.spacedRepetition.description}
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-4">
-              {dictionary.features.multiPlatform.title}
-            </h3>
-            <p className="text-gray-600">
-              {dictionary.features.multiPlatform.description}
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-4">
-              {dictionary.features.customizableDecks.title}
-            </h3>
-            <p className="text-gray-600">
-              {dictionary.features.customizableDecks.description}
-            </p>
-          </div>
+        <section id="features" className="mb-8">
+          <BentoGrid className="auto-rows-[20rem]">
+            <BentoCard
+              name={dictionary.features.spacedRepetition.title}
+              description={dictionary.features.spacedRepetition.description}
+              Icon={RepeatIcon}
+              className="md:col-span-2"
+              background={<DotPattern width={20} height={20} cx={1} cy={1} cr={1} />}
+              href="#"
+              cta={dictionary.features.learnMore}
+            />
+            <BentoCard
+              name={dictionary.features.multiPlatform.title}
+              description={dictionary.features.multiPlatform.description}
+              Icon={DeviceTabletIcon}
+              className="md:col-span-1"
+              background={<DotPattern width={20} height={20} cx={1} cy={1} cr={1} />}
+              href="#"
+              cta={dictionary.features.learnMore}
+            />
+            <BentoCard
+              name={dictionary.features.customizableDecks.title}
+              description={dictionary.features.customizableDecks.description}
+              Icon={LayersIcon}
+              className="md:col-span-3"
+              background={<DotPattern width={20} height={20} cx={1} cy={1} cr={1} />}
+              href="#"
+              cta={dictionary.features.learnMore}
+            />
+          </BentoGrid>
         </section>
 
         <section id="download" className="text-center mt-auto">
