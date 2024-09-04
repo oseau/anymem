@@ -3,7 +3,6 @@ import Link from "next/link";
 import { useTranslation } from "../../i18n";
 import DotPattern from "@/components/magicui/dot-pattern";
 import { BentoGrid, BentoCard } from "@/components/magicui/bento-grid";
-import { BookIcon, DeviceTabletIcon, LayersIcon } from "@radix-ui/react-icons";
 
 export default async function Home({
   params: { lang },
@@ -54,7 +53,7 @@ export default async function Home({
             <BentoCard
               name={t("features.spacedRepetition.title")}
               description={t("features.spacedRepetition.description")}
-              iconName="BookIcon"
+              icon={<span className="h-12 w-12 origin-left transform-gpu text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75">📚</span>}
               className="md:col-span-2"
               background={<DotPattern />}
               href="#"
@@ -63,7 +62,7 @@ export default async function Home({
             <BentoCard
               name={t("features.multiPlatform.title")}
               description={t("features.multiPlatform.description")}
-              iconName="DeviceTabletIcon"
+              icon={<span className="h-12 w-12 origin-left transform-gpu text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75">📱</span>}
               className="md:col-span-1"
               background={<DotPattern />}
               href="#"
@@ -72,7 +71,7 @@ export default async function Home({
             <BentoCard
               name={t("features.customizableDecks.title")}
               description={t("features.customizableDecks.description")}
-              iconName="LayersIcon"
+              icon={<span className="h-12 w-12 origin-left transform-gpu text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75">🃏</span>}
               className="md:col-span-3"
               background={<DotPattern />}
               href="#"
