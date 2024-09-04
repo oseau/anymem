@@ -1,8 +1,14 @@
 import { ReactNode } from "react";
-import { ArrowRightIcon } from "@radix-ui/react-icons";
+import { ArrowRightIcon, BookIcon, DeviceTabletIcon, LayersIcon } from "@radix-ui/react-icons";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+
+const iconMap = {
+  BookIcon,
+  DeviceTabletIcon,
+  LayersIcon,
+};
 
 const BentoGrid = ({
   children,
@@ -27,7 +33,7 @@ const BentoCard = ({
   name,
   className,
   background,
-  Icon,
+  iconName,
   description,
   href,
   cta,
@@ -35,11 +41,13 @@ const BentoCard = ({
   name: string;
   className: string;
   background: ReactNode;
-  Icon: any;
+  iconName: keyof typeof iconMap;
   description: string;
   href: string;
   cta: string;
-}) => (
+}) => {
+  const Icon = iconMap[iconName];
+  return (
   <div
     key={name}
     className={cn(

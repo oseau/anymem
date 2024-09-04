@@ -54,7 +54,7 @@ export default async function Home({
             <BentoCard
               name={t("features.spacedRepetition.title")}
               description={t("features.spacedRepetition.description")}
-              Icon={BookIcon}
+              iconName="BookIcon"
               className="md:col-span-2"
               background={<DotPattern />}
               href="#"
@@ -63,7 +63,7 @@ export default async function Home({
             <BentoCard
               name={t("features.multiPlatform.title")}
               description={t("features.multiPlatform.description")}
-              Icon={DeviceTabletIcon}
+              iconName="DeviceTabletIcon"
               className="md:col-span-1"
               background={<DotPattern />}
               href="#"
@@ -72,7 +72,7 @@ export default async function Home({
             <BentoCard
               name={t("features.customizableDecks.title")}
               description={t("features.customizableDecks.description")}
-              Icon={LayersIcon}
+              iconName="LayersIcon"
               className="md:col-span-3"
               background={<DotPattern />}
               href="#"
