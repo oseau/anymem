@@ -2,8 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslation } from '../i18n'
 
-export default async function Home({ params: { lng } }: { params: { lng: string } }) {
-  const { t } = await useTranslation(lng)
+export default async function Home({ params: { lang } }: { params: { lang: string } }) {
+  const { t } = await useTranslation(lang)
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-blue-50 to-white font-sans">
       <header className="bg-white shadow-md py-4">
