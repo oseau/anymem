@@ -1,16 +1,6 @@
-export const fallbackLng = 'en'
-export const defaultLng = 'zh-CN'
-export const languages = ['zh-CN', 'en', 'es', 'fr', 'zh-HK', 'zh-TW']
-export const defaultNS = 'common'
+export const i18n = {
+  defaultLocale: "zh-CN",
+  locales: ["en", "es", "fr", "zh-CN", "zh-TW", "zh-HK"],
+} as const;
 
-export function getOptions (lng = defaultLng, ns = defaultNS) {
-  return {
-    // debug: true,
-    supportedLngs: languages,
-    fallbackLng,
-    lng,
-    fallbackNS: defaultNS,
-    defaultNS,
-    ns
-  }
-}
+export type Locale = (typeof i18n)["locales"][number];

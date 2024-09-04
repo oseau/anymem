@@ -1,6 +1,6 @@
 FROM node:20-bookworm
 
-WORKDIR /app
+WORKDIR /usr/src/anymem/frontend
 
 # Copy package.json and package-lock.json
 COPY package*.json ./
