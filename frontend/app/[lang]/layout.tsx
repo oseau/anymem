@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { i18n, type Locale } from "../../i18n-config";
 import "../globals.css";
 
@@ -19,7 +20,7 @@ export default function Root({
   );
 }
 
-export const metadata = {
-  title: "i18n within app directory - Vercel Examples",
-  description: "How to do i18n in Next.js 13 within app directory",
+export const metadata: Metadata = {
+  title: "AnyMem",
+  description: "Memorize anything with AnyMem",
 };
