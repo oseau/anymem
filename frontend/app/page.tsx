@@ -1,20 +1,22 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useTranslation } from '../i18n'
 
-export default function Home() {
+export default async function Home({ params: { lng } }: { params: { lng: string } }) {
+  const { t } = await useTranslation(lng)
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-blue-50 to-white font-sans">
       <header className="bg-white shadow-md py-4">
         <nav className="container mx-auto px-4 flex justify-between items-center">
           <Link href="/">
-            <h1 className="text-2xl font-bold text-blue-600 cursor-pointer">AnyMem</h1>
+            <h1 className="text-2xl font-bold text-blue-600 cursor-pointer">{t('appName')}</h1>
           </Link>
           <div className="space-x-4">
             <a href="#features" className="text-gray-600 hover:text-blue-600">
-              Features
+              {t('features')}
             </a>
             <a href="#download" className="text-gray-600 hover:text-blue-600">
-              Coming Soon
+              {t('comingSoon')}
             </a>
           </div>
         </nav>
