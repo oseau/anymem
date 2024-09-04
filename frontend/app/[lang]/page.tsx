@@ -8,7 +8,7 @@ export default async function Home({ params: { lang } }: { params: { lang: strin
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-blue-50 to-white font-sans">
       <header className="bg-white shadow-md py-4">
         <nav className="container mx-auto px-4 flex justify-between items-center">
-          <Link href="/">
+          <Link href={`/${lang}`}>
             <h1 className="text-2xl font-bold text-blue-600 cursor-pointer">{t('title')}</h1>
           </Link>
           <div className="space-x-4">
