@@ -14,3 +14,12 @@ export function getOptions (lng = defaultLng, ns = defaultNS) {
     ns
   }
 }
+
+export function getLanguageFromPath(path: string): string {
+  const langCode = path.split('/')[1];
+  return languages.includes(langCode) ? langCode : defaultLng;
+}
+
+export function shouldRedirect(path: string): boolean {
+  return !languages.some(lang => path.startsWith(`/${lang}`));
+}
