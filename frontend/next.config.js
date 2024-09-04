@@ -1,4 +1,4 @@
-const { defaultLocale, locales } = require('./i18n-config.js');
+const { defaultLocale, locales } = require('./i18n-config');
 
 const nextConfig = {
   reactStrictMode: true,
