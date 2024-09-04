@@ -49,13 +49,12 @@ export default async function IndexPage({
         </section>
 
         <section id="features" className="mb-8">
-          <BentoGrid className="auto-rows-[20rem]">
+          <BentoGrid className="auto-rows-[12rem]">
             <BentoCard
               name={dictionary.features.spacedRepetition.title}
               description={dictionary.features.spacedRepetition.description}
               Icon={UpdateIcon}
               className="md:col-span-2"
-              background={<DotPattern width={20} height={20} cx={1} cy={1} cr={1} />}
               href="#"
               cta={dictionary.features.learnMore}
             />
@@ -64,7 +63,6 @@ export default async function IndexPage({
               description={dictionary.features.multiPlatform.description}
               Icon={MobileIcon}
               className="md:col-span-1"
-              background={<DotPattern width={20} height={20} cx={1} cy={1} cr={1} />}
               href="#"
               cta={dictionary.features.learnMore}
             />
@@ -73,7 +71,9 @@ export default async function IndexPage({
               description={dictionary.features.customizableDecks.description}
               Icon={LayersIcon}
               className="md:col-span-3"
-              background={<DotPattern width={20} height={20} cx={1} cy={1} cr={1} />}
+              background={
+                <img className="absolute -right-20 -top-20 opacity-60" />
+              }
               href="#"
               cta={dictionary.features.learnMore}
             />
