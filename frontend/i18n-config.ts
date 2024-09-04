@@ -1,8 +1,9 @@
 export const fallbackLng = 'en'
-export const languages = ['en', 'zh-CN', 'es', 'fr', 'zh-HK', 'zh-TW']
+export const defaultLng = 'zh-CN'
+export const languages = ['zh-CN', 'en', 'es', 'fr', 'zh-HK', 'zh-TW']
 export const defaultNS = 'common'
 
-export function getOptions (lng = fallbackLng, ns = defaultNS) {
+export function getOptions (lng = defaultLng, ns = defaultNS) {
   return {
     // debug: true,
     supportedLngs: languages,
