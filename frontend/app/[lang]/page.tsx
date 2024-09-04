@@ -71,9 +71,6 @@ export default async function IndexPage({
               description={dictionary.features.customizableDecks.description}
               Icon={LayersIcon}
               className="md:col-span-3"
-              background={
-                <img className="absolute -right-20 -top-20 opacity-60" />
-              }
               href="#"
               cta={dictionary.features.learnMore}
             />
