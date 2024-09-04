@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "../../i18n";
 import DotPattern from "@/components/magicui/dot-pattern";
-import { BentoGrid, BentoCard } from "@/components/magicui/bento-grid";
 
 export default async function Home({
   params: { lang },
@@ -48,36 +47,31 @@ export default async function Home({
           </div>
         </section>
 
-        <section id="features" className="mb-8">
-          <BentoGrid className="auto-rows-[20rem]">
-            <BentoCard
-              name={t("features.spacedRepetition.title")}
-              description={t("features.spacedRepetition.description")}
-              icon={<span className="h-12 w-12 origin-left transform-gpu text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75">📚</span>}
-              className="md:col-span-2"
-              background={<DotPattern />}
-              href="#"
-              cta={t("learnMore")}
-            />
-            <BentoCard
-              name={t("features.multiPlatform.title")}
-              description={t("features.multiPlatform.description")}
-              icon={<span className="h-12 w-12 origin-left transform-gpu text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75">📱</span>}
-              className="md:col-span-1"
-              background={<DotPattern />}
-              href="#"
-              cta={t("learnMore")}
-            />
-            <BentoCard
-              name={t("features.customizableDecks.title")}
-              description={t("features.customizableDecks.description")}
-              icon={<span className="h-12 w-12 origin-left transform-gpu text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75">🃏</span>}
-              className="md:col-span-3"
-              background={<DotPattern />}
-              href="#"
-              cta={t("learnMore")}
-            />
-          </BentoGrid>
+        <section id="features" className="grid md:grid-cols-3 gap-6 mb-8">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold mb-4">
+              {t("features.spacedRepetition.title")}
+            </h3>
+            <p className="text-gray-600">
+              {t("features.spacedRepetition.description")}
+            </p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold mb-4">
+              {t("features.multiPlatform.title")}
+            </h3>
+            <p className="text-gray-600">
+              {t("features.multiPlatform.description")}
+            </p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold mb-4">
+              {t("features.customizableDecks.title")}
+            </h3>
+            <p className="text-gray-600">
+              {t("features.customizableDecks.description")}
+            </p>
+          </div>
         </section>
 
         <section id="download" className="text-center mt-auto">
