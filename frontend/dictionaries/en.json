@@ -23,7 +23,8 @@
     "customizableDecks": {
       "title": "Custom Flashcard Decks",
       "description": "Flexibly create and manage flashcard decks to build your personalized learning system."
-    }
+    },
+    "learnMore": "Learn More"
   },
   "download": {
     "title": "AnyMem Mobile App",

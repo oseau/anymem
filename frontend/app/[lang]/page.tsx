@@ -58,6 +58,7 @@ export default async function IndexPage({
               className="md:col-span-2"
               href="#"
               cta={dictionary.features.learnMore}
+              background={<div className="bg-gradient-to-br from-blue-100 to-blue-200" />}
             />
             <BentoCard
               name={dictionary.features.multiPlatform.title}
@@ -66,6 +67,7 @@ export default async function IndexPage({
               className="md:col-span-1"
               href="#"
               cta={dictionary.features.learnMore}
+              background={<div className="bg-gradient-to-br from-blue-100 to-blue-200" />}
             />
             <BentoCard
               name={dictionary.features.customizableDecks.title}
@@ -74,6 +76,7 @@ export default async function IndexPage({
               className="md:col-span-3"
               href="#"
               cta={dictionary.features.learnMore}
+              background={<div className="bg-gradient-to-br from-blue-100 to-blue-200" />}
             />
           </BentoGrid>
         </section>

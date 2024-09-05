@@ -23,7 +23,8 @@
     "customizableDecks": {
       "title": "自訂卡組",
       "description": "靈活創建同管理卡組，打造專屬學習系統。"
-    }
+    },
+    "learnMore": "了解更多"
   },
   "download": {
     "title": "AnyMem 手機應用程式",

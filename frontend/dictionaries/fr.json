@@ -23,7 +23,8 @@
     "customizableDecks": {
       "title": "Paquets de cartes personnalisables",
       "description": "Créez et gérez vos paquets de cartes de manière flexible pour construire votre système d'apprentissage personnalisé."
-    }
+    },
+    "learnMore": "En savoir plus"
   },
   "download": {
     "title": "Application mobile AnyMem",
