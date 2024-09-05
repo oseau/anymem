@@ -3,6 +3,7 @@ import Link from "next/link";
 import DotPattern from "@/components/magicui/dot-pattern";
 import { BentoGrid, BentoCard } from "@/components/magicui/bento-grid";
 import { UpdateIcon, MobileIcon, LayersIcon } from "@radix-ui/react-icons";
+import { Locale } from "@/i18n-config";
 
 export default async function IndexPage({
   params: { lang },
