@@ -15,7 +15,7 @@ export default async function IndexPage({
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-blue-50 to-white font-sans relative">
       <DotPattern className="absolute inset-0 z-0 opacity-50" />
       <header className="bg-white shadow-md py-4 relative z-10">
-        <nav className="container mx-auto px-4 flex justify-between items-center">
+        <nav className="container mx-auto px-4 max-w-6xl flex justify-between items-center">
           <Link href={`/${lang}`}>
             <h1 className="text-2xl font-bold text-blue-600 cursor-pointer">
               {dictionary.title}
@@ -31,7 +31,7 @@ export default async function IndexPage({
           </div>
         </nav>
       </header>
-      <main className="flex-grow container mx-auto px-4 py-8 flex flex-col justify-between relative z-10">
+      <main className="flex-grow container mx-auto px-4 py-8 max-w-6xl flex flex-col justify-between relative z-10">
         <section className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
             {dictionary.hero.title}
@@ -88,7 +88,7 @@ export default async function IndexPage({
         </section>
       </main>
       <footer className="bg-gray-800 text-white py-3 mt-8">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 max-w-6xl text-center">
           <p>{dictionary.footer.copyright}</p>
         </div>
       </footer>
