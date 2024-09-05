@@ -1,5 +1,7 @@
 # AnyMem
 
+This project is an experimental attempt to develop code primarily using AI tools, specifically Claude and Aider. You can view the live preview of the project at [https://anymem.vercel.app](https://anymem.vercel.app).
+
 ## Development
 
 This project uses Docker and Docker Compose for development, with Node.js 20 (Debian Bookworm-based image) for both frontend and backend services.
