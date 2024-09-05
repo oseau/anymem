@@ -7,6 +7,7 @@ import {
   MobileIcon,
   LayersIcon,
   GitHubLogoIcon,
+  TwitterLogoIcon,
 } from "@radix-ui/react-icons";
 import { Locale } from "@/i18n-config";
 
@@ -36,6 +37,15 @@ export default async function IndexPage({
             </a>
             <a href="#download" className="text-gray-600 hover:text-blue-600">
               {dictionary.header.comingSoon}
+            </a>
+            <a
+              href="https://twitter.com/Yangorz/status/1831610190518698431"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-blue-600"
+              aria-label="Twitter Announcement"
+            >
+              <TwitterLogoIcon className="w-5 h-5" />
             </a>
             <a
               href="https://github.com/oseau/anymem"
