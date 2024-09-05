@@ -2,7 +2,12 @@ import { getDictionary } from "@/get-dictionary";
 import Link from "next/link";
 import DotPattern from "@/components/magicui/dot-pattern";
 import { BentoGrid, BentoCard } from "@/components/magicui/bento-grid";
-import { UpdateIcon, MobileIcon, LayersIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
+import {
+  UpdateIcon,
+  MobileIcon,
+  LayersIcon,
+  GitHubLogoIcon,
+} from "@radix-ui/react-icons";
 import { Locale } from "@/i18n-config";
 
 export default async function IndexPage({
@@ -19,7 +24,10 @@ export default async function IndexPage({
           <Link href={`/${lang}`}>
             <h1 className="text-2xl font-bold text-blue-600 cursor-pointer">
               <span>{dictionary.title.split(" - ")[0]}</span>
-              <span className="hidden sm:inline"> - {dictionary.title.split(" - ")[1]}</span>
+              <span className="hidden sm:inline">
+                {" "}
+                - {dictionary.title.split(" - ")[1]}
+              </span>
             </h1>
           </Link>
           <div className="flex items-center space-x-4">
@@ -46,7 +54,7 @@ export default async function IndexPage({
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
             {dictionary.hero.title}
           </h2>
-          <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 mb-6 mx-auto">
             {dictionary.hero.description}
           </p>
           <div className="flex justify-center space-x-4">
@@ -60,7 +68,7 @@ export default async function IndexPage({
         </section>
 
         <section id="features" className="mb-8">
-          <BentoGrid className="auto-rows-[12rem]">
+          <BentoGrid className="auto-rows-[10rem]">
             <BentoCard
               name={dictionary.features.spacedRepetition.title}
               description={dictionary.features.spacedRepetition.description}
@@ -68,7 +76,9 @@ export default async function IndexPage({
               className="md:col-span-2"
               href="#"
               cta={dictionary.features.learnMore}
-              background={<div className="bg-gradient-to-br from-blue-100 to-blue-200" />}
+              background={
+                <div className="bg-gradient-to-br from-blue-100 to-blue-200" />
+              }
             />
             <BentoCard
               name={dictionary.features.multiPlatform.title}
@@ -77,7 +87,9 @@ export default async function IndexPage({
               className="md:col-span-1"
               href="#"
               cta={dictionary.features.learnMore}
-              background={<div className="bg-gradient-to-br from-blue-100 to-blue-200" />}
+              background={
+                <div className="bg-gradient-to-br from-blue-100 to-blue-200" />
+              }
             />
             <BentoCard
               name={dictionary.features.customizableDecks.title}
@@ -86,7 +98,9 @@ export default async function IndexPage({
               className="md:col-span-3"
               href="#"
               cta={dictionary.features.learnMore}
-              background={<div className="bg-gradient-to-br from-blue-100 to-blue-200" />}
+              background={
+                <div className="bg-gradient-to-br from-blue-100 to-blue-200" />
+              }
             />
           </BentoGrid>
         </section>
@@ -100,7 +114,7 @@ export default async function IndexPage({
           </p>
         </section>
       </main>
-      <footer className="bg-gray-800 text-white py-3 mt-8">
+      <footer className="bg-gray-800 text-white py-3">
         <div className="container mx-auto px-4 max-w-6xl text-center">
           <p>{dictionary.footer.copyright}</p>
         </div>
