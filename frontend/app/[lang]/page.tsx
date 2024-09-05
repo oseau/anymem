@@ -18,7 +18,8 @@ export default async function IndexPage({
         <nav className="container mx-auto px-4 max-w-6xl flex justify-between items-center">
           <Link href={`/${lang}`}>
             <h1 className="text-2xl font-bold text-blue-600 cursor-pointer">
-              {dictionary.title}
+              <span>{dictionary.title.split(" - ")[0]}</span>
+              <span className="hidden sm:inline"> - {dictionary.title.split(" - ")[1]}</span>
             </h1>
           </Link>
           <div className="space-x-4">
