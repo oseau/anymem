@@ -2,7 +2,7 @@ import { getDictionary } from "@/get-dictionary";
 import Link from "next/link";
 import DotPattern from "@/components/magicui/dot-pattern";
 import { BentoGrid, BentoCard } from "@/components/magicui/bento-grid";
-import { UpdateIcon, MobileIcon, LayersIcon } from "@radix-ui/react-icons";
+import { UpdateIcon, MobileIcon, LayersIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
 import { Locale } from "@/i18n-config";
 
 export default async function IndexPage({
@@ -22,12 +22,21 @@ export default async function IndexPage({
               <span className="hidden sm:inline"> - {dictionary.title.split(" - ")[1]}</span>
             </h1>
           </Link>
-          <div className="space-x-4">
+          <div className="flex items-center space-x-4">
             <a href="#features" className="text-gray-600 hover:text-blue-600">
               {dictionary.header.features}
             </a>
             <a href="#download" className="text-gray-600 hover:text-blue-600">
               {dictionary.header.comingSoon}
+            </a>
+            <a
+              href="https://github.com/oseau/anymem"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-blue-600"
+              aria-label="GitHub Repository"
+            >
+              <GitHubLogoIcon className="w-5 h-5" />
             </a>
           </div>
         </nav>
