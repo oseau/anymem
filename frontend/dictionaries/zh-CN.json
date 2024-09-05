@@ -1,35 +1,35 @@
 {
-  "title": "AnyMem - 记住你学过的一切",
-  "description": "AnyMem：终极闪卡应用，帮助你记住所学的一切。可在网页、iOS 和 Android 上使用。",
+  "title": "AnyMem - 牢记所学，学以致用",
+  "description": "AnyMem：你的AI学习伙伴，让学习变得轻松有趣。手机电脑两不误，随时随地巩固知识。",
   "header": {
-    "features": "功能",
-    "comingSoon": "即将推出"
+    "features": "特色功能",
+    "comingSoon": "敬请期待"
   },
   "hero": {
-    "title": "记住你学过的一切",
-    "description": "AnyMem 是终极闪卡应用，帮助你轻松保留知识。可在网页、iOS 和 Android 上使用。",
-    "startLearning": "立即开始学习",
-    "watchDemo": "观看演示"
+    "title": "学而不忘，温故知新",
+    "description": "AnyMem 是你的智能记忆助手，让知识牢记于心。",
+    "startLearning": "开始学习之旅",
+    "watchDemo": "查看演示视频"
   },
   "features": {
     "spacedRepetition": {
-      "title": "间隔重复",
-      "description": "使用我们先进的间隔重复算法优化你的学习。"
+      "title": "科学复习",
+      "description": "运用先进的间隔重复算法，科学安排复习，让你轻松掌握知识。"
     },
     "multiPlatform": {
-      "title": "多平台",
-      "description": "随时随地在网页、iOS 和 Android 上访问你的闪卡。"
+      "title": "全平台通用",
+      "description": "网页、苹果、安卓三端同步，学习不受限。"
     },
     "customizableDecks": {
-      "title": "可定制的卡组",
-      "description": "使用自定义卡组和标签，按照你的方式创建和组织闪卡。"
+      "title": "自定义卡组",
+      "description": "灵活创建和管理卡组，打造专属学习体系。"
     }
   },
   "download": {
-    "title": "AnyMem 移动应用",
-    "description": "我们的移动应用即将推出！敬请期待 iOS 和 Android 版本的发布。"
+    "title": "AnyMem 手机应用",
+    "description": "苹果和安卓版本即将上线，敬请关注。"
   },
   "footer": {
-    "copyright": "© 2024 AnyMem。保留所有权利。"
+    "copyright": "© 2024 AnyMem。版权所有。"
   }
 }

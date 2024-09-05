@@ -1,35 +1,35 @@
 {
-  "title": "AnyMem - 記住你學過的一切",
-  "description": "AnyMem：終極閃卡應用，幫助你記住所學的一切。可在網頁、iOS 和 Android 上使用。",
+  "title": "AnyMem - 牢記所學，學以致用",
+  "description": "AnyMem：你的AI學習夥伴，讓學習變得輕鬆有趣。手機電腦都能用，隨時隨地鞏固知識。",
   "header": {
-    "features": "功能",
+    "features": "特色功能",
     "comingSoon": "即將推出"
   },
   "hero": {
-    "title": "記住你學過的一切",
-    "description": "AnyMem 是終極閃卡應用，幫助你輕鬆保留知識。可在網頁、iOS 和 Android 上使用。",
-    "startLearning": "立即開始學習",
-    "watchDemo": "觀看演示"
+    "title": "學而不忘，溫故知新",
+    "description": "AnyMem 是你的智慧記憶助手，讓知識牢記在心。",
+    "startLearning": "開始學習之旅",
+    "watchDemo": "觀看示範影片"
   },
   "features": {
     "spacedRepetition": {
-      "title": "間隔重複",
-      "description": "使用我們先進的間隔重複算法優化你的學習。"
+      "title": "科學複習",
+      "description": "運用先進的間隔重複演算法，科學安排複習，讓你輕鬆掌握知識。"
     },
     "multiPlatform": {
-      "title": "多平台",
-      "description": "隨時隨地在網頁、iOS 和 Android 上訪問你的閃卡。"
+      "title": "全平台通用",
+      "description": "網頁、蘋果、安卓三端同步，學習不受限。"
     },
     "customizableDecks": {
-      "title": "可定制的卡組",
-      "description": "使用自定義卡組和標籤，按照你的方式創建和組織閃卡。"
+      "title": "自訂卡組",
+      "description": "靈活建立和管理卡組，打造專屬學習系統。"
     }
   },
   "download": {
-    "title": "AnyMem 移動應用",
-    "description": "我們的移動應用即將推出！敬請期待 iOS 和 Android 版本的發布。"
+    "title": "AnyMem 手機應用程式",
+    "description": "蘋果和安卓版本即將上線，敬請關注。"
   },
   "footer": {
-    "copyright": "© 2024 AnyMem。保留所有權利。"
+    "copyright": "© 2024 AnyMem。版權所有。"
   }
 }

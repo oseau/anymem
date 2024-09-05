@@ -1,33 +1,33 @@
 {
-  "title": "AnyMem - Souvenez-vous de tout ce que vous avez appris",
-  "description": "AnyMem : L'application ultime de cartes mémoire pour vous souvenir de tout ce que vous avez appris. Disponible sur web, iOS et Android.",
+  "title": "AnyMem - Mémorisez ce que vous apprenez, appliquez ce que vous savez",
+  "description": "AnyMem : Votre compagnon d'apprentissage alimenté par l'IA. Rendez l'apprentissage facile et amusant. Renforcez vos connaissances à tout moment, sur votre téléphone ou votre ordinateur.",
   "header": {
     "features": "Fonctionnalités",
     "comingSoon": "Bientôt disponible"
   },
   "hero": {
-    "title": "Souvenez-vous de tout ce que vous avez appris",
-    "description": "AnyMem est l'application ultime de cartes mémoire qui vous aide à retenir les connaissances sans effort. Disponible sur web, iOS et Android.",
-    "startLearning": "Commencez à apprendre maintenant",
-    "watchDemo": "Regarder la démo"
+    "title": "Apprenez, mémorisez, réussissez",
+    "description": "AnyMem est votre assistant mémoire intelligent, vous aidant à retenir les connaissances sans effort.",
+    "startLearning": "Commencez votre parcours d'apprentissage",
+    "watchDemo": "Regarder la vidéo de démonstration"
   },
   "features": {
     "spacedRepetition": {
-      "title": "Répétition espacée",
-      "description": "Optimisez votre apprentissage avec notre algorithme avancé de répétition espacée."
+      "title": "Révision intelligente",
+      "description": "Utilisez des algorithmes avancés de répétition espacée pour optimiser votre calendrier de révision et maîtriser les connaissances facilement."
     },
     "multiPlatform": {
-      "title": "Multi-plateforme",
-      "description": "Accédez à vos cartes mémoire à tout moment et n'importe où sur web, iOS et Android."
+      "title": "Synchronisation multiplateforme",
+      "description": "Synchronisez sans effort entre le web, iOS et Android. Apprenez sans limites."
     },
     "customizableDecks": {
-      "title": "Paquets personnalisables",
-      "description": "Créez et organisez vos cartes mémoire à votre façon avec des paquets et des tags personnalisés."
+      "title": "Paquets de cartes personnalisables",
+      "description": "Créez et gérez vos paquets de cartes de manière flexible pour construire votre système d'apprentissage personnalisé."
     }
   },
   "download": {
     "title": "Application mobile AnyMem",
-    "description": "Notre application mobile arrive bientôt ! Restez à l'écoute pour la sortie sur iOS et Android."
+    "description": "Versions iOS et Android bientôt disponibles. Restez à l'écoute !"
   },
   "footer": {
     "copyright": "© 2024 AnyMem. Tous droits réservés."
