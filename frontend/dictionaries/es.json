@@ -13,9 +13,45 @@
     "watchDemo": "Ver vídeo de demostración"
   },
   "features": {
+    "learnMore": "Saber más",
     "spacedRepetition": {
       "title": "Repaso inteligente",
-      "description": "Utiliza algoritmos avanzados de repetición espaciada para optimizar tu calendario de repaso y dominar el conocimiento con facilidad."
+      "description": "Utiliza algoritmos avanzados de repetición espaciada para optimizar tu calendario de repaso y dominar el conocimiento con facilidad.",
+      "whatIs": {
+        "title": "¿Qué es la repetición espaciada?",
+        "description": "La repetición espaciada es una técnica de aprendizaje que implica revisar información a intervalos crecientes a lo largo del tiempo. Este método aprovecha el efecto psicológico del espaciamiento para mejorar la retención a largo plazo del conocimiento."
+      },
+      "algorithm": {
+        "title": "Nuestro algoritmo",
+        "description": "Nuestro algoritmo de repetición espaciada ajusta dinámicamente los intervalos de repaso basándose en el rendimiento individual. Las características clave incluyen:",
+        "features": [
+          "Programación adaptativa basada en la dificultad de recordar",
+          "Optimización del momento de repaso para maximizar la retención",
+          "Rutas de aprendizaje personalizadas para cada usuario"
+        ]
+      },
+      "howItWorks": {
+        "title": "Cómo funciona",
+        "steps": [
+          "Presentación inicial de nueva información",
+          "Primer repaso después de un intervalo corto (por ejemplo, 1 día)",
+          "Repasos posteriores a intervalos crecientes",
+          "Ajuste de intervalos basado en el rendimiento de recordar"
+        ]
+      },
+      "retentionCurve": {
+        "title": "Curva de retención",
+        "imageAlt": "Curva de retención de repetición espaciada"
+      },
+      "benefits": {
+        "title": "Beneficios de nuestro enfoque",
+        "list": [
+          "Mejora de la retención a largo plazo",
+          "Uso eficiente del tiempo de estudio",
+          "Reducción de la carga cognitiva",
+          "Experiencia de aprendizaje personalizada"
+        ]
+      }
     },
     "multiPlatform": {
       "title": "Sincronización multiplataforma",
@@ -24,8 +60,7 @@
     "customizableDecks": {
       "title": "Mazos de tarjetas personalizables",
       "description": "Crea y gestiona mazos de tarjetas de manera flexible para construir tu sistema de aprendizaje personalizado."
-    },
-    "learnMore": "Saber más"
+    }
   },
   "download": {
     "title": "Aplicación móvil AnyMem",

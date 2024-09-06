@@ -1,6 +1,6 @@
 {
-  "title": "AnyMem - 牢记所学，学以致用",
-  "description": "AnyMem：你的AI学习伙伴，让学习变得轻松有趣。手机电脑两不误，随时随地巩固知识。",
+  "title": "AnyMem - 牢記所學，學以致用",
+  "description": "AnyMem：你嘅AI學習夥伴，令學習變得輕鬆有趣。手機電腦兩不誤，隨時隨地鞏固知識。",
   "header": {
     "features": "特色功能",
     "comingSoon": "即將推出"
@@ -13,9 +13,45 @@
     "watchDemo": "睇示範影片"
   },
   "features": {
+    "learnMore": "了解更多",
     "spacedRepetition": {
       "title": "科學溫習",
-      "description": "運用先進嘅間隔重複算法，科學安排溫習，令你輕鬆掌握知識。"
+      "description": "運用先進嘅間隔重複算法，科學安排溫習，令你輕鬆掌握知識。",
+      "whatIs": {
+        "title": "咩係間隔重複？",
+        "description": "間隔重複係一種學習技巧，通過逐漸增加溫習間隔來鞏固記憶。呢種方法利用心理學上嘅間隔效應，有效提高長期記憶效果。"
+      },
+      "algorithm": {
+        "title": "我哋嘅算法",
+        "description": "我哋嘅間隔重複算法會根據個人表現動態調整溫習間隔。主要特點包括：",
+        "features": [
+          "根據記憶難度自適應調整溫習計劃",
+          "優化溫習時機，最大化記憶保留",
+          "為每位用戶定制個性化學習路徑"
+        ]
+      },
+      "howItWorks": {
+        "title": "運作原理",
+        "steps": [
+          "首次呈現新知識點",
+          "短期內進行首次溫習（例如1日後）",
+          "之後逐步增加溫習間隔",
+          "根據溫習表現調整間隔時間"
+        ]
+      },
+      "retentionCurve": {
+        "title": "記憶保留曲線",
+        "imageAlt": "間隔重複記憶保留曲線"
+      },
+      "benefits": {
+        "title": "我哋方法嘅優勢",
+        "list": [
+          "顯著提高長期記憶效果",
+          "高效利用學習時間",
+          "減輕認知負擔",
+          "個性化學習體驗"
+        ]
+      }
     },
     "multiPlatform": {
       "title": "全平台通用",
@@ -24,8 +60,7 @@
     "customizableDecks": {
       "title": "自訂卡組",
       "description": "靈活創建同管理卡組，打造專屬學習系統。"
-    },
-    "learnMore": "了解更多"
+    }
   },
   "download": {
     "title": "AnyMem 手機應用程式",

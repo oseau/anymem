@@ -13,9 +13,45 @@
     "watchDemo": "Regarder la vidéo de démonstration"
   },
   "features": {
+    "learnMore": "En savoir plus",
     "spacedRepetition": {
       "title": "Révision intelligente",
-      "description": "Utilisez des algorithmes avancés de répétition espacée pour optimiser votre calendrier de révision et maîtriser les connaissances facilement."
+      "description": "Utilisez des algorithmes avancés de répétition espacée pour optimiser votre calendrier de révision et maîtriser les connaissances facilement.",
+      "whatIs": {
+        "title": "Qu'est-ce que la répétition espacée ?",
+        "description": "La répétition espacée est une technique d'apprentissage qui consiste à revoir les informations à des intervalles croissants dans le temps. Cette méthode exploite l'effet psychologique de l'espacement pour améliorer la rétention à long terme des connaissances."
+      },
+      "algorithm": {
+        "title": "Notre algorithme",
+        "description": "Notre algorithme de répétition espacée ajuste dynamiquement les intervalles de révision en fonction des performances individuelles. Les principales caractéristiques comprennent :",
+        "features": [
+          "Planification adaptative basée sur la difficulté de rappel",
+          "Optimisation du timing des révisions pour maximiser la rétention",
+          "Parcours d'apprentissage personnalisés pour chaque utilisateur"
+        ]
+      },
+      "howItWorks": {
+        "title": "Comment ça marche",
+        "steps": [
+          "Présentation initiale des nouvelles informations",
+          "Première révision après un court intervalle (par exemple, 1 jour)",
+          "Révisions suivantes à des intervalles croissants",
+          "Ajustement des intervalles en fonction des performances de rappel"
+        ]
+      },
+      "retentionCurve": {
+        "title": "Courbe de rétention",
+        "imageAlt": "Courbe de rétention de la répétition espacée"
+      },
+      "benefits": {
+        "title": "Avantages de notre approche",
+        "list": [
+          "Amélioration de la rétention à long terme",
+          "Utilisation efficace du temps d'étude",
+          "Réduction de la charge cognitive",
+          "Expérience d'apprentissage personnalisée"
+        ]
+      }
     },
     "multiPlatform": {
       "title": "Synchronisation multiplateforme",
@@ -24,8 +60,7 @@
     "customizableDecks": {
       "title": "Paquets de cartes personnalisables",
       "description": "Créez et gérez vos paquets de cartes de manière flexible pour construire votre système d'apprentissage personnalisé."
-    },
-    "learnMore": "En savoir plus"
+    }
   },
   "download": {
     "title": "Application mobile AnyMem",
