@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Locale } from "@/i18n-config";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   LineChart,
@@ -29,14 +30,32 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   }
   return null;
 };
+// Define an interface for the dictionary structure
+interface Dictionary {
+  title: string;
+  description: string;
+  header: { features: string; comingSoon: string };
+  hero: {
+    title: string;
+    description1: string;
+    description2: string;
+    startLearning: string;
+    watchDemo: string;
+  };
+  features: {
+    spacedRepetition: any; // Replace 'any' with a more specific type if possible
+  };
+  download: any; // Replace 'any' with a more specific type if possible
+  footer: any; // Replace 'any' with a more specific type if possible
+}
 
 export default function SpacedRepetitionPage() {
-  const [dictionary, setDictionary] = useState(null);
+  const [dictionary, setDictionary] = useState<Dictionary | null>(null);
   const params = useParams();
-  const lang = params.lang as string;
+  const lang = params.lang as Locale;
 
   useEffect(() => {
-    getDictionary(lang).then(setDictionary);
+    getDictionary(lang).then((dict: Dictionary) => setDictionary(dict));
   }, [lang]);
 
   if (!dictionary) return <div>Loading...</div>;
@@ -81,7 +100,7 @@ export default function SpacedRepetitionPage() {
           <CardContent>
             <p>{d.algorithm.description}</p>
             <ul className="list-disc list-inside mt-2">
-              {d.algorithm.features.map((feature, index) => (
+              {d.algorithm.features.map((feature: string, index: number) => (
                 <li key={index}>{feature}</li>
               ))}
             </ul>
@@ -94,7 +113,7 @@ export default function SpacedRepetitionPage() {
           </CardHeader>
           <CardContent>
             <ol className="list-decimal list-inside">
-              {d.howItWorks.steps.map((step, index) => (
+              {d.howItWorks.steps.map((step: string, index: number) => (
                 <li key={index}>{step}</li>
               ))}
             </ol>
@@ -220,7 +239,7 @@ export default function SpacedRepetitionPage() {
         </CardHeader>
         <CardContent>
           <ul className="list-disc list-inside">
-            {d.benefits.list.map((benefit, index) => (
+            {d.benefits.list.map((benefit: string, index: number) => (
               <li key={index}>{benefit}</li>
             ))}
           </ul>
