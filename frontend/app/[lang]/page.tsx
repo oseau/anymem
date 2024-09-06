@@ -41,7 +41,7 @@ export default async function IndexPage({
             description={dictionary.features.spacedRepetition.description}
             Icon={UpdateIcon}
             className="md:col-span-2"
-            href="/spaced-repetition"
+            href={`/${lang}/spaced-repetition`}
             cta={dictionary.features.learnMore}
             background={
               <div className="bg-gradient-to-br from-blue-100 to-blue-200" />
