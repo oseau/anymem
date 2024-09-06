@@ -13,9 +13,45 @@
     "watchDemo": "Watch Demo Video"
   },
   "features": {
+    "learnMore": "Learn More",
     "spacedRepetition": {
       "title": "Smart Review",
-      "description": "Leverage advanced spaced repetition algorithms to optimize your review schedule and master knowledge with ease."
+      "description": "Leverage advanced spaced repetition algorithms to optimize your review schedule and master knowledge with ease.",
+      "whatIs": {
+        "title": "What is Spaced Repetition?",
+        "description": "Spaced repetition is a learning technique that involves reviewing information at increasing intervals over time. This method leverages the psychological spacing effect to enhance long-term retention of knowledge."
+      },
+      "algorithm": {
+        "title": "Our Algorithm",
+        "description": "Our spaced repetition algorithm dynamically adjusts review intervals based on individual performance. Key features include:",
+        "features": [
+          "Adaptive scheduling based on recall difficulty",
+          "Optimized review timing to maximize retention",
+          "Personalized learning paths for each user"
+        ]
+      },
+      "howItWorks": {
+        "title": "How It Works",
+        "steps": [
+          "Initial presentation of new information",
+          "First review after a short interval (e.g., 1 day)",
+          "Subsequent reviews at increasing intervals",
+          "Interval adjustment based on recall performance"
+        ]
+      },
+      "retentionCurve": {
+        "title": "Retention Curve",
+        "imageAlt": "Spaced Repetition Retention Curve"
+      },
+      "benefits": {
+        "title": "Benefits of Our Approach",
+        "list": [
+          "Improved long-term retention",
+          "Efficient use of study time",
+          "Reduced cognitive load",
+          "Personalized learning experience"
+        ]
+      }
     },
     "multiPlatform": {
       "title": "Cross-Platform Sync",
@@ -24,12 +60,11 @@
     "customizableDecks": {
       "title": "Custom Flashcard Decks",
       "description": "Flexibly create and manage flashcard decks to build your personalized learning system."
-    },
-    "learnMore": "Learn More"
+    }
   },
   "download": {
     "title": "AnyMem Mobile App",
-    "description": "iOS and Android coming soon. Stay tuned!"
+    "description": "iOS and Android versions coming soon. Stay tuned!"
   },
   "footer": {
     "copyright": "© 2024 AnyMem. All rights reserved."
