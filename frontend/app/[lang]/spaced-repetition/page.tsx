@@ -203,6 +203,20 @@ export default function SpacedRepetitionPage() {
 
       <Card className="mt-8">
         <CardHeader>
+          <CardTitle>{d.chartExplanation.title}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="mb-4">{d.chartExplanation.description}</p>
+          <ul className="list-disc list-inside space-y-2">
+            <li>{d.chartExplanation.optimizedReviews}</li>
+            <li>{d.chartExplanation.avoidEarlyReviews}</li>
+            <li>{d.chartExplanation.maximizePerformance}</li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-8">
+        <CardHeader>
           <CardTitle>{d.benefits.title}</CardTitle>
         </CardHeader>
         <CardContent>

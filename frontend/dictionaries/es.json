@@ -51,6 +51,13 @@
           "Reducción de la carga cognitiva",
           "Experiencia de aprendizaje personalizada"
         ]
+      },
+      "chartExplanation": {
+        "title": "Entendiendo la curva de retención",
+        "description": "Este gráfico ilustra cómo nuestro algoritmo de repetición espaciada optimiza tu proceso de aprendizaje:",
+        "optimizedReviews": "Intervalos de repaso optimizados: El algoritmo programa repasos en puntos estratégicos para reforzar tu memoria antes de que ocurra un deterioro significativo.",
+        "avoidEarlyReviews": "Evita repasos tempranos innecesarios: Al espaciar los repasos, te ayudamos a evitar perder tiempo en material que aún está fresco en tu memoria.",
+        "maximizePerformance": "Maximiza la retención a largo plazo: Nuestro enfoque asegura que repases la información justo cuando comienza a desvanecerse, fortaleciendo tu memoria a largo plazo y mejorando el rendimiento general."
       }
     },
     "multiPlatform": {

@@ -51,6 +51,13 @@
           "Réduction de la charge cognitive",
           "Expérience d'apprentissage personnalisée"
         ]
+      },
+      "chartExplanation": {
+        "title": "Comprendre la courbe de rétention",
+        "description": "Ce graphique illustre comment notre algorithme de répétition espacée optimise votre processus d'apprentissage :",
+        "optimizedReviews": "Intervalles de révision optimisés : L'algorithme planifie des révisions à des moments stratégiques pour renforcer votre mémoire avant qu'une dégradation significative ne se produise.",
+        "avoidEarlyReviews": "Éviter les révisions précoces inutiles : En espaçant les révisions, nous vous aidons à éviter de perdre du temps sur du matériel encore frais dans votre mémoire.",
+        "maximizePerformance": "Maximiser la rétention à long terme : Notre approche garantit que vous révisez l'information juste au moment où elle commence à s'estomper, renforçant votre mémoire à long terme et améliorant les performances globales."
       }
     },
     "multiPlatform": {

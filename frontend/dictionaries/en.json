@@ -51,6 +51,13 @@
           "Reduced cognitive load",
           "Personalized learning experience"
         ]
+      },
+      "chartExplanation": {
+        "title": "Understanding the Retention Curve",
+        "description": "This chart illustrates how our spaced repetition algorithm optimizes your learning process:",
+        "optimizedReviews": "Optimized review intervals: The algorithm schedules reviews at strategic points to reinforce your memory before significant decay occurs.",
+        "avoidEarlyReviews": "Avoid unnecessary early reviews: By spacing out reviews, we help you avoid wasting time on material that's still fresh in your memory.",
+        "maximizePerformance": "Maximize long-term retention: Our approach ensures that you review information just as it's starting to fade, strengthening your long-term memory and improving overall performance."
       }
     },
     "multiPlatform": {
