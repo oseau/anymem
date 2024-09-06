@@ -65,7 +65,9 @@ export default async function IndexPage({
             {dictionary.hero.title}
           </h2>
           <p className="text-lg text-gray-600 mb-6 mx-auto">
-            {dictionary.hero.description}
+            {dictionary.hero.description1}
+            <br />
+            {dictionary.hero.description2}
           </p>
           <div className="flex justify-center space-x-4">
             <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-lg transition duration-300">
