@@ -7,7 +7,8 @@
   },
   "hero": {
     "title": "學而不忘，溫故知新",
-    "description": "AnyMem 是你的智慧記憶助手，讓知識牢記在心。",
+    "description1": "AnyMem 是你的智慧記憶助手",
+    "description2": "讓知識牢記在心",
     "startLearning": "開始學習之旅",
     "watchDemo": "觀看示範影片"
   },

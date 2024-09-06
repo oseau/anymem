@@ -7,7 +7,8 @@
   },
   "hero": {
     "title": "Aprende, recuerda, triunfa",
-    "description": "AnyMem es tu asistente de memoria inteligente, ayudándote a retener conocimientos sin esfuerzo.",
+    "description1": "AnyMem es tu asistente de memoria inteligente",
+    "description2": "Ayuda a retener conocimientos sin esfuerzo",
     "startLearning": "Comienza tu viaje de aprendizaje",
     "watchDemo": "Ver vídeo de demostración"
   },
