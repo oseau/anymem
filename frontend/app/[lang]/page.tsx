@@ -1,10 +1,6 @@
 import { getDictionary } from "@/get-dictionary";
 import { BentoGrid, BentoCard } from "@/components/magicui/bento-grid";
-import {
-  UpdateIcon,
-  MobileIcon,
-  LayersIcon,
-} from "@radix-ui/react-icons";
+import { UpdateIcon, MobileIcon, LayersIcon } from "@radix-ui/react-icons";
 import { Locale } from "@/i18n-config";
 
 export default async function IndexPage({
@@ -73,9 +69,7 @@ export default async function IndexPage({
       </section>
 
       <section id="download" className="text-center mt-auto">
-        <h2 className="text-2xl font-bold mb-3">
-          {dictionary.download.title}
-        </h2>
+        <h2 className="text-2xl font-bold mb-3">{dictionary.download.title}</h2>
         <p className="text-lg text-gray-600">
           {dictionary.download.description}
         </p>
