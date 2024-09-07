@@ -59,11 +59,12 @@ export default function SpacedRepetitionPage() {
     getDictionary(lang).then((dict: Dictionary) => setDictionary(dict));
   }, [lang]);
 
-  if (!dictionary) return (
-    <div className="flex justify-center items-center h-screen">
-      <Spinner />
-    </div>
-  );
+  if (!dictionary)
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <Spinner />
+      </div>
+    );
 
   const {
     features: { spacedRepetition: d },
