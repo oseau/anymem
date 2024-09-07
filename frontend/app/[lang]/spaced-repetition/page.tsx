@@ -14,6 +14,7 @@ import {
 } from "recharts";
 import { getDictionary } from "@/get-dictionary";
 import { useParams } from "next/navigation";
+import { Spinner } from "@/components/ui/spinner";
 
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
@@ -58,7 +59,11 @@ export default function SpacedRepetitionPage() {
     getDictionary(lang).then((dict: Dictionary) => setDictionary(dict));
   }, [lang]);
 
-  if (!dictionary) return <div>Loading...</div>;
+  if (!dictionary) return (
+    <div className="flex justify-center items-center h-screen">
+      <Spinner />
+    </div>
+  );
 
   const {
     features: { spacedRepetition: d },
