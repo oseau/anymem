@@ -62,7 +62,23 @@
     },
     "multiPlatform": {
       "title": "全平台通用",
-      "description": "網頁、蘋果、安卓三個平台同步，學習冇界限。"
+      "description": "網頁、蘋果、安卓三個平台同步，學習冇界限。",
+      "mobile": {
+        "title": "手機版",
+        "description": "隨時隨地學習，盡在掌握。"
+      },
+      "desktop": {
+        "title": "電腦版",
+        "description": "喺電腦上享受功能完整嘅學習體驗。"
+      },
+      "paper": {
+        "title": "紙質版",
+        "description": "每日打印紙質版，學習唔傷眼。"
+      },
+      "syncFeature": {
+        "title": "裝置之間無縫同步",
+        "description": "你嘅學習進度同卡組會自動同步到所有裝置，輕鬆切換平台。"
+      }
     },
     "customizableDecks": {
       "title": "自訂卡組",

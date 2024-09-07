@@ -61,8 +61,24 @@
       }
     },
     "multiPlatform": {
-      "title": "Cross-Platform Sync",
-      "description": "Seamlessly sync across web, iOS, and Android. Learn without boundaries."
+      "title": "Multi-Platform Support",
+      "description": "Sync across web, iOS, and Android. Learn without limits.",
+      "mobile": {
+        "title": "Mobile",
+        "description": "Learn on the go, anytime, anywhere."
+      },
+      "desktop": {
+        "title": "Desktop",
+        "description": "Enjoy a full-featured learning experience on your computer."
+      },
+      "paper": {
+        "title": "Paper Version",
+        "description": "Print daily paper versions for eye-friendly learning."
+      },
+      "syncFeature": {
+        "title": "Seamless Sync Across Devices",
+        "description": "Your learning progress and decks automatically sync across all devices, allowing easy platform switching."
+      }
     },
     "customizableDecks": {
       "title": "Custom Flashcard Decks",

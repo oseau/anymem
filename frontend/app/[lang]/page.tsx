@@ -48,7 +48,7 @@ export default async function IndexPage({
             description={dictionary.features.multiPlatform.description}
             Icon={MobileIcon}
             className="md:col-span-1"
-            href="#"
+            href={`/${lang}/multi-platform`}
             cta={dictionary.features.learnMore}
             background={
               <div className="bg-gradient-to-br from-blue-100 to-blue-200" />

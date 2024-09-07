@@ -61,8 +61,24 @@
       }
     },
     "multiPlatform": {
-      "title": "Sincronización multiplataforma",
-      "description": "Sincroniza sin problemas entre web, iOS y Android. Aprende sin límites."
+      "title": "Soporte multiplataforma",
+      "description": "Sincroniza entre web, iOS y Android. Aprende sin límites.",
+      "mobile": {
+        "title": "Móvil",
+        "description": "Aprende en movimiento, en cualquier momento y lugar."
+      },
+      "desktop": {
+        "title": "Escritorio",
+        "description": "Disfruta de una experiencia de aprendizaje completa en tu ordenador."
+      },
+      "paper": {
+        "title": "Versión en papel",
+        "description": "Imprime versiones diarias en papel para un aprendizaje que no canse la vista."
+      },
+      "syncFeature": {
+        "title": "Sincronización perfecta entre dispositivos",
+        "description": "Tu progreso de aprendizaje y mazos se sincronizan automáticamente en todos los dispositivos, permitiendo un cambio fácil entre plataformas."
+      }
     },
     "customizableDecks": {
       "title": "Mazos de tarjetas personalizables",
