@@ -67,13 +67,6 @@ export default async function IndexPage({
           />
         </BentoGrid>
       </section>
-
-      <section id="download" className="text-center mt-auto">
-        <h2 className="text-2xl font-bold mb-3">{dictionary.download.title}</h2>
-        <p className="text-lg text-gray-600">
-          {dictionary.download.description}
-        </p>
-      </section>
     </>
   );
 }

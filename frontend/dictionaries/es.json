@@ -103,10 +103,6 @@
       }
     }
   },
-  "download": {
-    "title": "Aplicación móvil AnyMem",
-    "description": "Versiones para iOS y Android próximamente. ¡Mantente atento!"
-  },
   "footer": {
     "copyright": "© 2024 AnyMem. Todos los derechos reservados."
   }

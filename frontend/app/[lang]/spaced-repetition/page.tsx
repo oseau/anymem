@@ -46,7 +46,6 @@ interface Dictionary {
   features: {
     spacedRepetition: any; // Replace 'any' with a more specific type if possible
   };
-  download: any; // Replace 'any' with a more specific type if possible
   footer: any; // Replace 'any' with a more specific type if possible
 }
 

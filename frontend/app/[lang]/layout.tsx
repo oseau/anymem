@@ -42,12 +42,6 @@ export default async function Root({
                   {dictionary.header.features}
                 </a>
                 <a
-                  href="#download"
-                  className="text-gray-600 hover:text-blue-600"
-                >
-                  {dictionary.header.comingSoon}
-                </a>
-                <a
                   href="https://twitter.com/Yangorz/status/1831610190518698431"
                   target="_blank"
                   rel="noopener noreferrer"
