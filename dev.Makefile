@@ -7,3 +7,6 @@ shell-frontend: ## Login to frontend container
 
 shell-backend: ## Login to backend container
 	docker-compose exec backend bash
+
+fix: ## lint & format & build frontend
+	docker-compose exec frontend bash -c "npm run fix && npm run build"
