@@ -110,5 +110,9 @@
   },
   "footer": {
     "copyright": "© 2024 AnyMem. All rights reserved."
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up"
   }
 }

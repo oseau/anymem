@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import type { NextRequest } from "next/server";
 
 import { i18n } from "./i18n-config";
@@ -24,7 +25,7 @@ function getLocale(request: NextRequest): string | undefined {
   return locale;
 }
 
-export function middleware(request: NextRequest) {
+export function i18nMiddleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
   // // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
@@ -61,5 +62,17 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   // Matcher ignoring `/_next/` and `/api/`
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+  matcher: [
+    // Skip Next.js internals and all static files, unless found in search params
+    "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
+    // Always run for API routes
+    "/(api|trpc)(.*)",
+  ],
 };
+
+const isDashboardRoute = createRouteMatcher(["/dashboard(.*)"]);
+
+export default clerkMiddleware((auth, request) => {
+  if (isDashboardRoute(request)) auth().protect();
+  return i18nMiddleware(request);
+});

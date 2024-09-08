@@ -100,8 +100,17 @@
           "Organisez les cartes en catégories ou niveaux de difficulté",
           "Commencez à étudier et laissez AnyMem optimiser votre apprentissage"
         ]
+      },
+      "getStarted": {
+        "title": "Prêt à créer votre premier paquet ?",
+        "description": "Commencez à construire votre expérience d'apprentissage personnalisée dès aujourd'hui. Créez votre premier paquet personnalisé et découvrez comment AnyMem peut révolutionner vos habitudes d'étude.",
+        "buttonText": "Créer votre premier paquet"
       }
     }
+  },
+  "auth": {
+    "signIn": "Se connecter",
+    "signUp": "S'inscrire"
   },
   "footer": {
     "copyright": "© 2024 AnyMem. Tous droits réservés."

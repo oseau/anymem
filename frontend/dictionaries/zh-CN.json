@@ -100,8 +100,17 @@
           "将卡片分类或按难度等级组织",
           "开始学习，让 AnyMem 优化你的学习过程"
         ]
+      },
+      "getStarted": {
+        "title": "准备创建你的第一个卡组？",
+        "description": "今天就开始打造你的个性化学习体验。创建你的第一个自定义卡组，看看 AnyMem 如何彻底改变你的学习习惯。",
+        "buttonText": "创建你的第一个卡组"
       }
     }
+  },
+  "auth": {
+    "signIn": "登录",
+    "signUp": "注册"
   },
   "footer": {
     "copyright": "© 2024 AnyMem。版权所有。"

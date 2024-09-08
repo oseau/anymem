@@ -100,8 +100,17 @@
           "Organiza las tarjetas en categorías o niveles de dificultad",
           "Comienza a estudiar y deja que AnyMem optimice tu aprendizaje"
         ]
+      },
+      "getStarted": {
+        "title": "¿Listo para crear tu primer mazo?",
+        "description": "Empieza a construir tu experiencia de aprendizaje personalizada hoy. Crea tu primer mazo personalizado y descubre cómo AnyMem puede revolucionar tus hábitos de estudio.",
+        "buttonText": "Crea tu primer mazo"
       }
     }
+  },
+  "auth": {
+    "signIn": "Iniciar sesión",
+    "signUp": "Registrarse"
   },
   "footer": {
     "copyright": "© 2024 AnyMem. Todos los derechos reservados."
