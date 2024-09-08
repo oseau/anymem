@@ -82,7 +82,30 @@
     },
     "customizableDecks": {
       "title": "Custom Flashcard Decks",
-      "description": "Flexibly create and manage flashcard decks to build your personalized learning system."
+      "description": "Flexibly create and manage flashcard decks to build your personalized learning system.",
+      "benefits": {
+        "title": "Benefits of Custom Decks",
+        "list": [
+          "Tailor your learning to specific subjects or goals",
+          "Organize information in a way that makes sense to you",
+          "Easily update and refine your decks as you learn",
+          "Share decks with friends or study groups"
+        ]
+      },
+      "howTo": {
+        "title": "How to Create Custom Decks",
+        "steps": [
+          "Choose a topic or subject for your deck",
+          "Add cards with questions on one side and answers on the other",
+          "Organize cards into categories or difficulty levels",
+          "Start studying and let AnyMem optimize your learning"
+        ]
+      },
+      "getStarted": {
+        "title": "Ready to Create Your First Deck?",
+        "description": "Start building your personalized learning experience today. Create your first custom deck and see how AnyMem can revolutionize your study habits.",
+        "buttonText": "Create Your First Deck"
+      }
     }
   },
   "download": {

@@ -82,7 +82,25 @@
     },
     "customizableDecks": {
       "title": "Paquets de cartes personnalisables",
-      "description": "Créez et gérez vos paquets de cartes de manière flexible pour construire votre système d'apprentissage personnalisé."
+      "description": "Créez et gérez vos paquets de cartes de manière flexible pour construire votre système d'apprentissage personnalisé.",
+      "benefits": {
+        "title": "Avantages des paquets personnalisés",
+        "list": [
+          "Adaptez votre apprentissage à des sujets ou objectifs spécifiques",
+          "Organisez l'information d'une manière qui vous convient",
+          "Mettez à jour et affinez facilement vos paquets au fur et à mesure de votre apprentissage",
+          "Partagez des paquets avec des amis ou des groupes d'étude"
+        ]
+      },
+      "howTo": {
+        "title": "Comment créer des paquets personnalisés",
+        "steps": [
+          "Choisissez un sujet ou une matière pour votre paquet",
+          "Ajoutez des cartes avec des questions d'un côté et des réponses de l'autre",
+          "Organisez les cartes en catégories ou niveaux de difficulté",
+          "Commencez à étudier et laissez AnyMem optimiser votre apprentissage"
+        ]
+      }
     }
   },
   "download": {

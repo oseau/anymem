@@ -59,7 +59,7 @@ export default async function IndexPage({
             description={dictionary.features.customizableDecks.description}
             Icon={LayersIcon}
             className="md:col-span-3"
-            href="#"
+            href={`/${lang}/customizable-decks`}
             cta={dictionary.features.learnMore}
             background={
               <div className="bg-gradient-to-br from-blue-100 to-blue-200" />
