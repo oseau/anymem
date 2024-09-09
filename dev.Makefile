@@ -1,12 +1,9 @@
-web: ## Start backend and frontend in development mode
-	@echo "Starting backend and frontend in development mode using Docker..."
-	docker-compose up --build backend frontend
+web: ## Start web(frontend + backend with Next.js) in development mode
+	@echo "Starting web in development mode using Docker..."
+	docker-compose up --remove-orphans --build web
 
-shell-frontend: ## Login to frontend container
-	docker-compose exec frontend bash
+shell-web: ## Login to web container
+	docker-compose exec web bash
 
-shell-backend: ## Login to backend container
-	docker-compose exec backend bash
-
-fix: ## lint & format & build frontend
-	docker-compose exec frontend bash -c "npm run fix && npm run build"
+fix: ## lint & format & build next.js app
+	docker-compose exec web bash -c "npm run fix && npm run build"
