@@ -11,10 +11,10 @@ services:
     labels:
       - traefik.enable=true
       - traefik.http.routers.anymem.rule=Host(`${DOMAIN}`) || Host(`www.${DOMAIN}`)
-      - traefik.http.middlewares.redirect-to-non-www.redirectregex.regex=^https?://www.${DOMAIN}/(.*)
-      - traefik.http.middlewares.redirect-to-non-www.redirectregex.replacement=https://${DOMAIN}/$${1}
-      - traefik.http.middlewares.redirect-to-non-www.redirectregex.permanent=true
-      - traefik.http.routers.anymem.middlewares=redirect-to-non-www
+      - traefik.http.middlewares.anymem-redirect-to-non-www.redirectregex.regex=^https?://www.${DOMAIN}/(.*)
+      - traefik.http.middlewares.anymem-redirect-to-non-www.redirectregex.replacement=https://${DOMAIN}/$${1}
+      - traefik.http.middlewares.anymem-redirect-to-non-www.redirectregex.permanent=true
+      - traefik.http.routers.anymem.middlewares=anymem-redirect-to-non-www
       - traefik.http.routers.anymem.entrypoints=web
       - traefik.http.routers.anymem.service=anymem
       - traefik.http.services.anymem.loadbalancer.server.port=3000
