@@ -4,10 +4,10 @@ services:
     platform: linux/amd64
     image: anymem-web-prod:latest
     restart: always
-    # command: sleep infinity
     environment:
       - NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=${NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
       - CLERK_SECRET_KEY=${CLERK_SECRET_KEY}
+      - NEXT_PUBLIC_BASE_URL=${NEXT_PUBLIC_BASE_URL}
     labels:
       - traefik.enable=true
       - traefik.http.routers.anymem.rule=Host(`${DOMAIN}`) || Host(`www.${DOMAIN}`)
