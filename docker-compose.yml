@@ -3,7 +3,8 @@ services:
     build:
       context: ./web
       dockerfile: Dockerfile
-    command: sh -c "npm install && npm run dev"
+    # command: sh -c "npm install && npm run dev"
+    command: sleep infinity
     ports:
       - "3000:3000"
     volumes:

@@ -29,7 +29,7 @@ export function i18nMiddleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
   // Allow direct access to sitemap.xml and robots.txt
-  if (pathname === '/sitemap.xml' || pathname === '/robots.txt') {
+  if (pathname === "/sitemap.xml" || pathname === "/robots.txt") {
     return NextResponse.next();
   }
 
