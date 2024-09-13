@@ -33,6 +33,11 @@ export function i18nMiddleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // Skip locale redirect for API routes
+  if (pathname.startsWith('/api/')) {
+    return NextResponse.next();
+  }
+
   // Check if there is any supported locale in the pathname
   const pathnameIsMissingLocale = i18n.locales.every(
     (locale) =>
