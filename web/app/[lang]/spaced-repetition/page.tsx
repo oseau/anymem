@@ -13,7 +13,6 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { getDictionary } from "@/get-dictionary";
-import { useParams } from "next/navigation";
 import { Spinner } from "@/components/ui/spinner";
 
 const CustomTooltip = ({ active, payload, label }: any) => {
@@ -32,12 +31,16 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   return null;
 };
 
-export default async function SpacedRepetitionPage({
+export default function SpacedRepetitionPage({
   params: { lang },
 }: {
   params: { lang: Locale };
 }) {
-  const dictionary = await getDictionary(lang);
+  const [dictionary, setDictionary] = useState<any>(null);
+
+  useEffect(() => {
+    getDictionary(lang).then(setDictionary);
+  }, [lang]);
 
   const data = [
     { name: "day 0", day: 0, learn0: 100 },
@@ -53,6 +56,10 @@ export default async function SpacedRepetitionPage({
   const percentage0 = 100 - ((4 - 1 - 1) / (4 - 1)) * 100;
   const percentage1 = 100 - ((7 - 2 - 1) / (7 - 1)) * 100;
   const percentage2 = 100 - ((5 - 3 - 1) / (5 - 1)) * 100;
+
+  if (!dictionary) {
+    return <Spinner />;
+  }
 
   return (
     <>
