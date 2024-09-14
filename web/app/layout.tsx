@@ -4,24 +4,32 @@ import Link from "next/link";
 import { getDictionary } from "@/get-dictionary";
 import DotPattern from "@/components/magicui/dot-pattern";
 import { GitHubLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
-import { i18n, type Locale } from "../../i18n-config";
-import "../globals.css";
+import { i18n, type Locale } from "@/i18n-config";
+import "@/app/globals.css";
+import { headers } from "next/headers";
 
-export async function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ lang: locale }));
-}
+export const metadata: Metadata = {
+  title: "AnyMem",
+  description: "Memorize anything with AnyMem",
+};
 
-export default async function Root({
+export default async function RootLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { lang: Locale };
+  params: { lang?: Locale };
 }) {
-  const dictionary = await getDictionary(params.lang);
+  const headersList = headers();
+  const detectedLocale =
+    (headersList.get("x-detected-locale") as Locale) || i18n.defaultLocale;
+  const lang = params.lang || detectedLocale;
+
+  const dictionary = await getDictionary(lang);
+
   return (
     <ClerkProvider>
-      <html lang={params.lang}>
+      <html lang={lang}>
         <body>
           <div className="flex flex-col min-h-screen bg-gradient-to-b from-blue-50 to-white font-sans relative">
             <DotPattern className="absolute inset-0 z-0 opacity-50" />
@@ -81,8 +89,3 @@ export default async function Root({
     </ClerkProvider>
   );
 }
-
-export const metadata: Metadata = {
-  title: "AnyMem",
-  description: "Memorize anything with AnyMem",
-};

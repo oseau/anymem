@@ -1,28 +1,16 @@
 import { NextResponse } from "next/server";
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import type { NextRequest } from "next/server";
-
-import { i18n } from "./i18n-config";
-
+import { i18n, type Locale } from "./i18n-config";
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
-function getLocale(request: NextRequest): string | undefined {
-  // Negotiator expects plain object so we need to transform headers
+function getLocale(request: NextRequest): Locale {
   const negotiatorHeaders: Record<string, string> = {};
   request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
-  // @ts-ignore locales are readonly
-  const locales: string[] = i18n.locales;
-
-  // Use negotiator and intl-localematcher to get best locale
-  let languages = new Negotiator({ headers: negotiatorHeaders }).languages(
-    locales,
-  );
-
-  const locale = matchLocale(languages, locales, i18n.defaultLocale);
-
-  return locale;
+  let languages = new Negotiator({ headers: negotiatorHeaders }).languages();
+  return matchLocale(languages, i18n.locales, i18n.defaultLocale) as Locale;
 }
 
 export function i18nMiddleware(request: NextRequest) {
@@ -33,30 +21,34 @@ export function i18nMiddleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Skip locale redirect for API routes
-  if (pathname.startsWith('/api/')) {
+  // Skip locale handling for API routes
+  if (pathname.startsWith("/api/")) {
     return NextResponse.next();
   }
 
-  // Check if there is any supported locale in the pathname
-  const pathnameIsMissingLocale = i18n.locales.every(
-    (locale) =>
-      !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
-  );
-
-  // Redirect if there is no locale
-  if (pathnameIsMissingLocale) {
-    const locale = getLocale(request);
-
-    // e.g. incoming request is /products
-    // The new URL is now /en-US/products
-    return NextResponse.redirect(
-      new URL(
-        `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
-        request.url,
-      ),
+  const newRequest = request.clone();
+  // Check if the pathname already includes a locale
+  if (
+    i18n.locales.some(
+      (locale) =>
+        pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
+    )
+  ) {
+    // pathname already includes a locale
+    newRequest.headers.set(
+      "x-detected-locale",
+      i18n.locales.find(
+        (locale) =>
+          pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
+      )!,
     );
+  } else {
+    // no locale in the pathname, detect the user's preferred locale
+    newRequest.headers.set("x-detected-locale", getLocale(request));
   }
+  return NextResponse.next({
+    request: newRequest,
+  });
 }
 
 export const config = {

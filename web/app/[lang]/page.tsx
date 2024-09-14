@@ -1,11 +1,15 @@
+import { i18n, type Locale } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionary";
 import { BentoGrid, BentoCard } from "@/components/magicui/bento-grid";
 import { UpdateIcon, MobileIcon, LayersIcon } from "@radix-ui/react-icons";
-import { Locale } from "@/i18n-config";
 import { SignInButton, SignUpButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 
-export default async function IndexPage({
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }));
+}
+
+export default async function Page({
   params: { lang },
 }: {
   params: { lang: Locale };
