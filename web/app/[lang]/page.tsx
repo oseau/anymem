@@ -4,6 +4,7 @@ import { BentoGrid, BentoCard } from "@/components/magicui/bento-grid";
 import { UpdateIcon, MobileIcon, LayersIcon } from "@radix-ui/react-icons";
 import { SignInButton, SignUpButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
+import { headers } from "next/headers";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
@@ -12,10 +13,16 @@ export async function generateStaticParams() {
 export default async function Page({
   params: { lang },
 }: {
-  params: { lang: Locale };
+  params: { lang: Locale; localeSource?: string };
 }) {
   const { userId } = auth();
   const dictionary = await getDictionary(lang);
+
+  const headersList = headers();
+  const localeSource = headersList.get("x-locale-source") || "url";
+  const i18nPrefix = localeSource === "url" ? `/${lang}` : "";
+
+  console.log(`Language: ${lang}, Source: ${localeSource}`);
 
   return (
     <>
@@ -57,7 +64,7 @@ export default async function Page({
             description={dictionary.features.spacedRepetition.description}
             Icon={UpdateIcon}
             className="md:col-span-2"
-            href={`/${lang}/spaced-repetition`}
+            href={`${i18nPrefix}/spaced-repetition`}
             cta={dictionary.features.learnMore}
             background={
               <div className="bg-gradient-to-br from-blue-100 to-blue-200" />
@@ -68,7 +75,7 @@ export default async function Page({
             description={dictionary.features.multiPlatform.description}
             Icon={MobileIcon}
             className="md:col-span-1"
-            href={`/${lang}/multi-platform`}
+            href={`${i18nPrefix}/multi-platform`}
             cta={dictionary.features.learnMore}
             background={
               <div className="bg-gradient-to-br from-blue-100 to-blue-200" />
@@ -79,7 +86,7 @@ export default async function Page({
             description={dictionary.features.customizableDecks.description}
             Icon={LayersIcon}
             className="md:col-span-3"
-            href={`/${lang}/customizable-decks`}
+            href={`${i18nPrefix}/customizable-decks`}
             cta={dictionary.features.learnMore}
             background={
               <div className="bg-gradient-to-br from-blue-100 to-blue-200" />

@@ -6,6 +6,7 @@ export default async function RootPage() {
   const headersList = headers();
   const detectedLocale =
     (headersList.get("x-detected-locale") as Locale) || i18n.defaultLocale;
+  const localeSource = headersList.get("x-locale-source") || "detection";
 
-  return <Page params={{ lang: detectedLocale }} />;
+  return <Page params={{ lang: detectedLocale, localeSource }} />;
 }

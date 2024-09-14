@@ -23,7 +23,11 @@ export default async function RootLayout({
   const headersList = headers();
   const detectedLocale =
     (headersList.get("x-detected-locale") as Locale) || i18n.defaultLocale;
+  const localeSource = headersList.get("x-locale-source") || "detection";
   const lang = params.lang || detectedLocale;
+  const i18nPrefix = localeSource === "url" ? `/${lang}` : "";
+
+  console.log(`Layout Language: ${lang}, Source: ${localeSource}`);
 
   const dictionary = await getDictionary(lang);
 
@@ -35,7 +39,7 @@ export default async function RootLayout({
             <DotPattern className="absolute inset-0 z-0 opacity-50" />
             <header className="bg-white shadow-md py-4 relative z-10">
               <nav className="container mx-auto px-4 max-w-6xl flex justify-between items-center">
-                <Link href={`/${params.lang}`}>
+                <Link href={`${i18nPrefix}/`}>
                   <h1 className="text-2xl font-bold text-blue-600 cursor-pointer">
                     <span>{dictionary.title.split(" - ")[0]}</span>
                     <span className="hidden sm:inline">

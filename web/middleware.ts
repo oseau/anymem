@@ -28,24 +28,25 @@ export function i18nMiddleware(request: NextRequest) {
 
   const newRequest = request.clone();
   // Check if the pathname already includes a locale
-  if (
-    i18n.locales.some(
+  const pathnameHasLocale = i18n.locales.some(
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
+  );
+
+  if (pathnameHasLocale) {
+    // pathname already includes a locale
+    const explicitLocale = i18n.locales.find(
       (locale) =>
         pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
-    )
-  ) {
-    // pathname already includes a locale
-    newRequest.headers.set(
-      "x-detected-locale",
-      i18n.locales.find(
-        (locale) =>
-          pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
-      )!,
-    );
+    )!;
+    newRequest.headers.set("x-detected-locale", explicitLocale);
+    newRequest.headers.set("x-locale-source", "url");
   } else {
     // no locale in the pathname, detect the user's preferred locale
-    newRequest.headers.set("x-detected-locale", getLocale(request));
+    const detectedLocale = getLocale(request);
+    newRequest.headers.set("x-detected-locale", detectedLocale);
+    newRequest.headers.set("x-locale-source", "detection");
   }
+
   return NextResponse.next({
     request: newRequest,
   });
