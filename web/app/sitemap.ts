@@ -12,16 +12,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const sitemap: MetadataRoute.Sitemap = routes.flatMap((route) => {
-    return i18n.locales.map((locale) => ({
-      url: `${baseUrl}/${locale}${route}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-      alternateRefs: i18n.locales.map((l) => ({
-        href: `${baseUrl}/${l}${route}`,
-        hreflang: l,
+    return [
+      {
+        url: `${baseUrl}${route}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly" as const,
+        priority: 0.8,
+      },
+      ...i18n.locales.map((locale) => ({
+        url: `${baseUrl}/${locale}${route}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly" as const,
+        priority: 0.8,
+        alternateRefs: i18n.locales.map((l) => ({
+          href: `${baseUrl}/${l}${route}`,
+          hreflang: l,
+        })),
       })),
-    }));
+    ];
   });
 
   return sitemap;

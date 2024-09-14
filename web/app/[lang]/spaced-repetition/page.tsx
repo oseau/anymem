@@ -31,43 +31,13 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   }
   return null;
 };
-// Define an interface for the dictionary structure
-interface Dictionary {
-  title: string;
-  description: string;
-  header: { features: string; comingSoon: string };
-  hero: {
-    title: string;
-    description1: string;
-    description2: string;
-    startLearning: string;
-    watchDemo: string;
-  };
-  features: {
-    spacedRepetition: any; // Replace 'any' with a more specific type if possible
-  };
-  footer: any; // Replace 'any' with a more specific type if possible
-}
 
-export default function SpacedRepetitionPage() {
-  const [dictionary, setDictionary] = useState<Dictionary | null>(null);
-  const params = useParams();
-  const lang = params.lang as Locale;
-
-  useEffect(() => {
-    getDictionary(lang).then((dict: Dictionary) => setDictionary(dict));
-  }, [lang]);
-
-  if (!dictionary)
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <Spinner />
-      </div>
-    );
-
-  const {
-    features: { spacedRepetition: d },
-  } = dictionary;
+export default async function SpacedRepetitionPage({
+  params: { lang },
+}: {
+  params: { lang: Locale };
+}) {
+  const dictionary = await getDictionary(lang);
 
   const data = [
     { name: "day 0", day: 0, learn0: 100 },
@@ -86,41 +56,53 @@ export default function SpacedRepetitionPage() {
 
   return (
     <>
-      <h1 className="text-3xl font-bold mb-6">{d.title}</h1>
+      <h1 className="text-3xl font-bold mb-6">
+        {dictionary.features.spacedRepetition.title}
+      </h1>
 
       <Card className="mb-8">
         <CardHeader>
-          <CardTitle>{d.whatIs.title}</CardTitle>
+          <CardTitle>
+            {dictionary.features.spacedRepetition.whatIs.title}
+          </CardTitle>
         </CardHeader>
         <CardContent>
-          <p>{d.whatIs.description}</p>
+          <p>{dictionary.features.spacedRepetition.whatIs.description}</p>
         </CardContent>
       </Card>
 
       <div className="grid md:grid-cols-2 gap-8">
         <Card>
           <CardHeader>
-            <CardTitle>{d.algorithm.title}</CardTitle>
+            <CardTitle>
+              {dictionary.features.spacedRepetition.algorithm.title}
+            </CardTitle>
           </CardHeader>
           <CardContent>
-            <p>{d.algorithm.description}</p>
+            <p>{dictionary.features.spacedRepetition.algorithm.description}</p>
             <ul className="list-disc list-inside mt-2">
-              {d.algorithm.features.map((feature: string, index: number) => (
-                <li key={index}>{feature}</li>
-              ))}
+              {dictionary.features.spacedRepetition.algorithm.features.map(
+                (feature: string, index: number) => (
+                  <li key={index}>{feature}</li>
+                ),
+              )}
             </ul>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader>
-            <CardTitle>{d.howItWorks.title}</CardTitle>
+            <CardTitle>
+              {dictionary.features.spacedRepetition.howItWorks.title}
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <ol className="list-decimal list-inside">
-              {d.howItWorks.steps.map((step: string, index: number) => (
-                <li key={index}>{step}</li>
-              ))}
+              {dictionary.features.spacedRepetition.howItWorks.steps.map(
+                (step: string, index: number) => (
+                  <li key={index}>{step}</li>
+                ),
+              )}
             </ol>
           </CardContent>
         </Card>
@@ -128,7 +110,7 @@ export default function SpacedRepetitionPage() {
 
       <div className="mt-8 w-full bg-white p-4 rounded-lg shadow-md">
         <h2 className="text-2xl font-semibold mb-4">
-          {d.retentionCurve.title}
+          {dictionary.features.spacedRepetition.retentionCurve.title}
         </h2>
         <div className="w-full h-[400px]">
           <ResponsiveContainer width="100%" height="100%">
@@ -219,34 +201,54 @@ export default function SpacedRepetitionPage() {
             </LineChart>
           </ResponsiveContainer>
         </div>
-        <p className="mt-4 text-sm text-gray-600">
-          {d.retentionCurve.description}
-        </p>
       </div>
 
       <Card className="mt-8">
         <CardHeader>
-          <CardTitle>{d.chartExplanation.title}</CardTitle>
+          <CardTitle>
+            {dictionary.features.spacedRepetition.chartExplanation.title}
+          </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="mb-4">{d.chartExplanation.description}</p>
+          <p className="mb-4">
+            {dictionary.features.spacedRepetition.chartExplanation.description}
+          </p>
           <ul className="list-disc list-inside space-y-2">
-            <li>{d.chartExplanation.optimizedReviews}</li>
-            <li>{d.chartExplanation.avoidEarlyReviews}</li>
-            <li>{d.chartExplanation.maximizePerformance}</li>
+            <li>
+              {
+                dictionary.features.spacedRepetition.chartExplanation
+                  .optimizedReviews
+              }
+            </li>
+            <li>
+              {
+                dictionary.features.spacedRepetition.chartExplanation
+                  .avoidEarlyReviews
+              }
+            </li>
+            <li>
+              {
+                dictionary.features.spacedRepetition.chartExplanation
+                  .maximizePerformance
+              }
+            </li>
           </ul>
         </CardContent>
       </Card>
 
       <Card className="mt-8">
         <CardHeader>
-          <CardTitle>{d.benefits.title}</CardTitle>
+          <CardTitle>
+            {dictionary.features.spacedRepetition.benefits.title}
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <ul className="list-disc list-inside">
-            {d.benefits.list.map((benefit: string, index: number) => (
-              <li key={index}>{benefit}</li>
-            ))}
+            {dictionary.features.spacedRepetition.benefits.list.map(
+              (benefit: string, index: number) => (
+                <li key={index}>{benefit}</li>
+              ),
+            )}
           </ul>
         </CardContent>
       </Card>
