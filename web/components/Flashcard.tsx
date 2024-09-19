@@ -66,8 +66,8 @@ export function Flashcard({
   const getButtonClass = (index: number) => {
     if (selectedAnswer === index) {
       return isCorrect
-        ? "bg-green-500 hover:bg-green-600 text-white"
-        : "bg-red-500 hover:bg-red-600 text-white";
+        ? "bg-green-600 hover:bg-green-600 text-white"
+        : "bg-red-500 hover:bg-red-500 text-white";
     }
     return "";
   };
@@ -87,13 +87,18 @@ export function Flashcard({
               {choices.map((choice, index) => (
                 <Button
                   key={index}
-                  onClick={() => handleAnswer(index)}
+                  onClick={() =>
+                    selectedAnswer === null &&
+                    timeLeft > 0 &&
+                    handleAnswer(index)
+                  }
                   variant="outline"
-                  disabled={selectedAnswer !== null || timeLeft === 0}
                   className={`text-sm sm:text-base py-8 sm:py-6 px-5 sm:px-7 h-auto whitespace-normal text-left w-full ${getButtonClass(index)}`}
                 >
                   <div className="grid grid-cols-[auto,1fr] gap-3 sm:gap-5 items-center w-full">
-                    <span className="text-left text-xl sm:text-lg">{index + 1}.</span>
+                    <span className="text-left text-xl sm:text-lg">
+                      {index + 1}.
+                    </span>
                     <span className="text-center">{choice}</span>
                   </div>
                 </Button>
