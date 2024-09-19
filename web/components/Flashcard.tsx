@@ -1,0 +1,122 @@
+"use client";
+
+import { useState, useEffect, useCallback } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+
+interface FlashcardProps {
+  front: string;
+  choices: string[];
+  correctAnswer: number;
+  timeLimit: number;
+}
+
+export function Flashcard({
+  front,
+  choices,
+  correctAnswer,
+  timeLimit,
+}: FlashcardProps) {
+  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
+  const [timeLeft, setTimeLeft] = useState(timeLimit);
+  const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
+
+  const handleAnswer = useCallback(
+    (index: number) => {
+      if (selectedAnswer === null && timeLeft > 0) {
+        setSelectedAnswer(index);
+        setIsCorrect(index === correctAnswer);
+      }
+    },
+    [selectedAnswer, timeLeft, correctAnswer],
+  );
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout | null = null;
+    if (timeLeft > 0 && selectedAnswer === null) {
+      timer = setInterval(() => {
+        setTimeLeft((prevTime) => prevTime - 1);
+      }, 1000);
+    } else if (timeLeft === 0 && selectedAnswer === null) {
+      setIsCorrect(false);
+    }
+
+    return () => {
+      if (timer) clearInterval(timer);
+    };
+  }, [timeLeft, selectedAnswer]);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "1" || event.key === "ArrowUp") {
+        handleAnswer(0);
+      } else if (event.key === "2" || event.key === "ArrowDown") {
+        handleAnswer(1);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [handleAnswer]);
+
+  const getButtonClass = (index: number) => {
+    if (selectedAnswer === index) {
+      return isCorrect
+        ? "bg-green-500 hover:bg-green-600 text-white"
+        : "bg-red-500 hover:bg-red-600 text-white";
+    }
+    return "";
+  };
+
+  return (
+    <div className="absolute inset-0 flex justify-center items-center bg-gray-100 p-4 sm:p-6 md:p-8">
+      <Card className="w-full max-w-md bg-white shadow-lg">
+        <CardContent className="flex flex-col justify-between h-full p-6 sm:p-8 md:p-10">
+          <div className="text-center mb-6 sm:mb-8">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">
+              {front}
+            </h2>
+          </div>
+          <Separator className="my-6 sm:my-8" />
+          <div className="flex-grow flex flex-col justify-center">
+            <div className="flex flex-col gap-8 sm:gap-6 mb-6">
+              {choices.map((choice, index) => (
+                <Button
+                  key={index}
+                  onClick={() => handleAnswer(index)}
+                  variant="outline"
+                  disabled={selectedAnswer !== null || timeLeft === 0}
+                  className={`text-sm sm:text-base py-8 sm:py-6 px-5 sm:px-7 h-auto whitespace-normal text-left w-full ${getButtonClass(index)}`}
+                >
+                  <div className="grid grid-cols-[auto,1fr] gap-3 sm:gap-5 items-center w-full">
+                    <span className="text-left text-xl sm:text-lg">{index + 1}.</span>
+                    <span className="text-center">{choice}</span>
+                  </div>
+                </Button>
+              ))}
+            </div>
+          </div>
+          <Separator className="my-6 sm:my-8" />
+          <div className="text-center flex flex-col justify-center">
+            <div className="text-base sm:text-lg font-semibold mb-2">
+              Time left: {timeLeft}s
+            </div>
+            <div
+              className={`text-base sm:text-lg font-bold ${isCorrect === null ? "invisible" : isCorrect ? "text-green-600" : "text-red-600"}`}
+            >
+              {isCorrect === null
+                ? "Placeholder"
+                : isCorrect
+                  ? "Correct!"
+                  : "Incorrect!"}
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
