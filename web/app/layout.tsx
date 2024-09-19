@@ -7,6 +7,7 @@ import { GitHubLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
 import { i18n, type Locale } from "@/i18n-config";
 import "@/app/globals.css";
 import { headers } from "next/headers";
+import { TailwindIndicator } from "@/components/tailwind-indicator";
 
 export const metadata: Metadata = {
   title: "AnyMem",
@@ -88,6 +89,7 @@ export default async function RootLayout({
               </div>
             </footer>
           </div>
+          <TailwindIndicator />
         </body>
       </html>
     </ClerkProvider>
