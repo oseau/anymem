@@ -12,7 +12,7 @@ const dictionaries = {
     import("./dictionaries/zh-TW.json").then((module) => module.default),
 };
 
-type Dictionary = Awaited<ReturnType<typeof dictionaries["en"]>>;
+type Dictionary = Awaited<ReturnType<(typeof dictionaries)["en"]>>;
 
 export const getDictionary = async (locale: Locale): Promise<Dictionary> => {
   return dictionaries[locale]?.() ?? dictionaries.en();
