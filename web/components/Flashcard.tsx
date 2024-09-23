@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { TimerFuse } from "@/components/ui/timer-fuse"; // Corrected import path
 
 interface FlashcardProps {
   front: string;
@@ -107,6 +108,7 @@ export function Flashcard({
           </div>
           <Separator className="my-6 sm:my-8" />
           <div className="text-center flex flex-col justify-center">
+            <TimerFuse timeLeft={timeLeft} timeLimit={timeLimit} />
             <div className="text-base sm:text-lg font-semibold mb-2">
               Time left: {timeLeft}s
             </div>
