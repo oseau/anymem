@@ -1,14 +1,12 @@
 {
-  "title": "AnyMem - Mémorisez ce que vous apprenez, appliquez ce que vous savez",
+  "title": "AnyMem",
   "description": "AnyMem : Votre compagnon d'apprentissage alimenté par l'IA. Rendez l'apprentissage facile et amusant. Renforcez vos connaissances à tout moment, sur votre téléphone ou votre ordinateur.",
   "header": {
     "features": "Fonctionnalités",
     "comingSoon": "Bientôt disponible"
   },
   "hero": {
-    "title": "Apprenez, mémorisez, réussissez",
-    "description1": "AnyMem est votre assistant mémoire intelligent",
-    "description2": "Aide à retenir les connaissances sans effort",
+    "title": "Révisez n'importe quoi, pour toujours",
     "startLearning": "Commencez votre parcours d'apprentissage",
     "watchDemo": "Regarder la vidéo de démonstration"
   },

@@ -1,14 +1,12 @@
 {
-  "title": "AnyMem - 牢记所学，学以致用",
+  "title": "AnyMem",
   "description": "AnyMem：你的AI学习伙伴，让学习变得轻松有趣。手机电脑两不误，随时随地巩固知识。",
   "header": {
     "features": "特色功能",
     "comingSoon": "敬请期待"
   },
   "hero": {
-    "title": "学而不忘 温故知新",
-    "description1": "AnyMem 是你的智能记忆助手",
-    "description2": "让知识牢记于心",
+    "title": "记住所有知识，永不遗忘",
     "startLearning": "开始学习之旅",
     "watchDemo": "查看演示视频"
   },

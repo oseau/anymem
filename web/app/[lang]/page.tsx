@@ -22,19 +22,12 @@ export default async function Page({
   const localeSource = headersList.get("x-locale-source") || "url";
   const i18nPrefix = localeSource === "url" ? `/${lang}` : "";
 
-  console.log(`Language: ${lang}, Source: ${localeSource}`);
-
   return (
     <>
       <section className="text-center mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 my-10">
           {dictionary.hero.title}
         </h2>
-        <p className="text-lg text-gray-600 mb-6 mx-auto">
-          {dictionary.hero.description1}
-          <br />
-          {dictionary.hero.description2}
-        </p>
         <div className="flex justify-center space-x-4">
           {userId ? (
             <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-lg transition duration-300">

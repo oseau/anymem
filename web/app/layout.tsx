@@ -27,9 +27,6 @@ export default async function RootLayout({
   const localeSource = headersList.get("x-locale-source") || "detection";
   const lang = params.lang || detectedLocale;
   const i18nPrefix = localeSource === "url" ? `/${lang}` : "";
-
-  console.log(`Layout Language: ${lang}, Source: ${localeSource}`);
-
   const dictionary = await getDictionary(lang);
 
   return (
@@ -38,15 +35,11 @@ export default async function RootLayout({
         <body>
           <div className="flex flex-col min-h-screen bg-gradient-to-b from-blue-50 to-white font-sans relative">
             <DotPattern className="absolute inset-0 z-0 opacity-50" />
-            <header className="bg-white shadow-md py-4 relative z-10">
+            <header className="bg-white shadow-md py-2 relative z-10">
               <nav className="container mx-auto px-4 max-w-6xl flex justify-between items-center">
                 <Link href={`${i18nPrefix}/`}>
                   <h1 className="text-2xl font-bold text-blue-600 cursor-pointer">
-                    <span>{dictionary.title.split(" - ")[0]}</span>
-                    <span className="hidden sm:inline">
-                      {" "}
-                      - {dictionary.title.split(" - ")[1]}
-                    </span>
+                    <span>{dictionary.title}</span>
                   </h1>
                 </Link>
                 <div className="flex items-center space-x-4">
@@ -83,7 +76,7 @@ export default async function RootLayout({
               {children}
             </main>
 
-            <footer className="bg-gray-800 text-white py-3">
+            <footer className="bg-gray-800 text-white py-2">
               <div className="container mx-auto px-4 max-w-6xl text-center">
                 <p>{dictionary.footer.copyright}</p>
               </div>
