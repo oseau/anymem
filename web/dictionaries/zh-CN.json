@@ -106,6 +106,9 @@
       }
     }
   },
+  "flashcard": {
+    "timeLeft": "剩余时间"
+  },
   "auth": {
     "signIn": "登录",
     "signUp": "注册"

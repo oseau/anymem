@@ -1,35 +1,47 @@
 "use client";
-
+import { getDictionary } from "@/get-dictionary";
 import { useState, useEffect, useCallback } from "react";
+import { Locale } from "@/i18n-config";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { TimerFuse } from "@/components/ui/timer-fuse"; // Corrected import path
+import { TimerFuse } from "@/components/ui/timer-fuse";
 
 interface FlashcardProps {
   front: string;
   choices: string[];
   correctAnswer: number;
   timeLimit: number;
+  lang: Locale;
 }
 
 export function Flashcard({
-  front,
-  choices,
-  correctAnswer,
-  timeLimit,
-}: FlashcardProps) {
+  params: { front, choices, correctAnswer, timeLimit, lang },
+}: {
+  params: FlashcardProps;
+}) {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [timeLeft, setTimeLeft] = useState(timeLimit);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [isTimerActive, setIsTimerActive] = useState(true);
+  const [dictionary, setDictionary] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadDictionary = async () => {
+      const dict = await getDictionary(lang);
+      setDictionary(dict);
+      setIsLoading(false);
+    };
+    loadDictionary();
+  }, [lang]);
 
   const handleAnswer = useCallback(
     (index: number) => {
       if (selectedAnswer === null && timeLeft > 0) {
         setSelectedAnswer(index);
         setIsCorrect(index === correctAnswer);
-        setIsTimerActive(false); // Stop the timer when an answer is selected
+        setIsTimerActive(false);
       }
     },
     [selectedAnswer, timeLeft, correctAnswer],
@@ -43,7 +55,7 @@ export function Flashcard({
       }, 1000);
     } else if (timeLeft === 0 && selectedAnswer === null) {
       setIsCorrect(false);
-      setIsTimerActive(false); // Stop the timer when time runs out
+      setIsTimerActive(false);
     }
 
     return () => {
@@ -75,6 +87,10 @@ export function Flashcard({
     }
     return "";
   };
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="absolute inset-0 flex justify-center items-center bg-gray-100 p-4 sm:p-6 md:p-8">
@@ -117,7 +133,7 @@ export function Flashcard({
               isActive={isTimerActive}
             />
             <div className="text-base sm:text-lg font-semibold mb-2">
-              Time left: {timeLeft}s
+              {dictionary.flashcard.timeLeft}: {timeLeft}s
             </div>
             <div
               className={`text-base sm:text-lg font-bold ${isCorrect === null ? "invisible" : isCorrect ? "text-green-600" : "text-red-600"}`}

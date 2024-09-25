@@ -112,5 +112,8 @@
   "auth": {
     "signIn": "Sign In",
     "signUp": "Sign Up"
+  },
+  "flashcard": {
+    "timeLeft": "Time left"
   }
 }

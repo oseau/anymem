@@ -106,6 +106,9 @@
       }
     }
   },
+  "flashcard": {
+    "timeLeft": "剩餘時間"
+  },
   "auth": {
     "signIn": "登入",
     "signUp": "註冊"

@@ -106,6 +106,9 @@
       }
     }
   },
+  "flashcard": {
+    "timeLeft": "Temps restant"
+  },
   "auth": {
     "signIn": "Se connecter",
     "signUp": "S'inscrire"
