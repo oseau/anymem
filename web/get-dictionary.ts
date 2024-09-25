@@ -10,6 +10,8 @@ const dictionaries = {
     import("./dictionaries/zh-HK.json").then((module) => module.default),
   "zh-TW": () =>
     import("./dictionaries/zh-TW.json").then((module) => module.default),
+  ja: () => import("./dictionaries/ja.json").then((module) => module.default),
+  ko: () => import("./dictionaries/ko.json").then((module) => module.default),
 };
 
 type Dictionary = Awaited<ReturnType<(typeof dictionaries)["en"]>>;

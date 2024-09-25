@@ -1,0 +1,131 @@
+{
+  "title": "AnyMem",
+  "description": "AnyMem: AI 기반 학습 동반자. 학습을 쉽고 재미있게 만듭니다. 휴대폰이나 컴퓨터에서 언제 어디서나 지식을 강화하세요.",
+  "header": {
+    "features": "기능",
+    "comingSoon": "출시 예정"
+  },
+  "hero": {
+    "title": "모든 것을 영원히 기억하세요",
+    "startLearning": "학습 여정 시작하기",
+    "watchDemo": "데모 영상 보기"
+  },
+  "features": {
+    "learnMore": "더 알아보기",
+    "spacedRepetition": {
+      "title": "스마트 복습",
+      "description": "고급 간격 반복 알고리즘을 활용하여 복습 일정을 최적화하고 쉽게 지식을 마스터하세요.",
+      "whatIs": {
+        "title": "간격 반복이란?",
+        "description": "간격 반복은 시간이 지남에 따라 증가하는 간격으로 정보를 검토하는 학습 기술입니다. 이 방법은 심리학적 간격 효과를 활용하여 장기 지식 보유를 향상시킵니다."
+      },
+      "algorithm": {
+        "title": "우리의 알고리즘",
+        "description": "우리의 간격 반복 알고리즘은 개인 성과에 따라 복습 간격을 동적으로 조정합니다. 주요 특징은 다음과 같습니다:",
+        "features": [
+          "회상 난이도에 따른 적응형 일정 조정",
+          "기억 유지를 최대화하기 위한 최적화된 복습 타이밍",
+          "각 사용자를 위한 개인화된 학습 경로"
+        ]
+      },
+      "howItWorks": {
+        "title": "작동 방식",
+        "steps": [
+          "새로운 정보의 초기 제시",
+          "짧은 간격 후 첫 번째 복습 (예: 1일 후)",
+          "이후 증가하는 간격으로 후속 복습",
+          "회상 성과에 따른 간격 조정"
+        ]
+      },
+      "retentionCurve": {
+        "title": "기억 유지 곡선",
+        "imageAlt": "간격 반복 기억 유지 곡선"
+      },
+      "benefits": {
+        "title": "우리 접근 방식의 이점",
+        "list": [
+          "장기 기억력 향상",
+          "학습 시간의 효율적 사용",
+          "인지 부하 감소",
+          "개인화된 학습 경험"
+        ]
+      },
+      "chartExplanation": {
+        "title": "기억 유지 곡선 이해하기",
+        "description": "이 차트는 우리의 간격 반복 알고리즘이 학습 과정을 어떻게 최적화하는지 보여줍니다:",
+        "optimizedReviews": "최적화된 복습 간격: 알고리즘은 기억이 크게 감소하기 전에 전략적 시점에 복습을 예약합니다.",
+        "avoidEarlyReviews": "불필요한 조기 복습 방지: 복습 간격을 조절함으로써 아직 기억에 생생한 자료에 시간을 낭비하지 않도록 돕습니다.",
+        "maximizePerformance": "장기 기억력 극대화: 우리의 접근 방식은 정보가 희미해지기 시작할 때 복습을 보장하여 장기 기억을 강화하고 전반적인 성과를 향상시킵니다."
+      }
+    },
+    "multiPlatform": {
+      "title": "멀티 플랫폼 지원",
+      "description": "웹, iOS, Android 간 동기화. 제한 없이 학습하세요.",
+      "mobile": {
+        "title": "모바일",
+        "description": "언제 어디서나 이동 중에 학습하세요."
+      },
+      "desktop": {
+        "title": "데스크톱",
+        "description": "컴퓨터에서 완전한 기능의 학습 경험을 즐기세요."
+      },
+      "paper": {
+        "title": "종이 버전",
+        "description": "눈에 편안한 학습을 위해 매일 종이 버전을 인쇄하세요."
+      },
+      "syncFeature": {
+        "title": "기기 간 원활한 동기화",
+        "description": "학습 진행 상황과 덱이 모든 기기에서 자동으로 동기화되어 쉽게 플랫폼을 전환할 수 있습니다."
+      }
+    },
+    "customizableDecks": {
+      "title": "맞춤형 플래시카드 덱",
+      "description": "플래시카드 덱을 유연하게 만들고 관리하여 개인화된 학습 시스템을 구축하세요.",
+      "benefits": {
+        "title": "맞춤형 덱의 이점",
+        "list": [
+          "특정 주제나 목표에 맞춰 학습 조정",
+          "자신에게 맞는 방식으로 정보 구성",
+          "학습하면서 쉽게 덱 업데이트 및 개선",
+          "친구나 스터디 그룹과 덱 공유"
+        ]
+      },
+      "howTo": {
+        "title": "맞춤형 덱 만드는 방법",
+        "steps": [
+          "덱의 주제나 과목 선택",
+          "한 면에 질문, 다른 면에 답변이 있는 카드 추가",
+          "카드를 카테고리나 난이도 수준으로 구성",
+          "학습 시작 및 AnyMem이 학습을 최적화하도록 허용"
+        ]
+      },
+      "getStarted": {
+        "title": "첫 번째 덱을 만들 준비가 되셨나요?",
+        "description": "오늘부터 개인화된 학습 경험을 구축하세요. 첫 번째 맞춤형 덱을 만들고 AnyMem이 어떻게 학습 습관을 혁신하는지 확인하세요.",
+        "buttonText": "첫 번째 덱 만들기"
+      }
+    }
+  },
+  "flashcard": {
+    "timeLeft": "남은 시간"
+  },
+  "auth": {
+    "signIn": "로그인",
+    "signUp": "회원가입"
+  },
+  "footer": {
+    "copyright": "© 2024 AnyMem. All rights reserved."
+  },
+  "dashboard": {
+    "title": "대시보드",
+    "progress": "전체 진행 상황",
+    "cardsLearned": "학습한 카드",
+    "cardsToReview": "복습할 카드",
+    "startReview": "복습 시작",
+    "streak": "현재 연속 일수",
+    "days": "일",
+    "upcomingReviews": "예정된 복습",
+    "dueDate": "마감일",
+    "reviewNow": "지금 복습"
+  }
+}
