@@ -127,5 +127,10 @@
     "upcomingReviews": "即将到来的复习",
     "dueDate": "到期日期",
     "reviewNow": "立即复习"
+  },
+  "decks": {
+    "title": "预制卡片组",
+    "cardCount": "卡片 {count} 张",
+    "progress": "{progress}% 完成"
   }
 }

@@ -127,5 +127,10 @@
     "upcomingReviews": "예정된 복습",
     "dueDate": "마감일",
     "reviewNow": "지금 복습"
+  },
+  "decks": {
+    "title": "미리 만들어진 카드 세트",
+    "cardCount": "카드 {count}장",
+    "progress": "{progress}% 완료"
   }
 }

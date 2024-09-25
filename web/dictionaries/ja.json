@@ -127,5 +127,10 @@
     "upcomingReviews": "今後の復習",
     "dueDate": "期日",
     "reviewNow": "今すぐ復習"
+  },
+  "decks": {
+    "title": "プリメイドカードセット",
+    "cardCount": "カード{count}枚",
+    "progress": "{progress}% 完了"
   }
 }

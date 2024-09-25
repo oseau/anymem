@@ -127,5 +127,10 @@
     "upcomingReviews": "即將到來的複習",
     "dueDate": "到期日期",
     "reviewNow": "立即複習"
+  },
+  "decks": {
+    "title": "預製卡片組",
+    "cardCount": "卡片 {count} 張",
+    "progress": "{progress}% 完成"
   }
 }

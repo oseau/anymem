@@ -127,5 +127,10 @@
     "upcomingReviews": "Upcoming Reviews",
     "dueDate": "Due Date",
     "reviewNow": "Review Now"
+  },
+  "decks": {
+    "title": "Pre-made Card Sets",
+    "cardCount": "{count} cards",
+    "progress": "{progress}% complete"
   }
 }

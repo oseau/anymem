@@ -127,5 +127,10 @@
     "upcomingReviews": "Próximas revisiones",
     "dueDate": "Fecha de vencimiento",
     "reviewNow": "Revisar ahora"
+  },
+  "decks": {
+    "title": "Conjuntos de tarjetas prediseñados",
+    "cardCount": "{count} tarjetas",
+    "progress": "{progress}% completado"
   }
 }
