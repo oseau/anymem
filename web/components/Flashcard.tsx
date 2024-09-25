@@ -22,12 +22,14 @@ export function Flashcard({
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [timeLeft, setTimeLeft] = useState(timeLimit);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
+  const [isTimerActive, setIsTimerActive] = useState(true);
 
   const handleAnswer = useCallback(
     (index: number) => {
       if (selectedAnswer === null && timeLeft > 0) {
         setSelectedAnswer(index);
         setIsCorrect(index === correctAnswer);
+        setIsTimerActive(false); // Stop the timer when an answer is selected
       }
     },
     [selectedAnswer, timeLeft, correctAnswer],
@@ -41,6 +43,7 @@ export function Flashcard({
       }, 1000);
     } else if (timeLeft === 0 && selectedAnswer === null) {
       setIsCorrect(false);
+      setIsTimerActive(false); // Stop the timer when time runs out
     }
 
     return () => {
@@ -108,7 +111,11 @@ export function Flashcard({
           </div>
           <Separator className="my-6 sm:my-8" />
           <div className="text-center flex flex-col justify-center">
-            <TimerFuse timeLeft={timeLeft} timeLimit={timeLimit} />
+            <TimerFuse
+              timeLeft={timeLeft}
+              timeLimit={timeLimit}
+              isActive={isTimerActive}
+            />
             <div className="text-base sm:text-lg font-semibold mb-2">
               Time left: {timeLeft}s
             </div>
