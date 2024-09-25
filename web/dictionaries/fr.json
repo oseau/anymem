@@ -115,5 +115,17 @@
   },
   "footer": {
     "copyright": "© 2024 AnyMem. Tous droits réservés."
+  },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "progress": "Progrès global",
+    "cardsLearned": "cartes apprises",
+    "cardsToReview": "Cartes à revoir",
+    "startReview": "Commencer la révision",
+    "streak": "Récente",
+    "days": "jours",
+    "upcomingReviews": "Revisions à venir",
+    "dueDate": "Date d'échéance",
+    "reviewNow": "Reviser maintenant"
   }
 }

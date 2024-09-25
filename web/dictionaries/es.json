@@ -115,5 +115,17 @@
   },
   "footer": {
     "copyright": "© 2024 AnyMem. Todos los derechos reservados."
+  },
+  "dashboard": {
+    "title": "Tablero",
+    "progress": "Progreso general",
+    "cardsLearned": "tarjetas aprendidas",
+    "cardsToReview": "Tarjetas para revisar",
+    "startReview": "Comenzar revisión",
+    "streak": "Racha actual",
+    "days": "días",
+    "upcomingReviews": "Próximas revisiones",
+    "dueDate": "Fecha de vencimiento",
+    "reviewNow": "Revisar ahora"
   }
 }

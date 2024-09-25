@@ -30,9 +30,12 @@ export default async function Page({
         </h2>
         <div className="flex justify-center space-x-4">
           {userId ? (
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-lg transition duration-300">
+            <a
+              href="/dashboard"
+              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-lg transition duration-300"
+            >
               {dictionary.hero.startLearning}
-            </button>
+            </a>
           ) : (
             <>
               <SignInButton mode="modal">

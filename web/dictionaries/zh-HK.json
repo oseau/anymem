@@ -115,5 +115,17 @@
   },
   "footer": {
     "copyright": "© 2024 AnyMem。版權所有。"
+  },
+  "dashboard": {
+    "title": "儀表板",
+    "progress": "總體進度",
+    "cardsLearned": "卡片學習",
+    "cardsToReview": "卡片待複習",
+    "startReview": "開始複習",
+    "streak": "當前連勝",
+    "days": "天",
+    "upcomingReviews": "即將到來的複習",
+    "dueDate": "到期日期",
+    "reviewNow": "立即複習"
   }
 }

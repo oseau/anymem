@@ -115,5 +115,17 @@
   },
   "footer": {
     "copyright": "© 2024 AnyMem。版权所有。"
+  },
+  "dashboard": {
+    "title": "仪表板",
+    "progress": "总体进度",
+    "cardsLearned": "卡片学习",
+    "cardsToReview": "卡片待复习",
+    "startReview": "开始复习",
+    "streak": "当前连胜",
+    "days": "天",
+    "upcomingReviews": "即将到来的复习",
+    "dueDate": "到期日期",
+    "reviewNow": "立即复习"
   }
 }

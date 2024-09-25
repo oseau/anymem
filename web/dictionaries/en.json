@@ -115,5 +115,17 @@
   },
   "flashcard": {
     "timeLeft": "Time left"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "progress": "Overall Progress",
+    "cardsLearned": "cards learned",
+    "cardsToReview": "Cards to Review",
+    "startReview": "Start Review",
+    "streak": "Current Streak",
+    "days": "days",
+    "upcomingReviews": "Upcoming Reviews",
+    "dueDate": "Due Date",
+    "reviewNow": "Review Now"
   }
 }
