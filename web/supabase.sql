@@ -1,7 +1,6 @@
 -- this is a backup from the supabase sql editor
 
-CREATE TABLE
-  books (
+CREATE TABLE IF NOT EXISTS books (
     id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     title TEXT,
     word_count INTEGER DEFAULT 0
@@ -9,8 +8,7 @@ CREATE TABLE
 
 ALTER TABLE books ENABLE ROW LEVEL SECURITY;
 
-CREATE TABLE
-  units (
+CREATE TABLE IF NOT EXISTS units (
     id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     title TEXT,
     book_id BIGINT REFERENCES books (id),
@@ -19,8 +17,7 @@ CREATE TABLE
 
 ALTER TABLE units ENABLE ROW LEVEL SECURITY;
 
-CREATE TABLE
-  words (
+CREATE TABLE IF NOT EXISTS words (
     id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     spell TEXT,
     interpretation TEXT,
@@ -29,8 +26,7 @@ CREATE TABLE
 
 ALTER TABLE words ENABLE ROW LEVEL SECURITY;
 
-CREATE TABLE
-  users (
+CREATE TABLE IF NOT EXISTS users (
     id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     clerk_user_id TEXT UNIQUE,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
@@ -38,8 +34,7 @@ CREATE TABLE
 
 ALTER TABLE users ENABLE ROW LEVEL SECURITY;
 
-CREATE TABLE
-  flashcards (
+CREATE TABLE IF NOT EXISTS flashcards (
     id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     user_id BIGINT REFERENCES users (id),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
@@ -50,8 +45,7 @@ CREATE TABLE
 
 ALTER TABLE flashcards ENABLE ROW LEVEL SECURITY;
 
-CREATE TABLE
-  schedules (
+CREATE TABLE IF NOT EXISTS schedules (
     id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     flashcard_id BIGINT REFERENCES flashcards (id),
     revisit_date TIMESTAMP WITH TIME ZONE,
@@ -64,21 +58,21 @@ ALTER TABLE schedules ENABLE ROW LEVEL SECURITY;
 
 
 -- Indexes for books
-CREATE INDEX idx_books_title_fts ON public.books USING gin (to_tsvector('simple', title));
+CREATE INDEX IF NOT EXISTS idx_books_title_fts ON public.books USING gin (to_tsvector('simple', title));
 
 -- Indexes for units
-CREATE INDEX idx_units_book_id ON public.units USING btree (book_id);
+CREATE INDEX IF NOT EXISTS idx_units_book_id ON public.units USING btree (book_id);
 
 -- Indexes for words
-CREATE INDEX idx_words_unit_id ON public.words USING btree (unit_id);
-CREATE INDEX idx_words_spell ON public.words USING btree (spell);
+CREATE INDEX IF NOT EXISTS idx_words_unit_id ON public.words USING btree (unit_id);
+CREATE INDEX IF NOT EXISTS idx_words_spell ON public.words USING btree (spell);
 
 -- Indexes for schedules
-CREATE INDEX idx_schedules_word_id ON public.schedules USING btree (flashcard_id);
-CREATE INDEX idx_schedules_revisit_date ON public.schedules USING btree (revisit_date);
-CREATE INDEX idx_schedules_flashcard_id ON public.schedules USING btree (flashcard_id);
-CREATE INDEX idx_schedules_flashcard_id_revisit_date ON public.schedules USING btree (flashcard_id, revisit_date);
+CREATE INDEX IF NOT EXISTS idx_schedules_word_id ON public.schedules USING btree (flashcard_id);
+CREATE INDEX IF NOT EXISTS idx_schedules_revisit_date ON public.schedules USING btree (revisit_date);
+CREATE INDEX IF NOT EXISTS idx_schedules_flashcard_id ON public.schedules USING btree (flashcard_id);
+CREATE INDEX IF NOT EXISTS idx_schedules_flashcard_id_revisit_date ON public.schedules USING btree (flashcard_id, revisit_date);
 
 -- Indexes for flashcards
-CREATE INDEX idx_flashcards_user_id ON public.flashcards USING btree (user_id);
-CREATE INDEX idx_flashcards_meta ON public.flashcards USING gin (meta);
+CREATE INDEX IF NOT EXISTS idx_flashcards_user_id ON public.flashcards USING btree (user_id);
+CREATE INDEX IF NOT EXISTS idx_flashcards_meta ON public.flashcards USING gin (meta);
