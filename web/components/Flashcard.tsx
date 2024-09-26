@@ -1,4 +1,5 @@
 "use client";
+import { Spinner } from "@/components/ui/spinner";
 import { getDictionary } from "@/get-dictionary";
 import { useState, useEffect, useCallback } from "react";
 import { Locale } from "@/i18n-config";
@@ -89,7 +90,7 @@ export function Flashcard({
   };
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
 
   return (
