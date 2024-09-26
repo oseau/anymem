@@ -1,32 +1,7 @@
 -- this is a backup from the supabase sql editor
 
-CREATE TABLE IF NOT EXISTS books (
-    id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    title TEXT,
-    word_count INTEGER DEFAULT 0
-  );
-
-ALTER TABLE books ENABLE ROW LEVEL SECURITY;
-
-CREATE TABLE IF NOT EXISTS units (
-    id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    title TEXT,
-    book_id BIGINT REFERENCES books (id),
-    word_count INTEGER DEFAULT 0
-  );
-
-ALTER TABLE units ENABLE ROW LEVEL SECURITY;
-
-CREATE TABLE IF NOT EXISTS words (
-    id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    spell TEXT,
-    interpretation TEXT,
-    unit_id BIGINT REFERENCES units (id)
-  );
-
-ALTER TABLE words ENABLE ROW LEVEL SECURITY;
-
-CREATE TABLE IF NOT EXISTS users (
+CREATE TABLE IF NOT EXISTS
+  users (
     id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     clerk_user_id TEXT UNIQUE,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
@@ -34,45 +9,25 @@ CREATE TABLE IF NOT EXISTS users (
 
 ALTER TABLE users ENABLE ROW LEVEL SECURITY;
 
-CREATE TABLE IF NOT EXISTS flashcards (
+CREATE TABLE IF NOT EXISTS
+  decks (
+    id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    title TEXT,
+    user_id BIGINT REFERENCES users (id),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+  );
+
+ALTER TABLE decks ENABLE ROW LEVEL SECURITY;
+
+CREATE TABLE IF NOT EXISTS
+  cards (
     id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     user_id BIGINT REFERENCES users (id),
+    deck_id BIGINT REFERENCES decks (id),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     front_content TEXT,
     back_content TEXT,
     meta jsonb
   );
 
-ALTER TABLE flashcards ENABLE ROW LEVEL SECURITY;
-
-CREATE TABLE IF NOT EXISTS schedules (
-    id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    flashcard_id BIGINT REFERENCES flashcards (id),
-    revisit_date TIMESTAMP WITH TIME ZONE,
-    correct BOOLEAN,
-    seconds_taken INTERVAL,
-    is_done BOOLEAN DEFAULT FALSE
-  );
-
-ALTER TABLE schedules ENABLE ROW LEVEL SECURITY;
-
-
--- Indexes for books
-CREATE INDEX IF NOT EXISTS idx_books_title_fts ON public.books USING gin (to_tsvector('simple', title));
-
--- Indexes for units
-CREATE INDEX IF NOT EXISTS idx_units_book_id ON public.units USING btree (book_id);
-
--- Indexes for words
-CREATE INDEX IF NOT EXISTS idx_words_unit_id ON public.words USING btree (unit_id);
-CREATE INDEX IF NOT EXISTS idx_words_spell ON public.words USING btree (spell);
-
--- Indexes for schedules
-CREATE INDEX IF NOT EXISTS idx_schedules_word_id ON public.schedules USING btree (flashcard_id);
-CREATE INDEX IF NOT EXISTS idx_schedules_revisit_date ON public.schedules USING btree (revisit_date);
-CREATE INDEX IF NOT EXISTS idx_schedules_flashcard_id ON public.schedules USING btree (flashcard_id);
-CREATE INDEX IF NOT EXISTS idx_schedules_flashcard_id_revisit_date ON public.schedules USING btree (flashcard_id, revisit_date);
-
--- Indexes for flashcards
-CREATE INDEX IF NOT EXISTS idx_flashcards_user_id ON public.flashcards USING btree (user_id);
-CREATE INDEX IF NOT EXISTS idx_flashcards_meta ON public.flashcards USING gin (meta);
+ALTER TABLE cards ENABLE ROW LEVEL SECURITY;
