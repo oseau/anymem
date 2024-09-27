@@ -149,9 +149,8 @@
     "deckDescription": "説明",
     "deckDescriptionPlaceholder": "デッキの説明を入力（任意）",
     "deckDescriptionHelp": "デッキの簡単な説明を提供してください",
-    "createDeck": "デッキを作成",
-    "editDeck": "デッキを編集",
-    "deleteDeck": "デッキを削除"
+    "editDeck": "編集",
+    "deleteDeck": "削除"
   },
   "common": {
     "loading": "読み込み中...",

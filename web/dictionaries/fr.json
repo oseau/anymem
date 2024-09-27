@@ -149,9 +149,8 @@
     "deckDescription": "Description",
     "deckDescriptionPlaceholder": "Entrez la description du paquet (optionnel)",
     "deckDescriptionHelp": "Fournissez une brève description de votre paquet",
-    "createDeck": "Créer le paquet",
-    "editDeck": "Modifier le paquet",
-    "deleteDeck": "Supprimer le paquet"
+    "editDeck": "Modifier",
+    "deleteDeck": "Supprimer"
   },
   "common": {
     "loading": "Chargement...",

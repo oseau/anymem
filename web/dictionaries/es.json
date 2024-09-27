@@ -149,9 +149,8 @@
     "deckDescription": "Descripción",
     "deckDescriptionPlaceholder": "Ingresa la descripción del mazo (opcional)",
     "deckDescriptionHelp": "Proporciona una breve descripción de tu mazo",
-    "createDeck": "Crear mazo",
-    "editDeck": "Editar mazo",
-    "deleteDeck": "Eliminar mazo"
+    "editDeck": "Editar",
+    "deleteDeck": "Eliminar"
   },
   "common": {
     "loading": "Cargando...",

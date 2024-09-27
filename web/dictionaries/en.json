@@ -149,9 +149,8 @@
     "deckDescription": "Description",
     "deckDescriptionPlaceholder": "Enter deck description (optional)",
     "deckDescriptionHelp": "Provide a brief description of your deck",
-    "createDeck": "Create Deck",
-    "editDeck": "Edit Deck",
-    "deleteDeck": "Delete Deck"
+    "editDeck": "Edit",
+    "deleteDeck": "Delete"
   },
   "common": {
     "loading": "Loading...",

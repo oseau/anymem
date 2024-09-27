@@ -149,9 +149,8 @@
     "deckDescription": "설명",
     "deckDescriptionPlaceholder": "덱 설명 입력 (선택사항)",
     "deckDescriptionHelp": "덱의 간단한 설명을 제공해주세요",
-    "createDeck": "덱 만들기",
-    "editDeck": "덱 편집",
-    "deleteDeck": "덱 삭제"
+    "editDeck": "편집",
+    "deleteDeck": "삭제"
   },
   "common": {
     "loading": "로딩중...",

@@ -149,9 +149,8 @@
     "deckDescription": "描述",
     "deckDescriptionPlaceholder": "輸入卡組描述（可選）",
     "deckDescriptionHelp": "提供卡組的簡短描述",
-    "createDeck": "創建卡組",
-    "editDeck": "編輯卡組",
-    "deleteDeck": "刪除卡組"
+    "editDeck": "編輯",
+    "deleteDeck": "刪除"
   },
   "common": {
     "loading": "加載中...",
