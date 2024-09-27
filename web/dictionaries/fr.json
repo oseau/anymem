@@ -142,7 +142,19 @@
     "browseCards": "Parcourir les cartes",
     "revisitDeck": "Réviser le paquet",
     "createNewDeck": "Créer un nouveau paquet",
+    "createNewDeckDescription": "Créer un nouveau paquet pour organiser vos cartes de mémoire.",
+    "deckName": "Nom du paquet",
+    "deckNamePlaceholder": "Entrez le nom du paquet",
+    "deckNameDescription": "Donnez un nom unique à votre paquet",
+    "deckDescription": "Description",
+    "deckDescriptionPlaceholder": "Entrez la description du paquet (optionnel)",
+    "deckDescriptionHelp": "Fournissez une brève description de votre paquet",
+    "createDeck": "Créer le paquet",
     "editDeck": "Modifier le paquet",
     "deleteDeck": "Supprimer le paquet"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur"
   }
 }

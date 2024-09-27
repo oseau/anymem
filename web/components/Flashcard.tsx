@@ -1,9 +1,8 @@
 "use client";
-import { Spinner } from "@/components/ui/spinner";
-import { getDictionary } from "@/get-dictionary";
+
 import { useState, useEffect, useCallback } from "react";
-import { Locale } from "@/i18n-config";
 import { Card, CardContent } from "@/components/ui/card";
+import { type Dictionary } from "@/get-dictionary";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { TimerFuse } from "@/components/ui/timer-fuse";
@@ -13,11 +12,11 @@ interface FlashcardProps {
   choices: string[];
   correctAnswer: number;
   timeLimit: number;
-  lang: Locale;
+  dict: Dictionary;
 }
 
 export function Flashcard({
-  params: { front, choices, correctAnswer, timeLimit, lang },
+  params: { front, choices, correctAnswer, timeLimit, dict },
 }: {
   params: FlashcardProps;
 }) {
@@ -25,17 +24,6 @@ export function Flashcard({
   const [timeLeft, setTimeLeft] = useState(timeLimit);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [isTimerActive, setIsTimerActive] = useState(true);
-  const [dictionary, setDictionary] = useState<any>(null);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const loadDictionary = async () => {
-      const dict = await getDictionary(lang);
-      setDictionary(dict);
-      setIsLoading(false);
-    };
-    loadDictionary();
-  }, [lang]);
 
   const handleAnswer = useCallback(
     (index: number) => {
@@ -89,10 +77,6 @@ export function Flashcard({
     return "";
   };
 
-  if (isLoading) {
-    return <Spinner />;
-  }
-
   return (
     <div className="absolute inset-0 flex justify-center items-center bg-gray-100 p-4 sm:p-6 md:p-8">
       <Card className="w-full max-w-md bg-white shadow-lg">
@@ -134,7 +118,7 @@ export function Flashcard({
               isActive={isTimerActive}
             />
             <div className="text-base sm:text-lg font-semibold mb-2">
-              {dictionary.flashcard.timeLeft}: {timeLeft}s
+              {dict.flashcard.timeLeft}: {timeLeft}s
             </div>
             <div
               className={`text-base sm:text-lg font-bold ${isCorrect === null ? "invisible" : isCorrect ? "text-green-600" : "text-red-600"}`}

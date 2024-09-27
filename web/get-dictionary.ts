@@ -14,7 +14,7 @@ const dictionaries = {
   ko: () => import("./dictionaries/ko.json").then((module) => module.default),
 };
 
-type Dictionary = Awaited<ReturnType<(typeof dictionaries)["en"]>>;
+export type Dictionary = Awaited<ReturnType<(typeof dictionaries)["en"]>>;
 
 export const getDictionary = async (locale: Locale): Promise<Dictionary> => {
   return dictionaries[locale]?.() ?? dictionaries.en();

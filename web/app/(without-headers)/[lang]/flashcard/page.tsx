@@ -1,11 +1,14 @@
 import { Flashcard } from "@/components/Flashcard";
 import { Locale } from "@/i18n-config";
+import { getDictionary } from "@/get-dictionary";
 
-export default function FlashcardPage({
+export default async function FlashcardPage({
   params: { lang },
 }: {
   params: { lang: Locale };
 }) {
+  const dict = await getDictionary(lang);
+
   return (
     <div className="fixed inset-0 overflow-hidden">
       <Flashcard
@@ -17,7 +20,7 @@ export default function FlashcardPage({
           ],
           correctAnswer: 1,
           timeLimit: 10,
-          lang: lang,
+          dict,
         }}
       />
     </div>

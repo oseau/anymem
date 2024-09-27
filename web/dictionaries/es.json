@@ -142,7 +142,19 @@
     "browseCards": "Explorar tarjetas",
     "revisitDeck": "Revisar mazo",
     "createNewDeck": "Crear nuevo mazo",
+    "createNewDeckDescription": "Crea un nuevo mazo para organizar tus tarjetas de memoria.",
+    "deckName": "Nombre del mazo",
+    "deckNamePlaceholder": "Ingresa el nombre del mazo",
+    "deckNameDescription": "Dale un nombre único a tu mazo",
+    "deckDescription": "Descripción",
+    "deckDescriptionPlaceholder": "Ingresa la descripción del mazo (opcional)",
+    "deckDescriptionHelp": "Proporciona una breve descripción de tu mazo",
+    "createDeck": "Crear mazo",
     "editDeck": "Editar mazo",
     "deleteDeck": "Eliminar mazo"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error"
   }
 }

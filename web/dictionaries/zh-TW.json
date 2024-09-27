@@ -142,7 +142,19 @@
     "browseCards": "瀏覽卡片",
     "revisitDeck": "複習卡組",
     "createNewDeck": "創建新卡組",
+    "createNewDeckDescription": "創建一個新的卡組來組織您的閃卡。",
+    "deckName": "卡組名稱",
+    "deckNamePlaceholder": "輸入卡組名稱",
+    "deckNameDescription": "為您的卡組取一個獨特的名稱",
+    "deckDescription": "描述",
+    "deckDescriptionPlaceholder": "輸入卡組描述（可選）",
+    "deckDescriptionHelp": "提供卡組的簡短描述",
+    "createDeck": "創建卡組",
     "editDeck": "編輯卡組",
     "deleteDeck": "刪除卡組"
+  },
+  "common": {
+    "loading": "加載中...",
+    "error": "錯誤"
   }
 }

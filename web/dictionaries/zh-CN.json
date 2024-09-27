@@ -142,7 +142,19 @@
     "browseCards": "浏览卡片",
     "revisitDeck": "复习卡组",
     "createNewDeck": "创建新卡组",
+    "createNewDeckDescription": "创建一个新的卡组来组织你的卡片。",
+    "deckName": "卡组名称",
+    "deckNamePlaceholder": "输入卡组名称",
+    "deckNameDescription": "为你的卡组提供一个唯一的名称",
+    "deckDescription": "描述",
+    "deckDescriptionPlaceholder": "输入卡组描述（可选）",
+    "deckDescriptionHelp": "提供一个简短的卡组描述",
+    "createDeck": "创建卡组",
     "editDeck": "编辑卡组",
     "deleteDeck": "删除卡组"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "错误"
   }
 }

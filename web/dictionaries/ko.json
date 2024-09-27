@@ -142,7 +142,19 @@
     "browseCards": "카드 둘러보기",
     "revisitDeck": "덱 복습하기",
     "createNewDeck": "새 덱 만들기",
+    "createNewDeckDescription": "카드를 정리하기 위한 새로운 덱을 만듭니다.",
+    "deckName": "덱 이름",
+    "deckNamePlaceholder": "덱 이름 입력",
+    "deckNameDescription": "덱에 고유한 이름을 지어주세요",
+    "deckDescription": "설명",
+    "deckDescriptionPlaceholder": "덱 설명 입력 (선택사항)",
+    "deckDescriptionHelp": "덱의 간단한 설명을 제공해주세요",
+    "createDeck": "덱 만들기",
     "editDeck": "덱 편집",
     "deleteDeck": "덱 삭제"
+  },
+  "common": {
+    "loading": "로딩중...",
+    "error": "에러"
   }
 }

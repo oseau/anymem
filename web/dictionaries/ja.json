@@ -142,7 +142,19 @@
     "browseCards": "カードを閲覧",
     "revisitDeck": "デッキを復習",
     "createNewDeck": "新しいデッキを作成",
+    "createNewDeckDescription": "フラッシュカードを整理するための新しいデッキを作成します。",
+    "deckName": "デッキ名",
+    "deckNamePlaceholder": "デッキ名を入力",
+    "deckNameDescription": "デッキにユニークな名前をつけてください",
+    "deckDescription": "説明",
+    "deckDescriptionPlaceholder": "デッキの説明を入力（任意）",
+    "deckDescriptionHelp": "デッキの簡単な説明を提供してください",
+    "createDeck": "デッキを作成",
     "editDeck": "デッキを編集",
     "deleteDeck": "デッキを削除"
+  },
+  "common": {
+    "loading": "読み込み中...",
+    "error": "エラー"
   }
 }

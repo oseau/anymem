@@ -142,7 +142,19 @@
     "browseCards": "Browse Cards",
     "revisitDeck": "Revisit Deck",
     "createNewDeck": "Create New Deck",
+    "createNewDeckDescription": "Create a new deck to organize your flashcards.",
+    "deckName": "Deck Name",
+    "deckNamePlaceholder": "Enter deck name",
+    "deckNameDescription": "Give your deck a unique name",
+    "deckDescription": "Description",
+    "deckDescriptionPlaceholder": "Enter deck description (optional)",
+    "deckDescriptionHelp": "Provide a brief description of your deck",
+    "createDeck": "Create Deck",
     "editDeck": "Edit Deck",
     "deleteDeck": "Delete Deck"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error"
   }
 }
