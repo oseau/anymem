@@ -91,7 +91,7 @@ export function CreateDeckForm({
             />
           </div>
           <Button type="submit" disabled={isLoading}>
-            {isLoading ? dict.common.loading : dict.decks.createDeck}
+            {isLoading ? dict.common.loading : dict.decks.createNewDeck}
           </Button>
         </form>
       </DialogContent>

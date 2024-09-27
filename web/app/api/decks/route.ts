@@ -42,9 +42,15 @@ const mockUserDecks: Deck[] = [
   },
   {
     id: 2,
-    name: "Spanish Phrases",
+    name: "Countries Capitals",
     cardCount: { learned: 50, totalImported: 200 },
     cardsDue: { today: 10, thisWeek: 30, thisMonth: 60 },
+  },
+  {
+    id: 3,
+    name: "Calculus Formulas",
+    cardCount: { learned: 60, totalImported: 200 },
+    cardsDue: { today: 20, thisWeek: 30, thisMonth: 60 },
   },
 ];
 
