@@ -62,9 +62,9 @@ export const config = {
   ],
 };
 
-const isDashboardRoute = createRouteMatcher(["/dashboard(.*)"]);
+const isProtectedRoute = createRouteMatcher(["/dashboard(.*)", "/me(.*)"]);
 
 export default clerkMiddleware((auth, request) => {
-  if (isDashboardRoute(request)) auth().protect();
+  if (isProtectedRoute(request)) auth().protect();
   return i18nMiddleware(request);
 });
