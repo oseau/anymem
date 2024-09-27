@@ -130,7 +130,16 @@
   },
   "decks": {
     "title": "預製卡片組",
-    "cardCount": "卡片 {count} 張",
-    "progress": "{progress}% 完成"
+    "totalCount": "卡片 {count} 張",
+    "progress": "{progress}% 完成",
+    "myDecks": "我的卡片組",
+    "cardCount": "已學習 {learned} / {total} 張卡片",
+    "cardsDue": {
+      "today": "今日待複習",
+      "thisWeek": "本週待複習",
+      "thisMonth": "本月待複習"
+    },
+    "browseCards": "瀏覽卡片",
+    "revisitDeck": "複習卡組"
   }
 }

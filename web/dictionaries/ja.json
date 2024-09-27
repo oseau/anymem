@@ -130,7 +130,16 @@
   },
   "decks": {
     "title": "プリメイドカードセット",
-    "cardCount": "カード{count}枚",
-    "progress": "{progress}% 完了"
+    "totalCount": "カード{count}枚",
+    "progress": "{progress}% 完了",
+    "cardCount": "{learned} / {total} カード学習済み",
+    "myDecks": "マイデッキ",
+    "cardsDue": {
+      "today": "今日の復習",
+      "thisWeek": "今週の復習",
+      "thisMonth": "今月の復習"
+    },
+    "browseCards": "カードを閲覧",
+    "revisitDeck": "デッキを復習"
   }
 }

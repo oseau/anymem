@@ -130,7 +130,16 @@
   },
   "decks": {
     "title": "미리 만들어진 카드 세트",
-    "cardCount": "카드 {count}장",
-    "progress": "{progress}% 완료"
+    "totalCount": "카드 {count}장",
+    "progress": "{progress}% 완료",
+    "myDecks": "내 카드 세트",
+    "cardCount": "{learned} / {total} 카드 학습됨",
+    "cardsDue": {
+      "today": "오늘 복습 예정",
+      "thisWeek": "이번 주 복습 예정",
+      "thisMonth": "이번 달 복습 예정"
+    },
+    "browseCards": "카드 둘러보기",
+    "revisitDeck": "덱 복습하기"
   }
 }

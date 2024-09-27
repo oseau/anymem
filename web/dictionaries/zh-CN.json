@@ -130,7 +130,16 @@
   },
   "decks": {
     "title": "预制卡片组",
-    "cardCount": "卡片 {count} 张",
-    "progress": "{progress}% 完成"
+    "totalCount": "卡片 {count} 张",
+    "progress": "{progress}% 完成",
+    "myDecks": "我的卡片组",
+    "cardCount": "已学习 {learned} / {total} 张卡片",
+    "cardsDue": {
+      "today": "今天待复习",
+      "thisWeek": "本周待复习",
+      "thisMonth": "本月待复习"
+    },
+    "browseCards": "浏览卡片",
+    "revisitDeck": "复习卡组"
   }
 }

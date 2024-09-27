@@ -130,7 +130,16 @@
   },
   "decks": {
     "title": "Pre-made Card Sets",
-    "cardCount": "{count} cards",
-    "progress": "{progress}% complete"
+    "totalCount": "{count} cards",
+    "progress": "{progress}% complete",
+    "myDecks": "My Decks",
+    "cardCount": "{learned} / {total} cards learned",
+    "cardsDue": {
+      "today": "Due today",
+      "thisWeek": "Due this week",
+      "thisMonth": "Due this month"
+    },
+    "browseCards": "Browse Cards",
+    "revisitDeck": "Revisit Deck"
   }
 }

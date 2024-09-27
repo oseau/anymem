@@ -36,7 +36,9 @@ export default async function DecksPage({
   const dict = await getDictionary(lang);
 
   return (
-    <div className="flex items-center justify-center min-h-[calc(100vh-200px)]">
+    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-200px)]">
+      <h1 className="text-3xl font-bold mb-8">{dict.decks.myDecks}</h1>
+    <div >
       <div className="w-full max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {decks.map((deck) => (
@@ -49,7 +51,7 @@ export default async function DecksPage({
               </CardHeader>
               <CardContent>
                 <p className="mb-2">
-                  {dict.decks.cardCount.replace(
+                  {dict.decks.totalCount.replace(
                     "{count}",
                     deck.cardCount.toString(),
                   )}
@@ -65,6 +67,7 @@ export default async function DecksPage({
             </Card>
           ))}
         </div>
+      </div>
       </div>
     </div>
   );

@@ -130,7 +130,16 @@
   },
   "decks": {
     "title": "Conjuntos de tarjetas prediseñados",
-    "cardCount": "{count} tarjetas",
-    "progress": "{progress}% completado"
+    "totalCount": "{count} tarjetas",
+    "progress": "{progress}% completado",
+    "myDecks": "Mis paquetes",
+    "cardCount": "{learned} / {total} tarjetas aprendidas",
+    "cardsDue": {
+      "today": "À réviser aujourd'hui",
+      "thisWeek": "À réviser cette semaine",
+      "thisMonth": "À réviser ce mois-ci"
+    },
+    "browseCards": "Parcourir les cartes",
+    "revisitDeck": "Réviser le paquet"
   }
 }

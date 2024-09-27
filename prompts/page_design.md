@@ -1,30 +1,30 @@
 # Feature detail page links from the home page
-  - [/spaced-repetition](../web/app/(with-headers)/spaced-repetition)
-  - [/multi-platform](../web/app/(with-headers)/multi-platform)
-  - [/customizable-decks](../web/app/(with-headers)/customizable-decks)
+  - [x] [/spaced-repetition](../web/app/(with-headers)/spaced-repetition)
+  - [x] [/multi-platform](../web/app/(with-headers)/multi-platform)
+  - [x] [/customizable-decks](../web/app/(with-headers)/customizable-decks)
 
 # [/dashboard](../web/app/(with-headers)/dashboard)
 
 We have a overview of user's learning progress, including:
-  - cards count
+  - [x] cards count
     - learned
-    - imported but not learned yet
-  - cards due count
+    - total imported
+  - [x] cards due count
     - today
     - this week
     - this month
-  - streak days
-  - for each user created deck, we show:
+  - [x] streak days
+  - [x] for each user created deck, we show:
     - deck name
     - card count
       - learned
-      - imported but not learned yet
+      - total imported
     - cards due count
       - today
       - this week
       - this month
-    - button to browse cards in the deck
-    - button to revisit the deck now
+    - button to browse cards in the deck(/me/deck/:deck_id)
+    - button to revisit the deck now(/review/deck/:deck_id)
 
 # /me/decks
 
@@ -47,9 +47,9 @@ User can only access their own decks. In this page, we show all the cards in the
 # /decks
 
 Under this route, we have a list of admin pre-made decks
-  - paginated, each page show 20 decks (implement in next version)
-  - searchable by deck's name (implement in next version)
-  - each deck has:
+  - [ ] paginated, each page show 20 decks (implement in next version)
+  - [ ] searchable by deck's name (implement in next version)
+  - [x] each deck has:
     - title
     - card count: number of cards in the deck
     - imported rate: number of cards that are already imported to user's deck / total number of cards in the deck
