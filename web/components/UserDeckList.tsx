@@ -16,6 +16,7 @@ export function UserDeckList({
 }: {
   params: { dict: Dictionary };
 }) {
+  // we fetch from client side, so auth protected is generated in middleware
   const { data: decks, error } = useSWR<Deck[]>("/api/decks", fetcher);
 
   if (error) return <div>{dict.common.error}</div>;
