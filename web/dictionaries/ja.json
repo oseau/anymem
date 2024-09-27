@@ -140,6 +140,9 @@
       "thisMonth": "今月の復習"
     },
     "browseCards": "カードを閲覧",
-    "revisitDeck": "デッキを復習"
+    "revisitDeck": "デッキを復習",
+    "createNewDeck": "新しいデッキを作成",
+    "editDeck": "デッキを編集",
+    "deleteDeck": "デッキを削除"
   }
 }

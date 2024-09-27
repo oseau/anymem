@@ -140,6 +140,9 @@
       "thisMonth": "이번 달 복습 예정"
     },
     "browseCards": "카드 둘러보기",
-    "revisitDeck": "덱 복습하기"
+    "revisitDeck": "덱 복습하기",
+    "createNewDeck": "새 덱 만들기",
+    "editDeck": "덱 편집",
+    "deleteDeck": "덱 삭제"
   }
 }

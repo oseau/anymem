@@ -140,6 +140,9 @@
       "thisMonth": "本月待複習"
     },
     "browseCards": "瀏覽卡片",
-    "revisitDeck": "複習卡組"
+    "revisitDeck": "複習卡組",
+    "createNewDeck": "創建新卡組",
+    "editDeck": "編輯卡組",
+    "deleteDeck": "刪除卡組"
   }
 }

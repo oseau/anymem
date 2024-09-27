@@ -140,6 +140,9 @@
       "thisMonth": "本月待复习"
     },
     "browseCards": "浏览卡片",
-    "revisitDeck": "复习卡组"
+    "revisitDeck": "复习卡组",
+    "createNewDeck": "创建新卡组",
+    "editDeck": "编辑卡组",
+    "deleteDeck": "删除卡组"
   }
 }

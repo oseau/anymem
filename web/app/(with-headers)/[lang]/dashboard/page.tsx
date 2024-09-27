@@ -5,24 +5,8 @@ import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-interface Deck {
-  id: number;
-  name: string;
-  cardCount: {
-    learned: number;
-    totalImported: number;
-  };
-  cardsDue: {
-    today: number;
-    thisWeek: number;
-    thisMonth: number;
-  };
-}
-
 // Mock data - replace with actual data fetching logic
 const mockUserData = {
-  totalCards: 500,
-  cardsLearned: 350,
   streakDays: 15,
   decks: [
     {
@@ -40,6 +24,15 @@ const mockUserData = {
     // Add more mock decks as needed
   ],
 };
+
+const totalCards = mockUserData.decks.reduce(
+  (sum, deck) => sum + deck.cardCount.totalImported,
+  0,
+);
+const totalLearned = mockUserData.decks.reduce(
+  (sum, deck) => sum + deck.cardCount.learned,
+  0,
+);
 
 export default async function DashboardPage({
   params: { lang },
@@ -59,14 +52,11 @@ export default async function DashboardPage({
           </CardHeader>
           <CardContent>
             <Progress
-              value={
-                (mockUserData.cardsLearned / mockUserData.totalCards) * 100
-              }
+              value={(totalLearned / totalCards) * 100}
               className="mb-2"
             />
             <p>
-              {mockUserData.cardsLearned} / {mockUserData.totalCards}{" "}
-              {dict.dashboard.cardsLearned}
+              {totalLearned} / {totalCards} {dict.dashboard.cardsLearned}
             </p>
           </CardContent>
         </Card>
@@ -118,8 +108,12 @@ export default async function DashboardPage({
             <CardTitle>{dict.dashboard.streak}</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-4xl font-bold">{mockUserData.streakDays}</p>
-            <p>{dict.dashboard.days}</p>
+            <p className="text-4xl font-bold">
+              {mockUserData.streakDays}
+              <span className="ml-2 text-xl font-normal">
+                {dict.dashboard.days}
+              </span>
+            </p>
           </CardContent>
         </Card>
       </div>

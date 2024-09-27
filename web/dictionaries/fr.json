@@ -140,6 +140,9 @@
       "thisMonth": "À réviser ce mois-ci"
     },
     "browseCards": "Parcourir les cartes",
-    "revisitDeck": "Réviser le paquet"
+    "revisitDeck": "Réviser le paquet",
+    "createNewDeck": "Créer un nouveau paquet",
+    "editDeck": "Modifier le paquet",
+    "deleteDeck": "Supprimer le paquet"
   }
 }

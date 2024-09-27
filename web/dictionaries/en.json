@@ -140,6 +140,9 @@
       "thisMonth": "Due this month"
     },
     "browseCards": "Browse Cards",
-    "revisitDeck": "Revisit Deck"
+    "revisitDeck": "Revisit Deck",
+    "createNewDeck": "Create New Deck",
+    "editDeck": "Edit Deck",
+    "deleteDeck": "Delete Deck"
   }
 }

@@ -140,6 +140,9 @@
       "thisMonth": "Pendientes este mes"
     },
     "browseCards": "Explorar tarjetas",
-    "revisitDeck": "Revisar mazo"
+    "revisitDeck": "Revisar mazo",
+    "createNewDeck": "Crear nuevo mazo",
+    "editDeck": "Editar mazo",
+    "deleteDeck": "Eliminar mazo"
   }
 }
