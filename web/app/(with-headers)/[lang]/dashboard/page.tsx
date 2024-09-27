@@ -59,7 +59,9 @@ export default async function DashboardPage({
           </CardHeader>
           <CardContent>
             <Progress
-              value={(mockUserData.cardsLearned / mockUserData.totalCards) * 100}
+              value={
+                (mockUserData.cardsLearned / mockUserData.totalCards) * 100
+              }
               className="mb-2"
             />
             <p>
@@ -76,18 +78,33 @@ export default async function DashboardPage({
           <CardContent>
             <div className="space-y-2 mb-4">
               <p>
-                <span className="font-semibold">{dict.decks.cardsDue.today}:</span>{" "}
+                <span className="font-semibold">
+                  {dict.decks.cardsDue.today}:
+                </span>{" "}
                 <span className="text-2xl font-bold">
-                  {mockUserData.decks.reduce((sum, deck) => sum + deck.cardsDue.today, 0)}
+                  {mockUserData.decks.reduce(
+                    (sum, deck) => sum + deck.cardsDue.today,
+                    0,
+                  )}
                 </span>
               </p>
               <p>
-                <span className="font-semibold">{dict.decks.cardsDue.thisWeek}:</span>{" "}
-                {mockUserData.decks.reduce((sum, deck) => sum + deck.cardsDue.thisWeek, 0)}
+                <span className="font-semibold">
+                  {dict.decks.cardsDue.thisWeek}:
+                </span>{" "}
+                {mockUserData.decks.reduce(
+                  (sum, deck) => sum + deck.cardsDue.thisWeek,
+                  0,
+                )}
               </p>
               <p>
-                <span className="font-semibold">{dict.decks.cardsDue.thisMonth}:</span>{" "}
-                {mockUserData.decks.reduce((sum, deck) => sum + deck.cardsDue.thisMonth, 0)}
+                <span className="font-semibold">
+                  {dict.decks.cardsDue.thisMonth}:
+                </span>{" "}
+                {mockUserData.decks.reduce(
+                  (sum, deck) => sum + deck.cardsDue.thisMonth,
+                  0,
+                )}
               </p>
             </div>
             <Button asChild className="w-full">
@@ -110,7 +127,10 @@ export default async function DashboardPage({
       <h2 className="text-2xl font-bold mt-12 mb-4">{dict.decks.myDecks}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {mockUserData.decks.map((deck) => (
-          <Card key={deck.id} className="shadow-md hover:shadow-lg transition-shadow duration-300">
+          <Card
+            key={deck.id}
+            className="shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
             <CardHeader>
               <CardTitle>{deck.name}</CardTitle>
             </CardHeader>
@@ -121,8 +141,10 @@ export default async function DashboardPage({
                   .replace("{total}", deck.cardCount.totalImported.toString())}
               </p>
               <p className="mb-4 text-sm">
-                {dict.decks.cardsDue.today}: {deck.cardsDue.today}<br />
-                {dict.decks.cardsDue.thisWeek}: {deck.cardsDue.thisWeek}<br />
+                {dict.decks.cardsDue.today}: {deck.cardsDue.today}
+                <br />
+                {dict.decks.cardsDue.thisWeek}: {deck.cardsDue.thisWeek}
+                <br />
                 {dict.decks.cardsDue.thisMonth}: {deck.cardsDue.thisMonth}
               </p>
               <div className="flex flex-col space-y-2">
