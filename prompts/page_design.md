@@ -40,7 +40,7 @@ We have a overview of user's learning progress, including:
 # /me/deck/:deck_id
 
 User can only access their own decks. In this page, we show all the cards in the deck:
-  - [ ] if the deck is empty, we show a message to user to import cards from /decks page
+  - [x] if the deck is empty, we show a message to user to import cards from /decks page
   - [ ] with pagination, each page show 20 cards
   - [ ] filterable by whether the card is already learned, or not
   - [ ] sortable by:
