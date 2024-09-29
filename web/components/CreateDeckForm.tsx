@@ -2,10 +2,8 @@
 
 import { PlusCircle } from "lucide-react";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { type Dictionary } from "@/get-dictionary";
 import {
@@ -16,6 +14,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { createDeck } from "@/app/actions/decks";
 
 export function CreateDeckForm({
   params: { dict },
@@ -23,31 +22,16 @@ export function CreateDeckForm({
   params: { dict: Dictionary };
 }) {
   const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [open, setOpen] = useState(false);
-  const router = useRouter();
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await fetch("/api/decks", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, description }),
-      });
-
-      if (response.ok) {
-        setOpen(false);
-        setName("");
-        setDescription("");
-        router.refresh();
-      } else {
-        console.error("Failed to create deck");
-      }
+      await createDeck(name); // revalidatePath called inside, so no need to refresh
+      setOpen(false);
+      setName("");
     } catch (error) {
       console.error("Error creating deck:", error);
     } finally {
@@ -79,15 +63,6 @@ export function CreateDeckForm({
               onChange={(e) => setName(e.target.value)}
               placeholder={dict.decks.deckNamePlaceholder}
               required
-            />
-          </div>
-          <div>
-            <Label htmlFor="description">{dict.decks.deckDescription}</Label>
-            <Textarea
-              id="description"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              placeholder={dict.decks.deckDescriptionPlaceholder}
             />
           </div>
           <Button type="submit" disabled={isLoading}>

@@ -1,26 +1,16 @@
-"use client";
-
-import useSWR from "swr";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Edit, Trash2 } from "lucide-react";
 import { type Dictionary } from "@/get-dictionary";
-import { type Deck } from "@/app/api/decks/route";
-import { Spinner } from "@/components/ui/spinner";
+import { getDecks } from "@/app/actions/decks";
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
-
-export function UserDeckList({
+export async function UserDeckList({
   params: { dict },
 }: {
   params: { dict: Dictionary };
 }) {
-  // we fetch from client side, so auth protected is generated in middleware
-  const { data: decks, error } = useSWR<Deck[]>("/api/decks", fetcher);
-
-  if (error) return <div>{dict.common.error}</div>;
-  if (!decks) return <Spinner />;
+  const decks = await getDecks();
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

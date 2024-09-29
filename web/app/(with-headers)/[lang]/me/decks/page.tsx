@@ -1,7 +1,9 @@
 import { Locale } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionary";
-import { UserDeckList } from "@/components/UserDeckList";
 import { CreateDeckForm } from "@/components/CreateDeckForm";
+import { Suspense } from "react";
+import { Spinner } from "@/components/ui/spinner";
+import { UserDeckList } from "@/components/UserDeckList";
 
 export default async function UserDecksPage({
   params: { lang },
@@ -16,7 +18,9 @@ export default async function UserDecksPage({
         <h1 className="text-3xl font-bold">{dict.decks.myDecks}</h1>
         <CreateDeckForm params={{ dict }} />
       </div>
-      <UserDeckList params={{ dict }} />
+      <Suspense fallback={<Spinner />}>
+        <UserDeckList params={{ dict }} />
+      </Suspense>
     </div>
   );
 }
