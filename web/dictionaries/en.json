@@ -150,10 +150,15 @@
     "deckDescriptionPlaceholder": "Enter deck description (optional)",
     "deckDescriptionHelp": "Provide a brief description of your deck",
     "editDeck": "Edit",
-    "deleteDeck": "Delete"
+    "editDeckDescription": "Edit the name of your deck",
+    "saveDeckChanges": "Save Changes",
+    "deleteDeck": "Delete",
+    "deleteDeckDescription": "Are you sure you want to delete this deck? This action cannot be undone.",
+    "confirmDelete": "Yes, delete deck"
   },
   "common": {
     "loading": "Loading...",
-    "error": "Error"
+    "error": "Error",
+    "cancel": "Cancel"
   }
 }

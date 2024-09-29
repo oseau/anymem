@@ -150,10 +150,15 @@
     "deckDescriptionPlaceholder": "Entrez la description du paquet (optionnel)",
     "deckDescriptionHelp": "Fournissez une brève description de votre paquet",
     "editDeck": "Modifier",
-    "deleteDeck": "Supprimer"
+    "editDeckDescription": "Modifier le nom de votre paquet",
+    "saveDeckChanges": "Enregistrer les modifications",
+    "deleteDeck": "Supprimer",
+    "deleteDeckDescription": "Êtes-vous sûr de vouloir supprimer ce paquet ? Cette action ne peut pas être annulée.",
+    "confirmDelete": "Oui, supprimer le paquet"
   },
   "common": {
     "loading": "Chargement...",
-    "error": "Erreur"
+    "error": "Erreur",
+    "cancel": "Annuler"
   }
 }

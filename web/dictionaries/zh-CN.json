@@ -150,10 +150,15 @@
     "deckDescriptionPlaceholder": "输入卡组描述（可选）",
     "deckDescriptionHelp": "提供一个简短的卡组描述",
     "editDeck": "编辑",
-    "deleteDeck": "删除"
+    "editDeckDescription": "编辑卡组名称",
+    "saveDeckChanges": "保存更改",
+    "deleteDeck": "删除",
+    "deleteDeckDescription": "你确定要删除这个卡组吗？此操作无法撤销。",
+    "confirmDelete": "删除卡组"
   },
   "common": {
     "loading": "加载中...",
-    "error": "错误"
+    "error": "错误",
+    "cancel": "取消"
   }
 }

@@ -150,10 +150,15 @@
     "deckDescriptionPlaceholder": "덱 설명 입력 (선택사항)",
     "deckDescriptionHelp": "덱의 간단한 설명을 제공해주세요",
     "editDeck": "편집",
-    "deleteDeck": "삭제"
+    "editDeckDescription": "덱 이름 편집하기",
+    "saveDeckChanges": "변경 사항 저장",
+    "deleteDeck": "삭제",
+    "deleteDeckDescription": "이 덱을 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.",
+    "confirmDelete": "네, 덱을 삭제합니다"
   },
   "common": {
     "loading": "로딩중...",
-    "error": "에러"
+    "error": "에러",
+    "cancel": "취소"
   }
 }

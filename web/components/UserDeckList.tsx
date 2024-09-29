@@ -1,9 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Edit, Trash2 } from "lucide-react";
 import { type Dictionary } from "@/get-dictionary";
 import { getDecks } from "@/app/actions/decks";
+import { EditDeckForm } from "@/components/EditDeckForm";
+import { DeleteDeckDialog } from "@/components/DeleteDeckDialog";
 
 export async function UserDeckList({
   params: { dict },
@@ -47,14 +48,8 @@ export async function UserDeckList({
                 </Link>
               </Button>
               <div className="flex justify-between mt-2">
-                <Button variant="ghost" size="sm" className="flex-1 mr-1">
-                  <Edit className="mr-2 h-4 w-4" />
-                  {dict.decks.editDeck}
-                </Button>
-                <Button variant="ghost" size="sm" className="flex-1 ml-1">
-                  <Trash2 className="mr-2 h-4 w-4" />
-                  {dict.decks.deleteDeck}
-                </Button>
+                <EditDeckForm deck={deck} dict={dict} />
+                <DeleteDeckDialog deck={deck} dict={dict} />
               </div>
             </div>
           </CardContent>

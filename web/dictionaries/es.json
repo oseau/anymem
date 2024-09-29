@@ -150,10 +150,15 @@
     "deckDescriptionPlaceholder": "Ingresa la descripción del mazo (opcional)",
     "deckDescriptionHelp": "Proporciona una breve descripción de tu mazo",
     "editDeck": "Editar",
-    "deleteDeck": "Eliminar"
+    "editDeckDescription": "Editar el nombre de tu mazo",
+    "saveDeckChanges": "Guardar cambios",
+    "deleteDeck": "Eliminar",
+    "deleteDeckDescription": "¿Estás seguro de que quieres eliminar este mazo? Esta acción no se puede deshacer.",
+    "confirmDelete": "Sí, eliminar mazo"
   },
   "common": {
     "loading": "Cargando...",
-    "error": "Error"
+    "error": "Error",
+    "cancel": "Cancelar"
   }
 }

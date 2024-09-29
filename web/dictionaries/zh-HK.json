@@ -150,10 +150,15 @@
     "deckDescriptionPlaceholder": "輸入卡組的描述（可選）",
     "deckDescriptionHelp": "提供一個簡短的卡組描述",
     "editDeck": "編輯",
-    "deleteDeck": "刪除"
+    "editDeckDescription": "編輯卡組名稱",
+    "saveDeckChanges": "儲存更改",
+    "deleteDeck": "刪除",
+    "deleteDeckDescription": "您確定要刪除這個卡組嗎？此操作無法撤銷。",
+    "confirmDelete": "刪除卡組"
   },
   "common": {
     "loading": "加載中...",
-    "error": "錯誤"
+    "error": "錯誤",
+    "cancel": "取消"
   }
 }
