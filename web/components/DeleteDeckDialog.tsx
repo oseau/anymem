@@ -19,7 +19,13 @@ interface Deck {
   name: string;
 }
 
-export function DeleteDeckDialog({ deck, dict }: { deck: Deck; dict: Dictionary }) {
+export function DeleteDeckDialog({
+  deck,
+  dict,
+}: {
+  deck: Deck;
+  dict: Dictionary;
+}) {
   const [isLoading, setIsLoading] = useState(false);
   const [open, setOpen] = useState(false);
 

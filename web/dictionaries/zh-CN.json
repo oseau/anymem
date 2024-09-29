@@ -160,5 +160,17 @@
     "loading": "加载中...",
     "error": "错误",
     "cancel": "取消"
+  },
+  "deckPage": {
+    "title": "卡组详情",
+    "actions": "操作",
+    "openMenu": "打开菜单",
+    "edit": "编辑",
+    "delete": "删除",
+    "review": "复习",
+    "frontContent": "正面内容",
+    "backContent": "背面内容",
+    "emptyDeckMessage": "您的卡组是空的。导入卡片或创建新的卡片。",
+    "importCardsButton": "导入卡片"
   }
 }

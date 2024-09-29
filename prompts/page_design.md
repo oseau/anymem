@@ -23,23 +23,30 @@ We have a overview of user's learning progress, including:
       - today
       - this week
       - this month
-    - button to browse cards in the deck(/me/deck/:deck_id)
-    - button to revisit the deck now(/review/deck/:deck_id)
+    - [x] button to browse cards in the deck(/me/deck/:deck_id)
+    - [x] button to revisit the deck now(/review/deck/:deck_id)
 
 # /me/decks
 
-List of all the decks that user created, show info like in dashboard page, but with a button to edit the deck's name, and a button to delete the deck.
-At the top of the page, we have a button to create a new deck.
+  - [x] List of all the decks that user created
+  - [x] for each deck
+    - [x] show deck's name and card count like in dashboard page
+    - [x] Link to the deck's detail page at /me/deck/:deck_id
+    - [x] Link to the deck's review page at /review/deck/:deck_id
+    - [x] button to edit the deck's name
+    - [x] button to delete the deck
+  - [x] At the top of the page, we have a button to create a new deck
 
 # /me/deck/:deck_id
 
 User can only access their own decks. In this page, we show all the cards in the deck:
-  - with pagination, each page show 20 cards
-  - filterable by whether the card is already learned, or not
-  - sortable by:
+  - [ ] if the deck is empty, we show a message to user to import cards from /decks page
+  - [ ] with pagination, each page show 20 cards
+  - [ ] filterable by whether the card is already learned, or not
+  - [ ] sortable by:
     - card's due date
     - card's stability score
-  - for each card, we show the following information:
+  - [ ]for each card, we show the following information:
     - front content
     - back content
     - card stats: such as revisited count, correct rate, stability score(in Open Spaced Repetition algorithm), next due date, etc

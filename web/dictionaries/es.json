@@ -160,5 +160,17 @@
     "loading": "Cargando...",
     "error": "Error",
     "cancel": "Cancelar"
+  },
+  "deckPage": {
+    "title": "Detalles del mazo",
+    "actions": "Acciones",
+    "openMenu": "Abrir menú",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "review": "Repasar",
+    "frontContent": "Contenido frontal",
+    "backContent": "Contenido posterior",
+    "emptyDeckMessage": "Tu mazo está vacío. Importa tarjetas o crea nuevas tarjetas.",
+    "importCardsButton": "Importar tarjetas"
   }
 }

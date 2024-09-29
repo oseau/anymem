@@ -160,5 +160,17 @@
     "loading": "Loading...",
     "error": "Error",
     "cancel": "Cancel"
+  },
+  "deckPage": {
+    "title": "Deck Details",
+    "actions": "Actions",
+    "openMenu": "Open menu",
+    "edit": "Edit",
+    "delete": "Delete",
+    "review": "Review",
+    "frontContent": "Front Content",
+    "backContent": "Back Content",
+    "emptyDeckMessage": "Your deck is empty. Import cards or create new ones.",
+    "importCardsButton": "Import Cards"
   }
 }

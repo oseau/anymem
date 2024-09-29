@@ -160,5 +160,17 @@
     "loading": "読み込み中...",
     "error": "エラー",
     "cancel": "キャンセル"
+  },
+  "deckPage": {
+    "title": "デッキの詳細",
+    "actions": "アクション",
+    "openMenu": "メニューを開く",
+    "edit": "編集",
+    "delete": "削除",
+    "review": "復習",
+    "frontContent": "表面の内容",
+    "backContent": "裏面の内容",
+    "emptyDeckMessage": "デッキが空です。カードをインポートするか、新しいカードを作成してください。",
+    "importCardsButton": "カードをインポート"
   }
 }

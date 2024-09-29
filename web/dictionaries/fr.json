@@ -160,5 +160,17 @@
     "loading": "Chargement...",
     "error": "Erreur",
     "cancel": "Annuler"
+  },
+  "deckPage": {
+    "title": "Détails du paquet",
+    "actions": "Actions",
+    "openMenu": "Ouvrir le menu",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "review": "Réviser",
+    "frontContent": "Contenu recto",
+    "backContent": "Contenu verso",
+    "emptyDeckMessage": "Votre paquet est vide. Importer des cartes ou créer de nouvelles cartes.",
+    "importCardsButton": "Importer des cartes"
   }
 }

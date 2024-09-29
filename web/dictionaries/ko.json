@@ -160,5 +160,17 @@
     "loading": "로딩중...",
     "error": "에러",
     "cancel": "취소"
+  },
+  "deckPage": {
+    "title": "덱 상세",
+    "actions": "작업",
+    "openMenu": "메뉴 열기",
+    "edit": "편집",
+    "delete": "삭제",
+    "review": "복습",
+    "frontContent": "앞면 내용",
+    "backContent": "뒷면 내용",
+    "emptyDeckMessage": "덱이 비어있습니다. 카드를 가져오거나 새로운 카드를 만드세요.",
+    "importCardsButton": "카드 가져오기"
   }
 }
