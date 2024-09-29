@@ -55,7 +55,7 @@ export function CreateDeckForm({
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={onSubmit} className="space-y-4">
-          <div>
+          <div className="space-y-2">
             <Label htmlFor="name">{dict.decks.deckName}</Label>
             <Input
               id="name"
