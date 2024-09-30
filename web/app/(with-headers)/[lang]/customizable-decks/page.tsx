@@ -1,7 +1,11 @@
 import { getDictionary } from "@/get-dictionary";
-import { Locale } from "@/i18n-config";
+import { i18n, type Locale } from "@/i18n-config";
 import { LayersIcon, CheckCircledIcon } from "@radix-ui/react-icons";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }));
+}
 
 export default async function CustomizableDecksPage({
   params: { lang },

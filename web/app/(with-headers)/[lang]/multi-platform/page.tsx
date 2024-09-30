@@ -1,18 +1,9 @@
 import { getDictionary } from "@/get-dictionary";
-import { Locale } from "@/i18n-config";
-import { Metadata } from "next";
+import { i18n, type Locale } from "@/i18n-config";
 import { MobileIcon, DesktopIcon, Pencil2Icon } from "@radix-ui/react-icons";
 
-export async function generateMetadata({
-  params: { lang },
-}: {
-  params: { lang: Locale };
-}): Promise<Metadata> {
-  const dictionary = await getDictionary(lang);
-  return {
-    title: dictionary.features.multiPlatform.title,
-    description: dictionary.features.multiPlatform.description,
-  };
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
 export default async function MultiPlatformPage({

@@ -1,9 +1,13 @@
-import { Locale } from "@/i18n-config";
+import { i18n, type Locale } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionary";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }));
+}
 
 // Mock data - replace with actual data fetching logic
 const mockUserData = {

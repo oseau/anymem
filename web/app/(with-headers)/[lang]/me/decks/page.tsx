@@ -1,9 +1,13 @@
-import { Locale } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionary";
 import { CreateDeckForm } from "@/components/CreateDeckForm";
 import { Suspense } from "react";
 import { Spinner } from "@/components/ui/spinner";
 import { UserDeckList } from "@/components/UserDeckList";
+import { i18n, type Locale } from "@/i18n-config";
+
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }));
+}
 
 export default async function UserDecksPage({
   params: { lang },
