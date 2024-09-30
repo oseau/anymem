@@ -5,8 +5,8 @@ web: ## Start web(frontend + backend with Next.js) in development mode
 shell-web: ## Login to web container
 	@docker compose exec web bash
 
-fix: ## lint & format & build next.js app
-	@docker compose exec web bash -c "npm run fix && rsync -azvhP --delete --exclude='.next' /usr/src/anymem/web/ /tmp/anymem-web-fix && cd /tmp/anymem-web-fix && npm run build"
+build: ## lint & format & build next.js app
+	@docker compose exec web bash -c "npm exec -- prettier --write --list-different . && npm exec -- oxlint --fix && rsync -azvhP --delete --info=progress2,name0,flist0,stats --stats --exclude='.next' /usr/src/anymem/web/ /tmp/anymem-web-fix && cd /tmp/anymem-web-fix && npm run build"
 
 update: ## build image and rsync to server then update
 	@docker buildx build --platform linux/amd64 --file web/prod.Dockerfile --tag anymem-web-prod web
