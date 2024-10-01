@@ -1,5 +1,5 @@
 import Page from "../[lang]/test/page";
-import { i18n, type Locale } from "@/i18n-config";
+import { type Locale, i18n } from "@/i18n-config";
 import { headers } from "next/headers";
 
 export default async function PageDefault() {

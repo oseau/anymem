@@ -1,6 +1,6 @@
 import { getDictionary } from "@/get-dictionary";
-import { i18n, type Locale } from "@/i18n-config";
-import { LayersIcon, CheckCircledIcon } from "@radix-ui/react-icons";
+import { type Locale, i18n } from "@/i18n-config";
+import { CheckCircledIcon, LayersIcon } from "@radix-ui/react-icons";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export async function generateStaticParams() {

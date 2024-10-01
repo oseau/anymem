@@ -1,7 +1,7 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import DotPattern from "@/components/magicui/dot-pattern";
-import { i18n, type Locale } from "@/i18n-config";
+import { type Locale, i18n } from "@/i18n-config";
 import "@/app/globals.css";
 import { headers } from "next/headers";
 import { TailwindIndicator } from "@/components/tailwind-indicator";

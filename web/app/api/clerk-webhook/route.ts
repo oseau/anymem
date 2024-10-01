@@ -1,7 +1,7 @@
 import { createSupabaseClient } from "@/lib/supabase";
 import { NextResponse } from "next/server";
 import { Webhook } from "svix";
-import { WebhookEvent, UserJSON } from "@clerk/nextjs/server";
+import { UserJSON, WebhookEvent } from "@clerk/nextjs/server";
 
 export async function POST(req: Request) {
   const WEBHOOK_SECRET = process.env.CLERK_WEBHOOK_SECRET;

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { getDictionary } from "@/get-dictionary";
 import DotPattern from "@/components/magicui/dot-pattern";
 import { GitHubLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
-import { i18n, type Locale } from "@/i18n-config";
+import { type Locale, i18n } from "@/i18n-config";
 import "@/app/globals.css";
 import { headers } from "next/headers";
 import { TailwindIndicator } from "@/components/tailwind-indicator";

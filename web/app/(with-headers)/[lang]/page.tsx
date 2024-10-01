@@ -1,7 +1,7 @@
-import { i18n, type Locale } from "@/i18n-config";
+import { type Locale, i18n } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionary";
-import { BentoGrid, BentoCard } from "@/components/magicui/bento-grid";
-import { UpdateIcon, MobileIcon, LayersIcon } from "@radix-ui/react-icons";
+import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
+import { LayersIcon, MobileIcon, UpdateIcon } from "@radix-ui/react-icons";
 import { SignInButton, SignUpButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 import { headers } from "next/headers";

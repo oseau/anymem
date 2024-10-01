@@ -1,5 +1,5 @@
 import { headers } from "next/headers";
-import { i18n, type Locale } from "@/i18n-config";
+import { type Locale, i18n } from "@/i18n-config";
 import CustomizableDecksPage from "../[lang]/customizable-decks/page";
 
 export default async function RootCustomizableDecksPage() {

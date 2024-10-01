@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ClerkProvider, UserButton } from "@clerk/nextjs";
-import { i18n, type Locale } from "@/i18n-config";
+import { type Locale, i18n } from "@/i18n-config";
 import { GitHubLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
 import { getDictionary } from "@/get-dictionary";
 import Link from "next/link";

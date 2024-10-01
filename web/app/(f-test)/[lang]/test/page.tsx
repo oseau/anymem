@@ -1,4 +1,4 @@
-import { i18n, type Locale } from "@/i18n-config";
+import { type Locale, i18n } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionary";
 
 export async function generateStaticParams() {

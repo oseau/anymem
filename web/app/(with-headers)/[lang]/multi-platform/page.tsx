@@ -1,6 +1,6 @@
 import { getDictionary } from "@/get-dictionary";
-import { i18n, type Locale } from "@/i18n-config";
-import { MobileIcon, DesktopIcon, Pencil2Icon } from "@radix-ui/react-icons";
+import { type Locale, i18n } from "@/i18n-config";
+import { DesktopIcon, MobileIcon, Pencil2Icon } from "@radix-ui/react-icons";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));

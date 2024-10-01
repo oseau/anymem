@@ -1,6 +1,6 @@
 import { Flashcard } from "@/components/Flashcard";
 import { getDictionary } from "@/get-dictionary";
-import { i18n, type Locale } from "@/i18n-config";
+import { type Locale, i18n } from "@/i18n-config";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
