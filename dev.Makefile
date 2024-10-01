@@ -11,4 +11,4 @@ build: ## lint & format & build next.js app
 update: ## build image and rsync to server then update
 	@docker buildx build --platform linux/amd64 --file web/prod.Dockerfile --tag anymem-web-prod web
 	@docker save anymem-web-prod:latest > /tmp/anymem-web-prod.tar
-	@source .env && rsync -azvhP --exclude='.env*' --exclude='.next' --exclude='node_modules' $(shell pwd) $$DEST/repos && rsync -avP /tmp/anymem-web-prod.tar $$DEST/repos
+	@source .env && rsync -azvhP --info=progress2,name0,flist0,stats --stats --exclude='.env*' --exclude='.next' --exclude='node_modules' $(shell pwd) $$DEST/repos && rsync -avP /tmp/anymem-web-prod.tar $$DEST/repos
