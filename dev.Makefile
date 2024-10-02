@@ -1,6 +1,6 @@
 web: ## Start web(frontend + backend with Next.js) in development mode
 	@echo "Starting web in development mode using Docker..."
-	@docker compose up --remove-orphans --build web
+	@docker compose up --remove-orphans --no-recreate web
 
 shell-web: ## Login to web container
 	@docker compose exec web bash

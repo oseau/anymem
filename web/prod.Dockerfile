@@ -1,4 +1,6 @@
-FROM node:20-alpine AS base
+# specify image digest to avoid loading metadata from docker.io
+# see at https://news.ycombinator.com/item?id=40744290
+FROM node:20-alpine@sha256:2d07db07a2df6830718ae2a47db6fedce6745f5bcd174c398f2acdda90a11c03 AS base
 
 # 1. Install dependencies only when needed
 FROM base AS deps
