@@ -62,7 +62,11 @@ export const config = {
   ],
 };
 
-const isProtectedRoute = createRouteMatcher(["/dashboard(.*)", "/me(.*)"]);
+const isProtectedRoute = createRouteMatcher([
+  "/dashboard(.*)",
+  "/decks(.*)",
+  "/deck/(.*)",
+]);
 
 export default clerkMiddleware((auth, request) => {
   if (isProtectedRoute(request)) auth().protect();

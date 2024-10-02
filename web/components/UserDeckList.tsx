@@ -38,9 +38,7 @@ export async function UserDeckList({
             </p>
             <div className="flex flex-col space-y-2">
               <Button asChild variant="outline">
-                <Link href={`/me/deck/${deck.id}`}>
-                  {dict.decks.browseCards}
-                </Link>
+                <Link href={`/deck/${deck.id}`}>{dict.decks.browseCards}</Link>
               </Button>
               <Button asChild>
                 <Link href={`/review/deck/${deck.id}`}>

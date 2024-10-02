@@ -23,21 +23,21 @@ We have a overview of user's learning progress, including:
       - today
       - this week
       - this month
-    - [x] button to browse cards in the deck(/me/deck/:deck_id)
+    - [x] button to browse cards in the deck(/deck/:deck_id)
     - [x] button to revisit the deck now(/review/deck/:deck_id)
 
-# /me/decks
+# /decks
 
   - [x] List of all the decks that user created
   - [x] for each deck
     - [x] show deck's name and card count like in dashboard page
-    - [x] Link to the deck's detail page at /me/deck/:deck_id
+    - [x] Link to the deck's detail page at /deck/:deck_id
     - [x] Link to the deck's review page at /review/deck/:deck_id
     - [x] button to edit the deck's name
     - [x] button to delete the deck
   - [x] At the top of the page, we have a button to create a new deck
 
-# /me/deck/:deck_id
+# /deck/:deck_id
 
 User can only access their own decks. In this page, we show all the cards in the deck:
   - [x] if the deck is empty, we show a message to user to import cards from /decks page
@@ -51,7 +51,7 @@ User can only access their own decks. In this page, we show all the cards in the
     - back content
     - card stats: such as revisited count, correct rate, stability score(in Open Spaced Repetition algorithm), next due date, etc
 
-# /decks
+# /shared-decks
 
 Under this route, we have a list of admin pre-made decks
   - [ ] paginated, each page show 20 decks (implement in next version)
@@ -62,7 +62,7 @@ Under this route, we have a list of admin pre-made decks
     - imported rate: number of cards that are already imported to user's deck / total number of cards in the deck
     - the deck is clickable, and user can click into the deck to see the detail page at /deck/:id
 
-# /deck/:id
+# /shared-deck/:id
 
 We only show decks that are pre-made by admin, if the deck is not created by admin, we show a 404 page, as user should not have access to other user's decks.
 Under this route, we show the cards in the admin pre-made deck.The list of cards is:

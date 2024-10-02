@@ -52,7 +52,7 @@ export async function createDeck(name: string) {
     console.log("New deck created:", { name });
     await new Promise((resolve) => setTimeout(resolve, 1000));
     mockUserDecks.push(newDeck);
-    revalidatePath("/me/decks");
+    revalidatePath("/decks");
     return { error: null };
   } catch (error) {
     console.error("Error creating deck:", error);
@@ -72,7 +72,7 @@ export async function updateDeck(id: string, name: string) {
   if (deck) {
     deck.name = name;
   }
-  revalidatePath("/me/decks");
+  revalidatePath("/decks");
   return { error: null };
 }
 
@@ -82,7 +82,7 @@ export async function deleteDeck(id: string) {
     if (index !== -1) {
       mockUserDecks.splice(index, 1);
     }
-    revalidatePath("/me/decks");
+    revalidatePath("/decks");
     return { error: null };
   } catch (error) {
     console.error("Error deleting deck:", error);

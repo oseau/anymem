@@ -1,9 +1,9 @@
 import { headers } from "next/headers";
 import { getDictionary } from "@/get-dictionary";
 import { type Locale, i18n } from "@/i18n-config";
-import UserDeckPage from "@/app/(with-headers)/[lang]/me/deck/[id]/page";
+import UserDeckPage from "@/app/(with-headers)/[lang]/deck/[id]/page";
 
-export default async function RootMyDeckPage({
+export default async function RootUserDeckPage({
   params,
 }: {
   params: { id: string };

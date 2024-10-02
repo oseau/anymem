@@ -153,7 +153,7 @@ export default async function DashboardPage({
               </p>
               <div className="flex flex-col space-y-2">
                 <Button asChild variant="outline">
-                  <Link href={`/me/deck/${deck.id}`}>
+                  <Link href={`/deck/${deck.id}`}>
                     {dict.decks.browseCards}
                   </Link>
                 </Button>
