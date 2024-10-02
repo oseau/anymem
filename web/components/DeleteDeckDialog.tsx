@@ -16,7 +16,7 @@ import { deleteDeck } from "@/app/actions/decks";
 
 interface Deck {
   id: string;
-  name: string;
+  title: string;
 }
 
 export function DeleteDeckDialog({
@@ -51,7 +51,12 @@ export function DeleteDeckDialog({
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>{dict.decks.deleteDeck}</DialogTitle>
+          <DialogTitle>
+            {dict.decks.deleteDeck}
+            <span className="mx-2 font-bold line-through">
+              「{deck.title}」
+            </span>
+          </DialogTitle>
           <DialogDescription>
             {dict.decks.deleteDeckDescription}
           </DialogDescription>

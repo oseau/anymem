@@ -21,7 +21,7 @@ export async function UserDeckList({
           className="shadow-md hover:shadow-lg transition-shadow duration-300"
         >
           <CardHeader>
-            <CardTitle>{deck.name}</CardTitle>
+            <CardTitle>{deck.title}</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="mb-2">

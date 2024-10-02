@@ -25,14 +25,14 @@ export async function GET() {
       // User not found, create a new user in Supabase
       const user = await currentUser();
       if (!user) {
-        return NextResponse.json(
-          { error: "User not found" },
-          { status: 404 },
-        );
+        return NextResponse.json({ error: "User not found" }, { status: 404 });
       }
       const { data: newUser, error: createError } = await supabase
         .from("users")
-        .insert({ clerk_user_id: clerkID, email: user?.primaryEmailAddress?.emailAddress })
+        .insert({
+          clerk_user_id: clerkID,
+          email: user?.primaryEmailAddress?.emailAddress,
+        })
         .select("clerk_user_id, email")
         .single();
       if (createError) {

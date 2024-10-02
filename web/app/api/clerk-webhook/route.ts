@@ -55,7 +55,8 @@ export async function POST(req: Request) {
 
   switch (eventType) {
     case "user.created":
-      const { id, email_addresses, primary_email_address_id } = evt.data as UserJSON;
+      const { id, email_addresses, primary_email_address_id } =
+        evt.data as UserJSON;
       const primaryEmailAddress = email_addresses.find(
         (email) => email.id === primary_email_address_id,
       );

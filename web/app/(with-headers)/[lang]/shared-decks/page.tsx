@@ -1,36 +1,11 @@
 import { type Locale, i18n } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionary";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
+import { getSharedDecks } from "@/app/actions/decks";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
-
-interface Deck {
-  id: number;
-  title: string;
-  cardCount: number;
-  progress: number;
-}
-
-const decks: Deck[] = [
-  { id: 1, title: "Essential English", cardCount: 5000, progress: 20 },
-  {
-    id: 2,
-    title: "Essential English (Reverse)",
-    cardCount: 5000,
-    progress: 20,
-  },
-  { id: 3, title: "Countries Capitals", cardCount: 195, progress: 50 },
-  {
-    id: 4,
-    title: "Countries Capitals (Reverse)",
-    cardCount: 195,
-    progress: 50,
-  },
-  { id: 5, title: "Calculus Formulas", cardCount: 50, progress: 75 },
-];
 
 export default async function DecksPage({
   params: { lang },
@@ -38,6 +13,7 @@ export default async function DecksPage({
   params: { lang: Locale };
 }) {
   const dict = await getDictionary(lang);
+  const decks = await getSharedDecks();
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-200px)]">
@@ -58,13 +34,6 @@ export default async function DecksPage({
                     {dict.decks.totalCount.replace(
                       "{count}",
                       deck.cardCount.toString(),
-                    )}
-                  </p>
-                  <Progress value={deck.progress} className="w-full" />
-                  <p className="mt-2 text-sm text-gray-600">
-                    {dict.decks.progress.replace(
-                      "{progress}",
-                      deck.progress.toString(),
                     )}
                   </p>
                 </CardContent>

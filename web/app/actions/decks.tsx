@@ -1,6 +1,8 @@
 "use server";
 
+import { getClerkUserID } from "@/lib/auth";
 import { revalidatePath } from "next/cache";
+import { createSupabaseClient } from "@/lib/supabase";
 
 const mockUserDecks = [
   {
@@ -40,18 +42,18 @@ const mockUserDecks = [
 
 export type Card = (typeof mockUserDecks)[number]["cards"][number];
 
-export async function createDeck(name: string) {
+export async function createDeck(title: string) {
+  const supabase = createSupabaseClient();
   try {
-    const newDeck = {
-      id: (mockUserDecks.length + 1).toString(),
-      name,
-      cardCount: { learned: 0, totalImported: 0 },
-      cardsDue: { today: 0, thisWeek: 0, thisMonth: 0 },
-      cards: [],
-    };
-    console.log("New deck created:", { name });
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    mockUserDecks.push(newDeck);
+    const clerkUserID = await getClerkUserID();
+    const { error } = await supabase.from("decks").insert({
+      title,
+      clerk_user_id: clerkUserID,
+    });
+    if (error) {
+      console.error("Error creating deck:", error);
+      return { error: "Failed to create deck" };
+    }
     revalidatePath("/decks");
     return { error: null };
   } catch (error) {
@@ -61,33 +63,62 @@ export async function createDeck(name: string) {
 }
 
 export async function getDecks() {
-  // Simulate a delay to mimic a real API call
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  return mockUserDecks;
+  const supabase = createSupabaseClient();
+  const clerkUserID = await getClerkUserID();
+  const { data: decksWithCounts, error } = await supabase
+    .from("decks")
+    .select(
+      `
+    id, 
+    title,
+    cards:cards(count)
+  `,
+    )
+    .eq("clerk_user_id", clerkUserID)
+    .order("created_at", { ascending: false });
+  if (error) {
+    console.error("Error fetching decks:", error);
+    return [];
+  }
+  return decksWithCounts.map((deck) => ({
+    id: deck.id,
+    title: deck.title,
+    cardCount: { learned: 0, totalImported: deck.cards[0].count },
+    cardsDue: { today: 0, thisWeek: 0, thisMonth: 0 },
+    cards: [],
+  }));
 }
 
-export async function updateDeck(id: string, name: string) {
-  // use the mockUserDecks to update the deck name
-  const deck = mockUserDecks.find((deck) => deck.id === id);
-  if (deck) {
-    deck.name = name;
+export async function updateDeck(id: string, title: string) {
+  const supabase = createSupabaseClient();
+  const clerkUserID = await getClerkUserID();
+  const { error } = await supabase
+    .from("decks")
+    .update({ title })
+    .eq("id", id)
+    .eq("clerk_user_id", clerkUserID);
+  if (error) {
+    console.error("Error updating deck:", error);
+    return { error: "Failed to update deck" };
   }
   revalidatePath("/decks");
   return { error: null };
 }
 
 export async function deleteDeck(id: string) {
-  try {
-    const index = mockUserDecks.findIndex((deck) => deck.id === id);
-    if (index !== -1) {
-      mockUserDecks.splice(index, 1);
-    }
-    revalidatePath("/decks");
-    return { error: null };
-  } catch (error) {
+  const supabase = createSupabaseClient();
+  const clerkUserID = await getClerkUserID();
+  const { error } = await supabase
+    .from("decks")
+    .delete()
+    .eq("id", id)
+    .eq("clerk_user_id", clerkUserID);
+  if (error) {
     console.error("Error deleting deck:", error);
     return { error: "Failed to delete deck" };
   }
+  revalidatePath("/decks");
+  return { error: null };
 }
 
 export async function getUserDeckCards(deckId: string) {
@@ -102,4 +133,35 @@ export async function getUserDeckCards(deckId: string) {
     console.error("Error fetching deck cards:", error);
     return { error: "Failed to fetch deck cards" };
   }
+}
+
+export async function getSharedDecks() {
+  const supabase = createSupabaseClient();
+
+  // Fetch decks with card counts in a single query
+  const { data: decksWithCounts, error } = await supabase
+    .from("decks")
+    .select(
+      `
+      id, 
+      title,
+      cards:cards(count)
+    `,
+    )
+    .eq("clerk_user_id", process.env.ADMIN_CLERK_USER_ID!)
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    console.error("Error fetching shared decks:", error);
+    return [];
+  }
+
+  // Format the result
+  const formattedDecks = decksWithCounts.map((deck) => ({
+    id: deck.id,
+    title: deck.title,
+    cardCount: deck.cards[0].count,
+  }));
+
+  return formattedDecks;
 }

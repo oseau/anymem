@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -18,11 +18,11 @@ import { updateDeck } from "@/app/actions/decks";
 
 interface Deck {
   id: string;
-  name: string;
+  title: string;
 }
 
 export function EditDeckForm({ deck, dict }: { deck: Deck; dict: Dictionary }) {
-  const [name, setName] = useState(deck.name);
+  const [name, setName] = useState(deck.title);
   const [isLoading, setIsLoading] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -38,6 +38,12 @@ export function EditDeckForm({ deck, dict }: { deck: Deck; dict: Dictionary }) {
       setIsLoading(false);
     }
   }
+
+  // each time user opens the dialog, we restore name back to deck.title
+  // as user might have edited it previously without saving
+  useEffect(() => {
+    setName(deck.title);
+  }, [open]);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
