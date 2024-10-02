@@ -32,7 +32,7 @@ export async function GET() {
       }
       const { data: newUser, error: createError } = await supabase
         .from("users")
-        .insert({ clerk_user_id: clerkID, email: user?.primaryEmailAddress })
+        .insert({ clerk_user_id: clerkID, email: user?.primaryEmailAddress?.emailAddress })
         .select("clerk_user_id, email")
         .single();
       if (createError) {
