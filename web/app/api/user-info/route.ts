@@ -1,4 +1,4 @@
-import { auth } from "@clerk/nextjs/server";
+import { auth, currentUser } from "@clerk/nextjs/server";
 import { createSupabaseClient } from "@/lib/supabase";
 import { NextResponse } from "next/server";
 
@@ -14,7 +14,7 @@ export async function GET() {
   // Fetch user data from Supabase
   const { data: userData, error: userError } = await supabase
     .from("users")
-    .select("id")
+    .select("clerk_user_id, email")
     .eq("clerk_user_id", clerkID)
     .single();
 
@@ -23,10 +23,17 @@ export async function GET() {
     console.error("Error fetching user data:", userError);
     if (userError.code === "PGRST116") {
       // User not found, create a new user in Supabase
+      const user = await currentUser();
+      if (!user) {
+        return NextResponse.json(
+          { error: "User not found" },
+          { status: 404 },
+        );
+      }
       const { data: newUser, error: createError } = await supabase
         .from("users")
-        .insert({ clerk_user_id: clerkID })
-        .select("id")
+        .insert({ clerk_user_id: clerkID, email: user?.primaryEmailAddress })
+        .select("clerk_user_id, email")
         .single();
       if (createError) {
         console.error("Error creating user in Supabase:", createError);
@@ -41,7 +48,7 @@ export async function GET() {
 
   const userInfo = {
     clerkID,
-    ...userData, // this key might be missing, if the user is not in the database yet
+    ...userData,
   };
 
   return NextResponse.json(userInfo);

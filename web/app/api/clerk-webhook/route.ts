@@ -55,9 +55,20 @@ export async function POST(req: Request) {
 
   switch (eventType) {
     case "user.created":
-      const { id } = evt.data as UserJSON;
+      const { id, email_addresses, primary_email_address_id } = evt.data as UserJSON;
+      const primaryEmailAddress = email_addresses.find(
+        (email) => email.id === primary_email_address_id,
+      );
+      if (!primaryEmailAddress) {
+        console.error("Primary email address not found");
+        return NextResponse.json(
+          { error: "Primary email address not found" },
+          { status: 500 },
+        );
+      }
       const { error } = await supabase.from("users").insert({
         clerk_user_id: id,
+        email: primaryEmailAddress.email_address,
       });
 
       if (error) {
@@ -75,6 +86,7 @@ export async function POST(req: Request) {
 
     case "user.updated":
       // Handle user update logic here
+      // TODO: Implement user update logic
       return NextResponse.json(
         { message: "User update handled" },
         { status: 200 },
@@ -82,6 +94,7 @@ export async function POST(req: Request) {
 
     case "user.deleted":
       // Handle user deletion logic here
+      // TODO: Implement user deletion logic
       return NextResponse.json(
         { message: "User deletion handled" },
         { status: 200 },

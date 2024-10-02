@@ -2,8 +2,8 @@
 
 CREATE TABLE IF NOT EXISTS
   users (
-    id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    clerk_user_id TEXT UNIQUE,
+    clerk_user_id TEXT PRIMARY KEY,
+    email TEXT, -- this can be changed if users change their primary email at clerk
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
   );
 
@@ -11,9 +11,9 @@ ALTER TABLE users ENABLE ROW LEVEL SECURITY;
 
 CREATE TABLE IF NOT EXISTS
   decks (
-    id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     title TEXT,
-    user_id BIGINT REFERENCES users (id),
+    clerk_user_id TEXT REFERENCES users (clerk_user_id),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
   );
 
@@ -21,12 +21,11 @@ ALTER TABLE decks ENABLE ROW LEVEL SECURITY;
 
 CREATE TABLE IF NOT EXISTS
   cards (
-    id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    user_id BIGINT REFERENCES users (id),
-    deck_id BIGINT REFERENCES decks (id),
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    deck_id UUID REFERENCES decks (id),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-    front_content TEXT,
-    back_content TEXT,
+    front TEXT,
+    back TEXT,
     meta jsonb
   );
 
