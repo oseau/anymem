@@ -729,3 +729,4 @@ fabric.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,linux,windows,emacs,vim,visualstudiocode,xcode,androidstudio,swift,node,react,reactnative,nextjs
 .aider*
+web/sql/data.sql
