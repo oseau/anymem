@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/spaced-repetition",
     "/multi-platform",
     "/customizable-decks",
+    "/shared-decks",
   ];
 
   const sitemap: MetadataRoute.Sitemap = routes.flatMap((route) => {
