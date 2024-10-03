@@ -1,6 +1,6 @@
 import { EmptyDeckMessage } from "./EmptyDeckMessage";
 import { type Dictionary } from "@/get-dictionary";
-import { Card, getUserDeckCards } from "@/app/actions/decks";
+import { getUserDeckCards } from "@/app/actions/decks";
 import {
   Table,
   TableBody,
@@ -53,7 +53,7 @@ export async function CardList({
   );
 }
 
-function CardItem({ card, dict }: { card: Card; dict: Dictionary }) {
+function CardItem({ card, dict }: { card: { id: string; front: string; back: string }; dict: Dictionary }) {
   return (
     <TableRow>
       <TableCell className="font-medium">{card.front}</TableCell>
