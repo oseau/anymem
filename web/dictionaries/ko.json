@@ -126,7 +126,8 @@
     "days": "일",
     "upcomingReviews": "예정된 복습",
     "dueDate": "마감일",
-    "reviewNow": "지금 복습"
+    "reviewNow": "지금 복습",
+    "viewAllDecks": "모든 덱 보기"
   },
   "decks": {
     "title": "미리 만들어진 카드 세트",

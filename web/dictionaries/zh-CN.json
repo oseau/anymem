@@ -126,7 +126,8 @@
     "days": "天",
     "upcomingReviews": "即将到来的复习",
     "dueDate": "到期日期",
-    "reviewNow": "立即复习"
+    "reviewNow": "立即复习",
+    "viewAllDecks": "查看所有卡组"
   },
   "decks": {
     "title": "预制卡片组",

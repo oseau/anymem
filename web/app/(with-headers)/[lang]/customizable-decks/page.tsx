@@ -15,7 +15,7 @@ export default async function CustomizableDecksPage({
   const dictionary = await getDictionary(lang);
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <>
       <h1 className="text-4xl font-bold mb-6 flex items-center">
         <LayersIcon className="w-10 h-10 mr-3" />
         {dictionary.features.customizableDecks.title}
@@ -64,6 +64,6 @@ export default async function CustomizableDecksPage({
           </CardContent>
         </Card>
       </div>
-    </div>
+    </>
   );
 }

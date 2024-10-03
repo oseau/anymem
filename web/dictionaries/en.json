@@ -126,7 +126,8 @@
     "days": "days",
     "upcomingReviews": "Upcoming Reviews",
     "dueDate": "Due Date",
-    "reviewNow": "Review Now"
+    "reviewNow": "Review Now",
+    "viewAllDecks": "View All Decks"
   },
   "decks": {
     "title": "Pre-made Card Sets",

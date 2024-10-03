@@ -27,8 +27,10 @@ export async function CardList({
   deckId: string;
   dict: Dictionary;
 }) {
+  // we can not trust deckId here, user might change url
   const { cards } = await getUserDeckCards(deckId);
 
+  // empty deck cound be a user deck or deck not owned by user, or wrong deckId
   if (cards === undefined || cards.length === 0) {
     return <EmptyDeckMessage dict={dict} />;
   }
@@ -53,7 +55,13 @@ export async function CardList({
   );
 }
 
-function CardItem({ card, dict }: { card: { id: string; front: string; back: string }; dict: Dictionary }) {
+function CardItem({
+  card,
+  dict,
+}: {
+  card: { id: string; front: string; back: string };
+  dict: Dictionary;
+}) {
   return (
     <TableRow>
       <TableCell className="font-medium">{card.front}</TableCell>

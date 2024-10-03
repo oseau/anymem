@@ -29,7 +29,7 @@ export default async function RootLayout({
         <body>
           <div className="flex flex-col min-h-screen bg-gradient-to-b from-blue-50 to-white font-sans relative">
             <DotPattern className="absolute inset-0 z-0 opacity-50" />
-            <main className="flex-grow container mx-auto px-4 py-8 max-w-4xl relative z-10">
+            <main className="flex-grow container mx-auto my-6 content-center max-w-4xl relative z-10">
               {children}
             </main>
           </div>

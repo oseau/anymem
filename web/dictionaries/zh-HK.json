@@ -126,7 +126,8 @@
     "days": "天",
     "upcomingReviews": "即將到來的複習",
     "dueDate": "到期日期",
-    "reviewNow": "立即複習"
+    "reviewNow": "立即複習",
+    "viewAllDecks": "查看所有卡組"
   },
   "decks": {
     "title": "預製卡片組",

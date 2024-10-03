@@ -4,45 +4,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
-
-// Mock data - replace with actual data fetching logic
-const mockUserData = {
-  streakDays: 15,
-  decks: [
-    {
-      id: 1,
-      name: "English Vocabulary",
-      cardCount: { learned: 100, totalImported: 500 },
-      cardsDue: { today: 20, thisWeek: 50, thisMonth: 100 },
-    },
-    {
-      id: 2,
-      name: "Countries Capitals",
-      cardCount: { learned: 50, totalImported: 200 },
-      cardsDue: { today: 10, thisWeek: 30, thisMonth: 60 },
-    },
-    {
-      id: 3,
-      name: "Calculus Formulas",
-      cardCount: { learned: 60, totalImported: 200 },
-      cardsDue: { today: 20, thisWeek: 30, thisMonth: 60 },
-    },
-    // Add more mock decks as needed
-  ],
-};
-
-const totalCards = mockUserData.decks.reduce(
-  (sum, deck) => sum + deck.cardCount.totalImported,
-  0,
-);
-const totalLearned = mockUserData.decks.reduce(
-  (sum, deck) => sum + deck.cardCount.learned,
-  0,
-);
 
 export default async function DashboardPage({
   params: { lang },
@@ -52,120 +18,77 @@ export default async function DashboardPage({
   const dict = await getDictionary(lang);
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">{dict.dashboard.title}</h1>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <Card>
-          <CardHeader>
-            <CardTitle>{dict.dashboard.progress}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <Progress
-              value={(totalLearned / totalCards) * 100}
-              className="mb-2"
-            />
-            <p>
-              {totalLearned} / {totalCards} {dict.dashboard.cardsLearned}
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>{dict.dashboard.cardsToReview}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-2 mb-4">
-              <p>
-                <span className="font-semibold">
-                  {dict.decks.cardsDue.today}:
-                </span>{" "}
-                <span className="text-2xl font-bold">
-                  {mockUserData.decks.reduce(
-                    (sum, deck) => sum + deck.cardsDue.today,
-                    0,
-                  )}
-                </span>
-              </p>
-              <p>
-                <span className="font-semibold">
-                  {dict.decks.cardsDue.thisWeek}:
-                </span>{" "}
-                {mockUserData.decks.reduce(
-                  (sum, deck) => sum + deck.cardsDue.thisWeek,
-                  0,
-                )}
-              </p>
-              <p>
-                <span className="font-semibold">
-                  {dict.decks.cardsDue.thisMonth}:
-                </span>{" "}
-                {mockUserData.decks.reduce(
-                  (sum, deck) => sum + deck.cardsDue.thisMonth,
-                  0,
-                )}
-              </p>
-            </div>
-            <Button asChild className="w-full">
-              <Link href={`/review`}>{dict.dashboard.startReview}</Link>
-            </Button>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>{dict.dashboard.streak}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-4xl font-bold">
-              {mockUserData.streakDays}
-              <span className="ml-2 text-xl font-normal">
-                {dict.dashboard.days}
-              </span>
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-
-      <h2 className="text-2xl font-bold mt-12 mb-4">{dict.decks.myDecks}</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {mockUserData.decks.map((deck) => (
-          <Card
-            key={deck.id}
-            className="shadow-md hover:shadow-lg transition-shadow duration-300"
-          >
+    <div className="flex flex-col gap-6">
+      <div>
+        <h1 className="text-3xl font-bold mb-4">{dict.dashboard.title}</h1>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <Card>
             <CardHeader>
-              <CardTitle>{deck.name}</CardTitle>
+              <CardTitle>{dict.dashboard.progress}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="mb-2">
-                {dict.decks.cardCount
-                  .replace("{learned}", deck.cardCount.learned.toString())
-                  .replace("{total}", deck.cardCount.totalImported.toString())}
+              <Progress value={(0 / 1001) * 100} className="mb-2" />
+              <p>
+                {0} / {1001} {dict.dashboard.cardsLearned}
               </p>
-              <p className="mb-4 text-sm">
-                {dict.decks.cardsDue.today}: {deck.cardsDue.today}
-                <br />
-                {dict.decks.cardsDue.thisWeek}: {deck.cardsDue.thisWeek}
-                <br />
-                {dict.decks.cardsDue.thisMonth}: {deck.cardsDue.thisMonth}
-              </p>
-              <div className="flex flex-col space-y-2">
-                <Button asChild variant="outline">
-                  <Link href={`/deck/${deck.id}`}>
-                    {dict.decks.browseCards}
-                  </Link>
-                </Button>
-                <Button asChild>
-                  <Link href={`/review/deck/${deck.id}`}>
-                    {dict.decks.revisitDeck}
-                  </Link>
-                </Button>
-              </div>
             </CardContent>
           </Card>
-        ))}
+
+          <Card>
+            <CardHeader>
+              <CardTitle>{dict.dashboard.cardsToReview}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-2 mb-4">
+                <p>
+                  <span className="font-semibold">
+                    {dict.decks.cardsDue.today}:
+                  </span>{" "}
+                  <span className="text-2xl font-bold">{1001}</span>
+                </p>
+                <p>
+                  <span className="font-semibold">
+                    {dict.decks.cardsDue.thisWeek}:
+                  </span>{" "}
+                  {1001}
+                </p>
+                <p>
+                  <span className="font-semibold">
+                    {dict.decks.cardsDue.thisMonth}:
+                  </span>{" "}
+                  {1001}
+                </p>
+              </div>
+              <Button asChild className="w-full">
+                <Link href={`/review`}>{dict.dashboard.startReview}</Link>
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>{dict.dashboard.streak}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-4xl font-bold">
+                {1001}
+                <span className="ml-2 text-xl font-normal">
+                  {dict.dashboard.days}
+                </span>
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
+      <div>
+        <h2 className="text-2xl font-bold mb-4">{dict.decks.myDecks}</h2>
+        <Button asChild className="w-full md:w-auto">
+          <Link href={`/decks`} className="flex items-center justify-center">
+            {dict.dashboard.viewAllDecks}
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
+        </Button>
       </div>
     </div>
   );

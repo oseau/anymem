@@ -14,7 +14,7 @@ export default async function MultiPlatformPage({
   const dictionary = await getDictionary(lang);
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <>
       <h1 className="text-3xl font-bold mb-6">
         {dictionary.features.multiPlatform.title}
       </h1>
@@ -48,7 +48,7 @@ export default async function MultiPlatformPage({
           {dictionary.features.multiPlatform.syncFeature.description}
         </p>
       </div>
-    </div>
+    </>
   );
 }
 

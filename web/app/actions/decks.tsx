@@ -4,7 +4,6 @@ import { getClerkUserID } from "@/lib/auth";
 import { revalidatePath } from "next/cache";
 import { createSupabaseClient } from "@/lib/supabase";
 
-
 export async function createDeck(title: string) {
   const supabase = createSupabaseClient();
   try {
@@ -92,8 +91,8 @@ export async function getUserDeckCards(deckId: string) {
     .select(
       `id, front, back,
       decks!inner()`,
-    // NOTE:
-    // we can use `...decks!inner(clerk_user_id)` to expose the `clerk_user_id` to result
+      // NOTE:
+      // we can use `...decks!inner(clerk_user_id)` to expose the `clerk_user_id` to result
     )
     .eq("deck_id", deckId)
     .eq("decks.clerk_user_id", clerkUserID);

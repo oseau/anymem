@@ -126,7 +126,8 @@
     "days": "días",
     "upcomingReviews": "Próximas revisiones",
     "dueDate": "Fecha de vencimiento",
-    "reviewNow": "Revisar ahora"
+    "reviewNow": "Revisar ahora",
+    "viewAllDecks": "Ver todos los mazos"
   },
   "decks": {
     "title": "Conjuntos de tarjetas prediseñados",

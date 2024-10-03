@@ -126,7 +126,8 @@
     "days": "日",
     "upcomingReviews": "今後の復習",
     "dueDate": "期日",
-    "reviewNow": "今すぐ復習"
+    "reviewNow": "今すぐ復習",
+    "viewAllDecks": "すべてのデッキを表示"
   },
   "decks": {
     "title": "プリメイドカードセット",
