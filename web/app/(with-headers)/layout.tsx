@@ -72,7 +72,7 @@ export default async function RootLayout({
               </nav>
             </header>
 
-            <main className="flex-grow container mx-auto px-4 py-8 max-w-4xl relative z-10">
+            <main className="flex-grow container mx-auto my-6 content-center max-w-4xl relative z-10">
               {children}
             </main>
 
