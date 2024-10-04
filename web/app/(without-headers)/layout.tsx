@@ -13,19 +13,16 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params,
 }: {
   children: React.ReactNode;
-  params: { lang?: Locale };
 }) {
   const headersList = headers();
   const detectedLocale =
     (headersList.get("x-detected-locale") as Locale) || i18n.defaultLocale;
-  const lang = params.lang || detectedLocale;
 
   return (
     <ClerkProvider>
-      <html lang={lang}>
+      <html lang={detectedLocale}>
         <body>
           <div className="flex flex-col min-h-screen bg-gradient-to-b from-blue-50 to-white font-sans relative">
             <DotPattern className="absolute inset-0 z-0 opacity-50" />
