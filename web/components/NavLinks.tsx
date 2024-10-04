@@ -15,7 +15,7 @@ export function NavLinks({
   i18nPrefix: string;
 }) {
   const { isSignedIn } = useAuth();
-  const isHome = usePathname() === i18nPrefix;
+  const isHome = ["/", i18nPrefix].includes(usePathname());
 
   return (
     <div className="flex items-center space-x-4">

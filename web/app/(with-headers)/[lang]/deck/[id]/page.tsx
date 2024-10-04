@@ -1,6 +1,6 @@
-import { Dictionary } from "@/get-dictionary";
+import { getDictionary } from "@/get-dictionary";
 import { CardList } from "@/components/CardList";
-import { i18n } from "@/i18n-config";
+import { Locale, i18n } from "@/i18n-config";
 import { getUserDeckCards } from "@/app/actions/decks";
 import { notFound } from "next/navigation";
 
@@ -9,10 +9,11 @@ export async function generateStaticParams() {
 }
 
 export default async function UserDeckPage({
-  params: { dict, id },
+  params: { lang, id },
 }: {
-  params: { dict: Dictionary; id: string };
+  params: { lang: Locale; id: string };
 }) {
+  const dict = await getDictionary(lang);
   const deck = await getUserDeckCards(id);
   if (!deck) {
     notFound();
