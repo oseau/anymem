@@ -3,7 +3,8 @@
   "description": "AnyMem : Votre compagnon d'apprentissage alimenté par l'IA. Rendez l'apprentissage facile et amusant. Renforcez vos connaissances à tout moment, sur votre téléphone ou votre ordinateur.",
   "header": {
     "features": "Fonctionnalités",
-    "comingSoon": "Bientôt disponible"
+    "comingSoon": "Bientôt disponible",
+    "dashboard": "Tableau de bord"
   },
   "hero": {
     "title": "Révisez n'importe quoi, pour toujours",

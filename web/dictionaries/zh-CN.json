@@ -3,7 +3,8 @@
   "description": "AnyMem：你的AI学习伙伴，让学习变得轻松有趣。手机电脑两不误，随时随地巩固知识。",
   "header": {
     "features": "特色功能",
-    "comingSoon": "敬请期待"
+    "comingSoon": "敬请期待",
+    "dashboard": "仪表板"
   },
   "hero": {
     "title": "记住所有，永不遗忘",

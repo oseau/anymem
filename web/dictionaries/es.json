@@ -3,7 +3,8 @@
   "description": "AnyMem: Tu compañero de aprendizaje con IA. Haz que aprender sea fácil y divertido. Refuerza tus conocimientos en cualquier momento y lugar, desde tu móvil o computadora.",
   "header": {
     "features": "Características",
-    "comingSoon": "Próximamente"
+    "comingSoon": "Próximamente",
+    "dashboard": "Tablero"
   },
   "hero": {
     "title": "Recuerda todo, para siempre",

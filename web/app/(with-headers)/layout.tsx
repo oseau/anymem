@@ -1,13 +1,13 @@
-import { ClerkProvider, UserButton } from "@clerk/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getDictionary } from "@/get-dictionary";
 import DotPattern from "@/components/magicui/dot-pattern";
-import { GitHubLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
 import { type Locale, i18n } from "@/i18n-config";
 import "@/app/globals.css";
 import { headers } from "next/headers";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
+import { NavLinks } from "@/components/NavLinks";
 
 export const metadata: Metadata = {
   title: "AnyMem",
@@ -27,7 +27,7 @@ export default async function RootLayout({
   const localeSource = headersList.get("x-locale-source") || "detection";
   const lang = params.lang || detectedLocale;
   const i18nPrefix = localeSource === "url" ? `/${lang}` : "";
-  const dictionary = await getDictionary(lang);
+  const dict = await getDictionary(lang);
 
   return (
     <ClerkProvider>
@@ -39,36 +39,10 @@ export default async function RootLayout({
               <nav className="container mx-auto px-4 max-w-6xl flex justify-between items-center">
                 <Link href={`${i18nPrefix}/`}>
                   <h1 className="text-2xl font-bold text-blue-600 cursor-pointer">
-                    <span>{dictionary.title}</span>
+                    <span>{dict.title}</span>
                   </h1>
                 </Link>
-                <div className="flex items-center space-x-4">
-                  <a
-                    href="#features"
-                    className="text-gray-600 hover:text-blue-600"
-                  >
-                    {dictionary.header.features}
-                  </a>
-                  <a
-                    href="https://twitter.com/Yangorz/status/1831610190518698431"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-blue-600"
-                    aria-label="Twitter Announcement"
-                  >
-                    <TwitterLogoIcon className="w-5 h-5" />
-                  </a>
-                  <a
-                    href="https://github.com/oseau/anymem"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-blue-600"
-                    aria-label="GitHub Repository"
-                  >
-                    <GitHubLogoIcon className="w-5 h-5" />
-                  </a>
-                  <UserButton afterSignOutUrl={`/${params.lang}`} />
-                </div>
+                <NavLinks dict={dict} i18nPrefix={i18nPrefix} />
               </nav>
             </header>
 
@@ -78,7 +52,7 @@ export default async function RootLayout({
 
             <footer className="bg-gray-800 text-white py-2">
               <div className="container mx-auto px-4 max-w-6xl text-center">
-                <p>{dictionary.footer.copyright}</p>
+                <p>{dict.footer.copyright}</p>
               </div>
             </footer>
           </div>

@@ -3,7 +3,8 @@
   "description": "AnyMem: AI 기반 학습 동반자. 학습을 쉽고 재미있게 만듭니다. 휴대폰이나 컴퓨터에서 언제 어디서나 지식을 강화하세요.",
   "header": {
     "features": "기능",
-    "comingSoon": "출시 예정"
+    "comingSoon": "출시 예정",
+    "dashboard": "대시보드"
   },
   "hero": {
     "title": "모든 것을 영원히 기억하세요",

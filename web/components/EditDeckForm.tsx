@@ -39,11 +39,12 @@ export function EditDeckForm({ deck, dict }: { deck: Deck; dict: Dictionary }) {
     }
   }
 
-  // each time user opens the dialog, we restore name back to deck.title
-  // as user might have edited it previously without saving
+  // Reset the form when the dialog opens
   useEffect(() => {
-    setName(deck.title);
-  }, [open]);
+    if (open) {
+      setName(deck.title);
+    }
+  }, [open, deck.title]);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>

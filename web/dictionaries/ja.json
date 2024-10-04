@@ -3,7 +3,8 @@
   "description": "AnyMem：AIを活用した学習パートナー。学習を簡単で楽しいものに。スマートフォンやパソコンで、いつでもどこでも知識を強化。",
   "header": {
     "features": "機能",
-    "comingSoon": "近日公開"
+    "comingSoon": "近日公開",
+    "dashboard": "ダッシュボード"
   },
   "hero": {
     "title": "何でも永久に記憶",

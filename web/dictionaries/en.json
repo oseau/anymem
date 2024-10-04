@@ -3,7 +3,8 @@
   "description": "AnyMem: Your AI-powered learning companion. Make learning effortless and fun. Reinforce knowledge anytime, anywhere - on your phone or computer.",
   "header": {
     "features": "Features",
-    "comingSoon": "Coming Soon"
+    "comingSoon": "Coming Soon",
+    "dashboard": "Dashboard"
   },
   "hero": {
     "title": "Remember Anything, Forever",
