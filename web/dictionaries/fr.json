@@ -173,5 +173,9 @@
     "backContent": "Contenu verso",
     "emptyDeckMessage": "Votre paquet est vide. Importer des cartes ou créer de nouvelles cartes.",
     "importCardsButton": "Importer des cartes"
+  },
+  "sharedDeck": {
+    "importCards": "Importer des cartes dans un jeu existant",
+    "cloneDeck": "Cloner en tant que nouveau jeu"
   }
 }

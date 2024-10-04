@@ -173,5 +173,9 @@
     "backContent": "背面內容",
     "emptyDeckMessage": "您的卡組是空的。導入卡片或創建新的卡片。",
     "importCardsButton": "導入卡片"
+  },
+  "sharedDeck": {
+    "importCards": "匯入卡片至現有牌組",
+    "cloneDeck": "複製為新牌組"
   }
 }

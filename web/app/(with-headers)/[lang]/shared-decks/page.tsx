@@ -1,7 +1,16 @@
 import { type Locale, i18n } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionary";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { getSharedDecks } from "@/app/actions/decks";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
@@ -16,7 +25,7 @@ export default async function DecksPage({
   const decks = await getSharedDecks();
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-200px)]">
+    <div className="flex flex-col items-center justify-center">
       <h1 className="text-3xl font-bold mb-8">{dict.decks.title}</h1>
       <div>
         <div className="w-full max-w-7xl">
@@ -37,6 +46,17 @@ export default async function DecksPage({
                     )}
                   </p>
                 </CardContent>
+                <CardFooter className="flex justify-between">
+                  <Button asChild>
+                    <Link
+                      href={`/shared-deck/${deck.id}`}
+                      className="flex items-center justify-center"
+                    >
+                      {dict.decks.browseCards}
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </CardFooter>
               </Card>
             ))}
           </div>

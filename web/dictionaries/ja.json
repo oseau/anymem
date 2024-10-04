@@ -154,7 +154,7 @@
     "editDeckDescription": "デッキ名を編集する",
     "saveDeckChanges": "変更を保存",
     "deleteDeck": "削除",
-    "deleteDeckDescription": "このデッキを削除してもよろしいですか？この操作は元に戻せません。",
+    "deleteDeckDescription": "このデッキを削除してもよろしいですか？この操作は元に戻せませ��。",
     "confirmDelete": "はい、デッキを削除します"
   },
   "common": {
@@ -173,5 +173,9 @@
     "backContent": "裏面の内容",
     "emptyDeckMessage": "デッキが空です。カードをインポートするか、新しいカードを作成してください。",
     "importCardsButton": "カードをインポート"
+  },
+  "sharedDeck": {
+    "importCards": "既存のデッキにカードをインポート",
+    "cloneDeck": "新しいデッキとしてクローン"
   }
 }

@@ -86,22 +86,18 @@ export async function deleteDeck(id: string) {
 export async function getUserDeckCards(deckId: string) {
   const supabase = createSupabaseClient();
   const clerkUserID = await getClerkUserID();
-  const { data: cards, error } = await supabase
-    .from("cards")
-    .select(
-      `id, front, back,
-      decks!inner()`,
-      // NOTE:
-      // we can use `...decks!inner(clerk_user_id)` to expose the `clerk_user_id` to result
-    )
-    .eq("deck_id", deckId)
-    .eq("decks.clerk_user_id", clerkUserID);
+  const { data, error } = await supabase
+    .from("decks")
+    .select(`title, cards(front, back)`)
+    .eq("id", deckId)
+    .eq("clerk_user_id", clerkUserID)
+    .single();
 
   if (error) {
     console.error("Error fetching deck cards:", error);
-    return { cards: [] };
+    return null;
   }
-  return { cards };
+  return { title: data.title, cards: data.cards };
 }
 
 export async function getSharedDecks() {
@@ -132,4 +128,28 @@ export async function getSharedDecks() {
   }));
 
   return formattedDecks;
+}
+
+export async function getSharedDeckById(id: string) {
+  const supabase = createSupabaseClient();
+  const { data, error } = await supabase
+    .from("decks")
+    .select(
+      `
+    title,
+    cards (
+      front,
+      back
+    )
+  `,
+    )
+    .eq("id", id)
+    .eq("clerk_user_id", process.env.ADMIN_CLERK_USER_ID!)
+    .single();
+
+  if (error) {
+    console.error("Error fetching shared deck:", error);
+    return null;
+  }
+  return { title: data?.title, cards: data?.cards };
 }

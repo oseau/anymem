@@ -171,7 +171,11 @@
     "review": "복습",
     "frontContent": "앞면 내용",
     "backContent": "뒷면 내용",
-    "emptyDeckMessage": "덱이 비어있습니다. 카드를 가져오거나 새로운 카드를 만드세요.",
+    "emptyDeckMessage": "덱이 ���어있습니다. 카드를 가져오거나 새로운 카드를 만드세요.",
     "importCardsButton": "카드 가져오기"
+  },
+  "sharedDeck": {
+    "importCards": "기존 덱에 카드 가져오기",
+    "cloneDeck": "새 덱으로 복제"
   }
 }

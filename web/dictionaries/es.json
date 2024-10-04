@@ -173,5 +173,9 @@
     "backContent": "Contenido posterior",
     "emptyDeckMessage": "Tu mazo está vacío. Importa tarjetas o crea nuevas tarjetas.",
     "importCardsButton": "Importar tarjetas"
+  },
+  "sharedDeck": {
+    "importCards": "Importar tarjetas al mazo existente",
+    "cloneDeck": "Clonar como nuevo mazo"
   }
 }
