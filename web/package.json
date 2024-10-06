@@ -30,7 +30,8 @@
     "recharts": "^2.12.7",
     "svix": "^1.35.0",
     "tailwind-merge": "^2.5.2",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "ts-fsrs": "^4.3.1"
   },
   "devDependencies": {
     "@types/negotiator": "^0.6.3",
@@ -45,6 +46,7 @@
     "postcss": "^8.4.45",
     "prettier": "^3.3.3",
     "tailwindcss": "^3.4.10",
+    "tsx": "^4.19.1",
     "typescript": "^5.5.4"
   }
 }
