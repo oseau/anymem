@@ -7,7 +7,7 @@ import {
   fsrs,
   generatorParameters,
 } from "ts-fsrs";
-import type { ReviewLog, RecordLogItem } from "ts-fsrs";
+import type { RecordLogItem, ReviewLog } from "ts-fsrs";
 
 const f = fsrs(
   generatorParameters({
@@ -109,9 +109,9 @@ console.table(
     ...log,
     stability: parseFloat(log.stability.toFixed(1)),
     difficulty: parseFloat(log.difficulty.toFixed(1)),
-    due: `${log.due.toISOString().slice(2, 10).replace(/-/g, '/')}`,
+    due: `${log.due.toISOString().slice(2, 10).replace(/-/g, "/")}`,
     rating: Rating[log.rating],
-    review: `${log.review.toISOString().slice(2, 10).replace(/-/g, '/')}`,
+    review: `${log.review.toISOString().slice(2, 10).replace(/-/g, "/")}`,
   })),
 );
 console.groupEnd();
