@@ -36,7 +36,7 @@ export async function getDecks() {
     cards:cards(count)
   `,
     )
-    .eq("clerk_user_id", clerkUserID)
+    .eq("clerk_user_id", clerkUserID) // only get user's own decks
     .order("created_at", { ascending: false });
   if (error) {
     console.error("Error fetching decks:", error);
@@ -58,7 +58,7 @@ export async function updateDeck(id: string, title: string) {
     .from("decks")
     .update({ title })
     .eq("id", id)
-    .eq("clerk_user_id", clerkUserID);
+    .eq("clerk_user_id", clerkUserID); // only update user's own deck
   if (error) {
     console.error("Error updating deck:", error);
     return { error: "Failed to update deck" };
@@ -74,7 +74,7 @@ export async function deleteDeck(id: string) {
     .from("decks")
     .delete()
     .eq("id", id)
-    .eq("clerk_user_id", clerkUserID);
+    .eq("clerk_user_id", clerkUserID); // only delete user's own deck
   if (error) {
     console.error("Error deleting deck:", error);
     return { error: "Failed to delete deck" };
@@ -90,7 +90,7 @@ export async function getUserDeckCards(deckId: string) {
     .from("decks")
     .select(`title, cards(front, back)`)
     .eq("id", deckId)
-    .eq("clerk_user_id", clerkUserID)
+    .eq("clerk_user_id", clerkUserID) // only get user's own deck
     .single();
 
   if (error) {
@@ -112,7 +112,7 @@ export async function getSharedDecks() {
       cards:cards(count)
     `,
     )
-    .eq("clerk_user_id", process.env.ADMIN_CLERK_USER_ID!)
+    .eq("shared", true) // only get shared decks
     .order("created_at", { ascending: false });
 
   if (error) {
@@ -144,7 +144,7 @@ export async function getSharedDeckById(id: string) {
   `,
     )
     .eq("id", id)
-    .eq("clerk_user_id", process.env.ADMIN_CLERK_USER_ID!)
+    .eq("shared", true) // only get shared decks
     .single();
 
   if (error) {
@@ -152,4 +152,22 @@ export async function getSharedDeckById(id: string) {
     return null;
   }
   return { title: data?.title, cards: data?.cards };
+}
+
+export async function cloneDeck(id: string) {
+  const supabase = createSupabaseClient();
+  const clerkUserID = await getClerkUserID();
+  const { data, error } = await supabase
+    .from("decks")
+    .select("title, cards(front, back)")
+    .eq("id", id)
+    .eq("shared", true) // only clone shared decks
+    .neq("clerk_user_id", clerkUserID) // prevent cloning own deck
+    .single();
+  console.log("cloning deck data:", data);
+  if (error) {
+    console.error("Error cloning deck:", error);
+    return { error: "Failed to clone deck" };
+  }
+  return { error: null };
 }

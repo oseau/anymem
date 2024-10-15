@@ -2,8 +2,8 @@ import { getDictionary } from "@/get-dictionary";
 import { getSharedDeckById } from "@/app/actions/decks";
 import { notFound } from "next/navigation";
 import { CardList } from "@/components/CardList";
-import { Button } from "@/components/ui/button";
 import { Locale, i18n } from "@/i18n-config";
+import CloneButton from "@/components/clone-button";
 
 export async function generateStaticParams() {
   // TODO: also generate shared deck ids
@@ -25,12 +25,7 @@ export default async function SharedDeckPage({
   return (
     <div className="space-y-6">
       <CardList deck={deck} dict={dict} />
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <Button variant="outline" className="w-full">
-          {dict.sharedDeck.importCards}
-        </Button>
-        <Button className="w-full">{dict.sharedDeck.cloneDeck}</Button>
-      </div>
+      <CloneButton id={id} label={dict.sharedDeck.cloneDeck} />
     </div>
   );
 }

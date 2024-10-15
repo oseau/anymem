@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     title TEXT,
     clerk_user_id TEXT REFERENCES users (clerk_user_id),
+    shared BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
   );
 
@@ -23,21 +24,19 @@ CREATE TABLE IF NOT EXISTS
   cards (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     deck_id UUID REFERENCES decks (id),
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     due TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     front TEXT,
     back TEXT,
-    meta jsonb
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
   );
 
 ALTER TABLE cards ENABLE ROW LEVEL SECURITY;
 
 CREATE TABLE IF NOT EXISTS
-  reviews (
+  review_logs (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     card_id UUID REFERENCES cards (id),
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-    meta jsonb
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
   );
 
-ALTER TABLE reviews ENABLE ROW LEVEL SECURITY;
+ALTER TABLE review_logs ENABLE ROW LEVEL SECURITY;
