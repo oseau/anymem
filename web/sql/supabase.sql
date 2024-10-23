@@ -3,7 +3,7 @@
 CREATE TABLE IF NOT EXISTS
   users (
     clerk_user_id TEXT PRIMARY KEY,
-    email TEXT, -- this can be changed if users change their primary email at clerk
+    email TEXT NOT NULL, -- this can be changed if users change their primary email at clerk
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
   );
 
@@ -12,7 +12,7 @@ ALTER TABLE users ENABLE ROW LEVEL SECURITY;
 CREATE TABLE IF NOT EXISTS
   decks (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    title TEXT,
+    title TEXT NOT NULL,
     clerk_user_id TEXT REFERENCES users (clerk_user_id),
     shared BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
@@ -25,8 +25,8 @@ CREATE TABLE IF NOT EXISTS
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     deck_id UUID REFERENCES decks (id),
     due TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-    front TEXT,
-    back TEXT,
+    front TEXT NOT NULL,
+    back TEXT NOT NULL,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
   );
 
