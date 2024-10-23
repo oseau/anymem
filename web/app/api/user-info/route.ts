@@ -31,7 +31,7 @@ export async function GET() {
         .from("users")
         .insert({
           clerk_user_id: clerkID,
-          email: user?.primaryEmailAddress?.emailAddress,
+          email: user?.primaryEmailAddress?.emailAddress || "UNKNOWN",
         })
         .select("clerk_user_id, email")
         .single();
@@ -42,14 +42,10 @@ export async function GET() {
           { status: 500 },
         );
       }
-      return NextResponse.json({ clerkID, ...newUser });
+      newUser!.email = newUser!.email.replace(/(.{2})(.*)(@.*)/, "$1***$3"); // redact email partially
+      return NextResponse.json(newUser);
     }
   }
-
-  const userInfo = {
-    clerkID,
-    ...userData,
-  };
-
-  return NextResponse.json(userInfo);
+  userData!.email = userData!.email.replace(/(.{2})(.*)(@.*)/, "$1***$3"); // redact email partially
+  return NextResponse.json(userData);
 }
