@@ -151,7 +151,7 @@ export async function getSharedDeckById(id: string) {
     console.error("Error fetching shared deck:", error);
     return null;
   }
-  return { title: data?.title, cards: data?.cards };
+  return { title: data?.title ?? "", cards: data?.cards ?? [] };
 }
 
 export async function cloneDeck(id: string) {
@@ -164,10 +164,28 @@ export async function cloneDeck(id: string) {
     .eq("shared", true) // only clone shared decks
     .neq("clerk_user_id", clerkUserID) // prevent cloning own deck
     .single();
-  console.log("cloning deck data:", data);
   if (error) {
     console.error("Error cloning deck:", error);
     return { error: "Failed to clone deck" };
   }
+  // create a new deck with the same cards for the user
+  const { error: createDeckError, data: newDeck } = await supabase
+    .from("decks")
+    .insert({ title: data.title, clerk_user_id: clerkUserID })
+    .select()
+    .single();
+  if (createDeckError) {
+    console.error("Error creating cloned deck:", createDeckError);
+    return { error: "Failed to create cloned deck" };
+  }
+  // insert cards into the new deck
+  const { error: insertCardsError } = await supabase
+    .from("cards")
+    .insert(data.cards.map((card) => ({ ...card, deck_id: newDeck.id })));
+  if (insertCardsError) {
+    console.error("Error inserting cards into cloned deck:", insertCardsError);
+    return { error: "Failed to insert cards into cloned deck" };
+  }
+  revalidatePath("/decks");
   return { error: null };
 }

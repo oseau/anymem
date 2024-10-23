@@ -23,7 +23,7 @@ ALTER TABLE decks ENABLE ROW LEVEL SECURITY;
 CREATE TABLE IF NOT EXISTS
   cards (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    deck_id UUID REFERENCES decks (id),
+    deck_id UUID REFERENCES decks (id) ON DELETE CASCADE,
     due TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     front TEXT NOT NULL,
     back TEXT NOT NULL,
@@ -35,7 +35,7 @@ ALTER TABLE cards ENABLE ROW LEVEL SECURITY;
 CREATE TABLE IF NOT EXISTS
   review_logs (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    card_id UUID REFERENCES cards (id),
+    card_id UUID REFERENCES cards (id) ON DELETE CASCADE,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
   );
 

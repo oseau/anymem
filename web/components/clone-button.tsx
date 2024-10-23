@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { cloneDeck } from "@/app/actions/decks";
+import { useRouter } from "next/navigation";
 
 interface CloneButtonProps {
   id: string;
@@ -9,11 +10,12 @@ interface CloneButtonProps {
 }
 
 export default function CloneButton({ id, label }: CloneButtonProps) {
+  const router = useRouter();
   const onClickClone = async () => {
     try {
       const res = await cloneDeck(id);
       console.log("Deck cloned:", res);
-      // TODO: Handle successful clone (e.g., show a success message, redirect)
+      router.push(`/decks`);
     } catch (error) {
       console.error("Error cloning deck:", error);
       // TODO: Handle error (e.g., show an error message)
