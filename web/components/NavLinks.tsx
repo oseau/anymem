@@ -46,7 +46,7 @@ export function NavLinks({
           </a>
         </>
       )}
-      <UserButton />
+      {isSignedIn && <UserButton />}
     </div>
   );
 }

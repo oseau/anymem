@@ -2,26 +2,18 @@ import { type Locale, i18n } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionary";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import { LayersIcon, MobileIcon, UpdateIcon } from "@radix-ui/react-icons";
-import { SignInButton, SignUpButton } from "@clerk/nextjs";
-import { auth } from "@clerk/nextjs/server";
-import { headers } from "next/headers";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
 export default async function Page({
-  params: { lang },
+  params: { lang, localeSource },
 }: {
   params: { lang: Locale; localeSource?: string };
 }) {
-  const { userId } = auth();
   const dictionary = await getDictionary(lang);
-
-  const headersList = headers();
-  const localeSource = headersList.get("x-locale-source") || "url";
-  const i18nPrefix = localeSource === "url" ? `/${lang}` : "";
-
+  const i18nPrefix = localeSource === "detection" ? "" : `/${lang}`;
   return (
     <>
       <section className="text-center mb-8">
@@ -29,27 +21,12 @@ export default async function Page({
           {dictionary.hero.title}
         </h2>
         <div className="flex justify-center space-x-4">
-          {userId ? (
-            <a
-              href="/dashboard"
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-lg transition duration-300"
-            >
-              {dictionary.hero.startLearning}
-            </a>
-          ) : (
-            <>
-              <SignInButton mode="modal">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-lg transition duration-300">
-                  {dictionary.auth.signIn}
-                </button>
-              </SignInButton>
-              <SignUpButton mode="modal">
-                <button className="bg-white hover:bg-gray-100 text-blue-600 font-bold py-2 px-4 rounded-lg shadow-lg transition duration-300 border border-blue-600">
-                  {dictionary.auth.signUp}
-                </button>
-              </SignUpButton>
-            </>
-          )}
+          <a
+            href="/dashboard"
+            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-lg transition duration-300"
+          >
+            {dictionary.hero.startLearning}
+          </a>
         </div>
       </section>
 

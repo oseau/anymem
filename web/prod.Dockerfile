@@ -14,6 +14,7 @@ FROM base AS builder
 WORKDIR /usr/src/anymem/web
 COPY --from=deps /usr/src/anymem/web/node_modules ./node_modules
 COPY . .
+ENV NEXT_TELEMETRY_DISABLED 1
 RUN npm run build
 
 FROM base AS runner
