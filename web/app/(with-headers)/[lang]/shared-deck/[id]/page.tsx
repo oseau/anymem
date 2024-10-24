@@ -10,18 +10,11 @@ export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
-export default async function SharedDeckPage(
-  props: {
-    params: Promise<{ lang: Locale; id: string }>;
-  }
-) {
-  const params = await props.params;
-
-  const {
-    lang,
-    id
-  } = params;
-
+export default async function SharedDeckPage({
+  params: { lang, id },
+}: {
+  params: { lang: Locale; id: string };
+}) {
   const dict = await getDictionary(lang);
   const deck = await getSharedDeckById(id);
 

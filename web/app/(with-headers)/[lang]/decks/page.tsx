@@ -9,17 +9,11 @@ export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
-export default async function UserDecksPage(
-  props: {
-    params: Promise<{ lang: Locale }>;
-  }
-) {
-  const params = await props.params;
-
-  const {
-    lang
-  } = params;
-
+export default async function UserDecksPage({
+  params: { lang },
+}: {
+  params: { lang: Locale };
+}) {
   const dict = await getDictionary(lang);
 
   return (

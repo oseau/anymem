@@ -3,7 +3,7 @@ import { type Locale, i18n } from "@/i18n-config";
 import FlashcardPage from "../[lang]/flashcard/page";
 
 export default async function RootFlashcardPage() {
-  const headersList = await headers();
+  const headersList = headers();
   const detectedLocale =
     (headersList.get("x-detected-locale") as Locale) || i18n.defaultLocale;
 

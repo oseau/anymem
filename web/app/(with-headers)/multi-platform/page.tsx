@@ -3,7 +3,7 @@ import { type Locale, i18n } from "@/i18n-config";
 import MultiPlatformPage from "../[lang]/multi-platform/page";
 
 export default async function RootMultiPlatformPage() {
-  const headersList = await headers();
+  const headersList = headers();
   const detectedLocale =
     (headersList.get("x-detected-locale") as Locale) || i18n.defaultLocale;
 
