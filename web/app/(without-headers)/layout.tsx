@@ -16,7 +16,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const headersList = headers();
+  const headersList = await headers();
   const detectedLocale =
     (headersList.get("x-detected-locale") as Locale) || i18n.defaultLocale;
 

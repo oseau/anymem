@@ -3,7 +3,7 @@ import { createSupabaseClient } from "@/lib/supabase";
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const { userId: clerkID } = auth();
+  const { userId: clerkID } = await auth();
 
   if (!clerkID) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });

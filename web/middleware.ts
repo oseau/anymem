@@ -68,7 +68,7 @@ const isProtectedRoute = createRouteMatcher([
   "/deck/(.*)",
 ]);
 
-export default clerkMiddleware((auth, request) => {
-  if (isProtectedRoute(request)) auth().protect();
+export default clerkMiddleware(async (auth, request) => {
+  if (isProtectedRoute(request)) await auth.protect();
   return i18nMiddleware(request);
 });

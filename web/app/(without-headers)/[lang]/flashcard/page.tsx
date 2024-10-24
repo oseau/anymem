@@ -6,11 +6,17 @@ export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
-export default async function FlashcardPage({
-  params: { lang },
-}: {
-  params: { lang: Locale };
-}) {
+export default async function FlashcardPage(
+  props: {
+    params: Promise<{ lang: Locale }>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    lang
+  } = params;
+
   const dict = await getDictionary(lang);
 
   return (
