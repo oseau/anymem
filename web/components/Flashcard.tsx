@@ -9,7 +9,7 @@ import { TimerFuse } from "@/components/ui/timer-fuse";
 
 interface FlashcardProps {
   front: string;
-  choices: string[];
+  choices: string[]; // we need to pass in this choices to avoid hydration error as it is randomized
   correctAnswer: number;
   timeLimit: number;
   dict: Dictionary;
@@ -78,7 +78,7 @@ export function Flashcard({
   };
 
   return (
-    <div className="absolute inset-0 flex justify-center items-center bg-gray-100 p-4 sm:p-6 md:p-8">
+    <div className="absolute inset-0 flex justify-center items-center p-4 sm:p-6 md:p-8">
       <Card className="w-full max-w-md bg-white shadow-lg">
         <CardContent className="flex flex-col justify-between h-full p-6 sm:p-8 md:p-10">
           <div className="text-center mb-6 sm:mb-8">

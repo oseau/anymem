@@ -41,7 +41,7 @@ export async function UserDeckList({
                 <Link href={`/deck/${deck.id}`}>{dict.decks.browseCards}</Link>
               </Button>
               <Button asChild>
-                <Link href={`/review/deck/${deck.id}`}>
+                <Link href={`/review/${deck.id}`}>
                   {dict.decks.revisitDeck}
                 </Link>
               </Button>
