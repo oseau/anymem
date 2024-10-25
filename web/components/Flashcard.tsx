@@ -126,8 +126,8 @@ export function Flashcard({
               {isCorrect === null
                 ? "Placeholder"
                 : isCorrect
-                  ? "Correct!"
-                  : "Incorrect!"}
+                  ? `${dict.flashcard.correct}!`
+                  : `${dict.flashcard.incorrect}!`}
             </div>
           </div>
         </CardContent>
