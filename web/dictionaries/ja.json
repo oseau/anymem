@@ -108,7 +108,9 @@
     }
   },
   "flashcard": {
-    "timeLeft": "残り時間"
+    "timeLeft": "残り時間",
+    "correct": "正解",
+    "incorrect": "不正解"
   },
   "auth": {
     "signIn": "サインイン",

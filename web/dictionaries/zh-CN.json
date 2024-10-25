@@ -108,7 +108,9 @@
     }
   },
   "flashcard": {
-    "timeLeft": "剩余时间"
+    "timeLeft": "剩余时间",
+    "correct": "正确",
+    "incorrect": "错误"
   },
   "auth": {
     "signIn": "登录",

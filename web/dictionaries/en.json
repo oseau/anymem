@@ -115,7 +115,9 @@
     "signUp": "Sign Up"
   },
   "flashcard": {
-    "timeLeft": "Time left"
+    "timeLeft": "Time left",
+    "correct": "Correct",
+    "incorrect": "Incorrect"
   },
   "dashboard": {
     "title": "Dashboard",

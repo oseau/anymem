@@ -108,7 +108,9 @@
     }
   },
   "flashcard": {
-    "timeLeft": "Temps restant"
+    "timeLeft": "Temps restant",
+    "correct": "Correct",
+    "incorrect": "Incorrect"
   },
   "auth": {
     "signIn": "Se connecter",

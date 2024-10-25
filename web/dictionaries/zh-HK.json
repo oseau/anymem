@@ -108,7 +108,9 @@
     }
   },
   "flashcard": {
-    "timeLeft": "剩餘時間"
+    "timeLeft": "剩餘時間",
+    "correct": "正確",
+    "incorrect": "錯誤"
   },
   "auth": {
     "signIn": "登入",

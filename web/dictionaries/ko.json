@@ -108,7 +108,9 @@
     }
   },
   "flashcard": {
-    "timeLeft": "남은 시간"
+    "timeLeft": "남은 시간",
+    "correct": "정답",
+    "incorrect": "오답"
   },
   "auth": {
     "signIn": "로그인",
@@ -172,7 +174,7 @@
     "review": "복습",
     "frontContent": "앞면 내용",
     "backContent": "뒷면 내용",
-    "emptyDeckMessage": "덱이 ���어있습니다. 카드를 가져오거나 새로운 카드를 만드세요.",
+    "emptyDeckMessage": "덱이 어있습니다. 카드를 가져오거나 새로운 카드를 만드세요.",
     "importCardsButton": "카드 가져오기"
   },
   "sharedDeck": {
